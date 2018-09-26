@@ -1,0 +1,82 @@
+﻿<div class="bigBox">
+    <!--头部-->
+    <div class="dr_header">
+        <div class="w1000 fix">
+            <div class="dr_member">
+                <div class="drmember_sec">
+                    <div class="dr_member-left fl" style="margin-right:115px;">
+                        <a href="javascript:void(0);">中文(简体)&nbsp;<span class="fa fa-angle-down"></span></a>
+                        <ul style="display: none;">
+                            <li>
+                                <a href="#">English</a>
+                            </li>
+                            <li>
+                                <a href="#">中文(繁體)</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="dr_member-left fl">
+                        @if (WorkContext.Uid < 1)
+                        {
+                            <a href="@Url.Action("login", "account", new RouteValueDictionary { { "returnUrl", WorkContext.Url } })">登录</a>
+                            <i>/</i>
+                            <a href="@Url.Action("register", "account")" class="drtojoin">加入Vedantti</a>
+                        }
+                        else
+                        {
+                            @:您好: @WorkContext.NickName
+                            <a href="@Url.Action("logout", "account")">[退出]</a>
+                            if (WorkContext.AdminGid > 1)
+                            {
+                                <i>/</i>
+                                <a href="@Url.Action("index", "home", new RouteValueDictionary { { "area", "admin" } })">[商城管理]</a>
+                            }
+                            <i>/</i>
+                            <a href="@Url.Action("orderlist", "ucenter")">[我的订单]</a>
+                        }
+                    </div>
+                    <div class="dr_member-left fl">
+                        <i>/</i>
+                        <a href="#">关注VD</a>
+                    </div>
+                    <div class="dr_member-left drwapWeb fl">
+                        <i>/</i>
+                        <a href="#">手机官网</a>
+                    </div>
+                    <div class="dr_member-left fl">
+                        <i>/</i>
+                        <i class="fa fa-phone">
+                            400-01-13520
+                        </i>
+                    </div>
+                    <!--店铺定位-->
+                    <div class="dr_member-left fr">
+                        <a href="#"><i class="fa fa-map-marker"></i>深圳&emsp;全国店铺<i class="fa fa-angle-right"></i></a>
+                    </div>
+                    <!--店铺定位 end-->
+                </div>                
+            </div>
+        </div>
+    </div>
+    <!--头部end-->
+    <!--导航end-->
+    <div class="dr_navbk fix">
+        <ul class="dr_nav" style="height:100px; width:1200px; margin-left:auto; margin-right:auto;">
+            <div class="dr_logo"><img src="@{@WorkContext.ImageCDN}/themes/default/images/logo.png" /></div>
+            <li><a href="/">首页</a></li>
+            <li class="drop-down">
+                <a href="javascript:void(0);">系列产品</a>
+                <ul class="drop-down-content">
+                    <li><a href="/blist/28.html" style="height:50px; line-height:50px;">MOBIUS</a></li>
+                    <li><a href="/blist/29.html" style="height:50px; line-height:50px;">THE CIRCLE</a></li>
+                </ul>
+            </li>
+            <li><a href="/other/designer">设计师</a></li>
+            <li><a href="/other/technics">制作工艺</a></li>
+            <li><a href="/other/story">品牌文化</a></li>
+            <li><a href="/news/list">新闻活动</a></li>
+            <li><a href="#">杂志</a></li>
+        </ul>	
+    </div>
+    <!--导航end-->    
+</div>

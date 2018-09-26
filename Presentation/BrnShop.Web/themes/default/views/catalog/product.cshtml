@@ -1,0 +1,536 @@
+﻿@model BrnShop.Web.Models.ProductModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>@Model.ProductInfo.Name-@{@WorkContext.ShopConfig.SiteTitle}</title>
+    @Html.Raw(WorkContext.ShopConfig.SEOKeyword)
+    @Html.Raw(WorkContext.ShopConfig.SEODescription)
+    <link href="@{@WorkContext.CSSCDN}/themes/default/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="@{@WorkContext.CSSCDN}/themes/default/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="@{@WorkContext.CSSCDN}/themes/default/css/dr.css" rel="stylesheet" type="text/css" />
+    <link href="@{@WorkContext.CSSCDN}/themes/default/css/content.css" rel="stylesheet" type="text/css" />    
+    <script src="@{@WorkContext.ScriptCDN}/scripts/jquery.js" type="text/javascript"></script>
+    <script src="@{@WorkContext.ScriptCDN}/scripts/common.js" type="text/javascript"></script>
+    <script src="@{@WorkContext.ScriptCDN}/scripts/product.js" type="text/javascript"></script>
+    <link href="@{@WorkContext.ScriptCDN}/scripts/jquery.jqzoom.css" rel="stylesheet" type="text/css" />
+    <script src="@{@WorkContext.ScriptCDN}/scripts/jquery.jqzoom.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        uid = @WorkContext.Uid;
+        pid = @Model.Pid;
+        isGuestSC = @WorkContext.ShopConfig.IsGuestSC;
+        scSubmitType = @WorkContext.ShopConfig.SCSubmitType;
+    </script>
+</head>
+
+<body>
+@Html.Partial("_header")
+    <div class="dr-bread w1000">
+        <!--左边-->
+        <div class="drring_search-left fl">
+            <!--面包屑-->
+            <div class="drring_all-bread fl">
+                <a href="/">Vedantti</a>
+                <span>&gt;</span>
+                <a href="@Url.Action("brand", new RouteValueDictionary { { "brandId", Model.BrandInfo.BrandId } })">@Model.BrandInfo.Name</a>
+                <span>&gt;</span>
+                <span><a href="#">
+                    @{
+                        string vN = Model.ProductInfo.Name;
+                        int vI = vN.LastIndexOf(" ");
+                        if (vI > 0)
+                        {
+                            vN = vN.Substring(0, vI - 1);
+                        }
+                        @vN;
+                    }
+                    </a></span>
+            </div>
+            <!--面包屑end-->
+            <!--筛选-->
+            <div class="drring_search-choose fl" id="searchList">
+            </div>
+            <!--筛选end-->
+        </div>
+        <!--左边end-->
+    </div>
+
+<div class="w1000" id="content">
+<div class="conL left">
+<div class="conLitme">
+    <a class="jqzoom"><img jqimg="@{@WorkContext.ImageCDN}/upload/product/show/thumb800_800/@Model.ProductInfo.ShowImg" src="@{@WorkContext.ImageCDN}/upload/product/show/thumb460_460/@Model.ProductInfo.ShowImg" id="pShowImg" style="width:460px;height:460px" /></a>
+</div>
+
+<div class="conLnav">
+    <div id="demo" style="width:460px; height:60px;overflow: hidden; position:relative;">
+        <div class="leftBtInner" id="demo1">
+            <ul>
+            @foreach (ProductImageInfo info in Model.ProductImageList)
+            {
+                <li><a href="@{@WorkContext.ImageCDN}/upload/product/show/thumb800_800/@info.ShowImg" rev="@{@WorkContext.ImageCDN}/upload/product/show/thumb320_320/@info.ShowImg" rel="zoom-id:zoomer" title="" target="_blank"><img src="@{@WorkContext.ImageCDN}/upload/product/show/thumb60_60/@info.ShowImg" width="54" height="54" onmouseover="selectProductImg(this)"/></a></li>
+            }
+            <div class="clear"></div>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+<script type="text/javascript">
+    var canRoll = false;
+    var inBox = document.getElementById("demo1");
+    var liList = inBox.getElementsByTagName("li");
+    if (liList.length > 5) {
+        canRoll = true;
+    }
+    var boxWidth = 62;
+    var step = 0;
+    var maxStep = liList.length - 5;
+    function selectProductImg(obj) {
+        for (var i = 0; i < liList.length; i++) {
+            liList[i].className = ""
+        }
+        obj.parentNode.parentNode.className = "hot"
+        $("#pShowImg").attr("jqimg", $(obj.parentNode).prop("href"))
+        $("#pShowImg").prop("src", $(obj.parentNode).attr("rev"))
+    }
+    function moveL() {
+        if (!canRoll) {
+            return;
+        }
+        if (step < maxStep) {
+            step = step + 1;
+            inBox.style.marginLeft = (-1 * (step * boxWidth)) + "px"
+        }
+    }
+    function moveR() {
+        if (!canRoll) {
+            return;
+        }
+        if (step > 0) {
+            step = step - 1;
+            inBox.style.marginLeft = (-1 * (step * boxWidth)) + "px"
+        }
+    }
+    $(function(){
+         $(".jqzoom").jqueryzoom({
+                xzoom: 400, //放大图的宽度(默认是 200)
+                yzoom: 300, //放大图的高度(默认是 200)
+                offset: 10, //离原图的距离(默认是 10)
+                position: "right", //放大图的定位(默认是 "right")
+                preload: 1
+            });
+
+    })
+</script>
+
+    <!--右边区域-->
+    <div class="ringbuy_cort-right fr">
+        <h2>
+            @{
+                string vName = Model.ProductInfo.Name;
+                int vIdx = vName.LastIndexOf(" ");
+                if (vIdx > 0)
+                {
+                    vName = vName.Substring(0, vIdx - 1);
+                }
+                @vName;
+            }
+        </h2>
+        <!-- <h3>副标题，极简中欧复古款式</h3> -->
+        <div class="ringbuy_pirce">
+            @if (WorkContext.IsMember)
+            {
+                <span class="fl title">会员价:</span><span class="fl">￥@Model.ProductInfo.MarketPrice.ToString("######0")</span><span class="fl title">&emsp;现价:</span><span class="fl other">￥@Model.ProductInfo.ShopPrice.ToString("######0")</span><span class="fl title">&emsp;原价:</span><span class="fl other">￥@Model.ProductInfo.CostPrice.ToString("######0")</span>
+            }
+            else
+            {
+                <span class="fl title">现价:</span><span class="fl">￥@Model.ProductInfo.ShopPrice.ToString("######0")</span><span class="fl title">&emsp;会员价:</span><span class="fl other">￥@Model.ProductInfo.MarketPrice.ToString("######0")</span><span class="fl title">&emsp;原价:</span><span class="fl other">￥@Model.ProductInfo.CostPrice.ToString("######0")</span>
+            }
+            <a href="@Url.Action("brand", new RouteValueDictionary { { "brandId", Model.BrandInfo.BrandId } })" target="_blank" class="fr">更多<i>@Model.BrandInfo.Name</i>&gt;&gt;</a>
+        </div>
+        <!--售出评价-->
+        <ul class="ringbuy_sale">
+            <li>
+                <span>近期售出：</span><i>@Model.ProductInfo.SaleCount</i>
+            </li>
+            <li>
+                <span>评价：</span><i>@Model.ProductInfo.ReviewCount</i>
+            </li>
+            <li>
+                <span>访问：</span><i>@Model.ProductInfo.VisitCount</i>
+            </li>
+        </ul>
+        <!--售出评价end-->
+        <!--产品参数-->
+        <ul class="ringbuy_Parameter">
+            <li><span>商品编号:&nbsp;</span><span>@Model.ProductInfo.PSN</span></li>
+            <li><span>商品重量:&nbsp;</span><span>@Model.ProductInfo.Weight</span></li>
+            @{
+                foreach (ExtProductAttributeInfo info in Model.ExtProductAttributeList)
+                {
+                    if (info.IsFilter == 0)
+                    { 
+                        if (info.IsInput != 0)
+                        {
+                            <li><span>@info.AttrName:&nbsp;</span><span>@info.InputValue</span></li>
+                        }
+                        else
+                        {
+                            <li><span>@info.AttrName:&nbsp;</span><span>@info.AttrValue</span></li>
+                        }
+                    }
+                }
+            }
+        </ul>
+        <!--产品参数end-->
+        <!--其他参数选择-->
+        <div class="ringbuy_Choose">
+            @if (Model.ProductSKUList != null && Model.ProductSKUList.Count > 0)
+            {
+                int attrLayer = 0;
+                List<ExtProductSKUItemInfo> currentProductSKUItemList = Model.ProductSKUList.FindAll(x => x.Pid == Model.Pid);
+                List<KeyValuePair<string, ExtProductSKUItemInfo>> skuProductList = new List<KeyValuePair<string, ExtProductSKUItemInfo>>();
+                foreach (IGrouping<int, ExtProductSKUItemInfo> info in Model.ProductSKUList.GroupBy(x => x.Pid, x => x))
+                {
+                    string attrValueIdKey = "";
+                    foreach (var item in info)
+                    {
+                        attrValueIdKey += item.AttrValueId + "_" + item.InputValue + "_";
+                    }
+                    skuProductList.Add(new KeyValuePair<string, ExtProductSKUItemInfo>(attrValueIdKey, info.First<ExtProductSKUItemInfo>()));
+                }
+                List<ExtProductSKUItemInfo> attrList = new List<ExtProductSKUItemInfo>();
+                foreach (ExtProductSKUItemInfo info in Model.ProductSKUList)
+                {
+                    if (attrList.Find(x => x.AttrId == info.AttrId) == null)
+                    {
+                        attrList.Add(info);
+                    }
+                }
+                foreach (ExtProductSKUItemInfo info in attrList)
+                {
+                    @:<dl class="choose @if (info.AttrShowType == 1) {<text>chooseImg</text>}"><dt>@info.AttrName：</dt><dd>
+
+                    List<ExtProductSKUItemInfo> attrValueList = new List<ExtProductSKUItemInfo>();
+                    foreach (ExtProductSKUItemInfo attrValue in Model.ProductSKUList)
+                    {
+                        if (attrValue.AttrId == info.AttrId && attrValueList.Find(x => x.AttrValueId == attrValue.AttrValueId && x.InputValue == attrValue.InputValue) == null)
+                        {
+                            attrValueList.Add(attrValue);
+                        }
+                    }
+
+                    foreach (ExtProductSKUItemInfo attrValue in attrValueList)
+                    {
+                        string attrValueIdKey = "";
+                        for (int i = 0; i < currentProductSKUItemList.Count; i++)
+                        {
+                            if (attrLayer != i)
+                            {
+                                attrValueIdKey += currentProductSKUItemList[i].AttrValueId + "_" + currentProductSKUItemList[i].InputValue + "_";
+                            }
+                            else
+                            {
+                                attrValueIdKey += attrValue.AttrValueId + "_" + attrValue.InputValue + "_";
+                            }
+                        }
+                        KeyValuePair<string, ExtProductSKUItemInfo> skuProduct = skuProductList.Find(x => x.Key == attrValueIdKey);
+                        if (skuProduct.Value == null)
+                        {
+                            <a href="javascript:;" class="itme">@if (attrValue.IsInput == 0){ @attrValue.AttrValue }else{ @attrValue.InputValue }</a>
+                        }
+                        else
+                        {
+                            if (info.AttrShowType == 0)
+                            {
+                                <a href="@Url.Action("product", new RouteValueDictionary { { "pid", skuProduct.Value.Pid } })" class="itme @if (skuProduct.Value.Pid == Model.Pid){ <text>hot</text> }">@if (attrValue.IsInput == 0){ @attrValue.AttrValue }else{ @attrValue.InputValue }</a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("product", new RouteValueDictionary { { "pid", skuProduct.Value.Pid } })" class="itme @if (skuProduct.Value.Pid == Model.Pid){ <text>hot</text> }"><img src="@{@WorkContext.ImageCDN}/upload/product/show/thumb60_60/@skuProduct.Value.ShowImg" width="25" height="25" /><i>@if (attrValue.IsInput == 0){ @attrValue.AttrValue }else{ @attrValue.InputValue }</i></a>
+                            }
+                        }
+                    }
+                    @:</dd><div class="clear"></div></dl>
+                    attrLayer++;
+                }
+            }
+        </div>
+        <!--其他参数选择end-->
+        <!--加入购物车等-->
+        <div class="ringbuy_Button">
+            <a href="javascript:addProductToCart(@Model.Pid, 1);void(0);" class="to_shopcart" data-info="0">
+                <span>加入购物车</span>
+            </a>
+            
+            @if (Model.ProductInfo.Number > 0)
+            {
+                <a href="javascript:buyProduct(@Model.Pid, 1);void(0);" class="to_buyit" data-info="1">立即购买</a>
+            }
+            else
+            {
+                <a href="javascript:void(0);" class="to_buyit" data-info="1">暂无库存</a>
+            }
+            <i class="to_joinGift" isadded="0" gid="16" onclick="addToFavorite(@Model.Pid)">收藏</i>
+        </div>
+        <!--加入购物车等end-->
+        <!--预计送货时间-->
+
+        <p class="ringbuy_Delivery">
+            配送说明：
+
+            预计15个工作日送达（限大陆地区）,其它地区请咨询客服。
+        </p>
+        <!--预计送货时间end-->
+        <!--服务承诺-->
+        <div class="ringbuy_Promise">
+            <strong>服务承诺</strong>
+            <span class="Promise_first">15天退换</span>
+            <span class="Promise_sec">全国包邮</span>
+            <span class="Promise_third">终生保养</span>
+            <a href="javascript:showxiaon('kf_9883_1402631963601');" rel="nofollow">
+                <i class="drsqkfli">在线客服</i>
+            </a>
+        </div>
+
+        <!-- 在线客服 -->
+        <!-- 在线客服end -->
+        <!--服务承诺end-->
+    </div>
+    <!--右边区域end-->
+<div class="clear"></div>
+</div>
+<br />
+
+<div id="ConInfo" class="w1000">
+
+
+<div id="infoR">
+@if (Model.SuitProductList.Count > 0)
+{
+<div class="infoRBox">
+    <h2 class="infoRT">
+        <ul>
+            <li>优惠套装</li>    
+            <div class="clear"></div>
+        </ul>
+    </h2>
+    <div class="clear"></div>
+    <ul class="taocanNav">
+        @for (int i = 1; i <= Model.SuitProductList.Count; i++)
+        {
+            <li onmouseover="selectSuit(@{@i}, @{@Model.SuitProductList.Count})">优惠套装@{@i}</li>    
+        }
+        <div class="clear"></div>
+    </ul>
+    <div class="infoCon taocan">
+      @{
+        decimal suitAmount = 0M;
+        decimal suitDiscount = 0M;
+        int suitIndex = 1;
+        foreach (KeyValuePair<SuitPromotionInfo, List<ExtSuitProductInfo>> pair in Model.SuitProductList)
+        {
+        <div class="proList" id="suitList@{@suitIndex}">
+            <ul>
+                <li>
+                    <a href="@Url.Action("product", new RouteValueDictionary { { "pid", Model.Pid } })"><img src="@{@WorkContext.ImageCDN}/upload/product/show/thumb190_190/@Model.ProductInfo.ShowImg" width="100%" /><em>@Model.ProductInfo.Name</em><b>¥@Model.ProductInfo.ShopPrice</b></a>
+                </li>
+            </ul>
+            <div class="left taocanCon"  style="width:430px; overflow-x:auto;">
+                <ul>
+                    @foreach (ExtSuitProductInfo info in pair.Value)
+                    {
+                        suitAmount += info.Number * (info.ShopPrice - info.Discount);
+                        suitDiscount += info.Number * info.Discount;
+                        if (info.Pid != Model.Pid)
+                        {
+                        <li><a href="@Url.Action("product", new RouteValueDictionary { { "pid", info.Pid } })"><img src="@{@WorkContext.ImageCDN}/upload/product/show/thumb190_190/@info.ShowImg" width="100%" /><em>@info.Name</em></a><b><label>@*<input type="checkbox" />*@¥@info.ShopPrice</label></b></li>
+                        }
+                    }
+                </ul>
+            </div>
+            <div class="right taocanR">
+                <div>套  餐  价：<i>￥@suitAmount</i></div>
+                <div>商  城  价：<s>￥@Html.Raw((suitAmount + suitDiscount).ToString())</S></div>
+                <div>节&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;省：<s>￥@suitDiscount</S></div>
+                <div class="taocanRBt"><a href="@Url.Action("suit", new RouteValueDictionary { { "pmId", pair.Key.PmId } })">立即购买</a></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+       suitAmount = 0M;
+       suitDiscount = 0M;
+       suitIndex++;
+        }
+        }
+        <div class="clear"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    function selectSuit(index, count) {
+        for (var i = 1; i <= count; i++) {
+            document.getElementById("suitList" + i).style.display = "none";
+        }
+        document.getElementById("suitList" + index).style.display = "block";
+    }
+</script>
+}
+<div class="infoRBox" style="border-bottom:0;">
+    <h2 class="infoRT infoBT2">
+        <ul>
+            <li class="hot" onmouseover="selectProductInfo(1, this)">商品介绍</li>
+            <li onmouseover="selectProductInfo(2, this)">规格参数</li>
+            <li onmouseover="selectProductInfo(3, this)">售后保障</li>
+            <div class="clear"></div>
+        </ul>
+    </h2>
+    <div class="clear"></div>
+</div>
+
+<div class="infoRCon" id="productInfo1">
+@Html.Raw(Model.ProductInfo.Description)
+</div>
+
+<div class="infoRCon hide" id="productInfo2">
+    <table cellpadding="0" cellspacing="1" width="100%" border="0" class="Ptable">
+        <tbody>
+        @{
+            int tempAttrGroupId = 0;
+            foreach (ExtProductAttributeInfo info in Model.ExtProductAttributeList)
+            {
+                if (info.AttrGroupId != tempAttrGroupId)
+                {
+                <tr><th colspan="2" class="tdTitle">@info.AttrGroupName</th></tr><tr></tr>
+                }
+                if (info.IsFilter == 0)
+                {
+                    if (info.IsInput == 0)
+                    {
+				    <tr><td class="tdTitle">@info.AttrName</td><td>@info.AttrValue</td></tr>
+                    }
+                    else
+                    {
+				    <tr><td class="tdTitle">@info.AttrName</td><td>@info.InputValue</td></tr>
+                    }
+                }
+                tempAttrGroupId = info.AttrGroupId;
+            }
+        }
+        </tbody>
+    </table>
+</div>
+
+<div class="infoRCon hide" id="productInfo3">
+本产品全国联保，享受三包服务，质保期为：一年质保
+如因质量问题或故障，凭厂商维修中心或特约维修点的质量检测证明，享受7日内退货，15日内换货，15日以上在质保期内享受免费保修等三包服务！
+(注:如厂家在商品介绍中有售后保障的说明,则此商品按照厂家说明执行售后保障服务。)您可以查询本品牌在各地售后服务中心的联系方式，请点击这儿查询......
+注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！
+</div>
+
+<div class="infoRCon" id="PJ">
+<div class="PJinfo">
+<h2>商品评价</h2>
+@{
+    int reviewLayer1 = 100;
+    int reviewLayer2 = 0;
+    int reviewLayer3 = 0;
+
+    int goodStars = Model.ProductInfo.Star4 + Model.ProductInfo.Star5;
+    int allStars = goodStars + Model.ProductInfo.Star1 + Model.ProductInfo.Star2 + Model.ProductInfo.Star3;
+
+    if (allStars != 0)
+    {
+        reviewLayer1 = (int)Math.Floor((double)(goodStars / allStars * 100));
+        reviewLayer2 = (int)Math.Floor((double)(Model.ProductInfo.Star3 / allStars * 100));
+        reviewLayer3 = 100 - reviewLayer1 - reviewLayer2;
+    }
+    }
+<div class="rate"> 
+<strong>@reviewLayer1<span>%</span></strong> <br>
+  <span>好评度</span> 
+</div>
+  
+<div class="percent">
+  <dl>
+    <dt>好评<span>(@reviewLayer1%)</span></dt>
+    <dd>
+      <div style="width: @reviewLayer1%;"></div>
+    </dd>
+  </dl>
+  <dl>
+    <dt>中评<span>(@reviewLayer2%)</span></dt>
+    <dd class="d1">
+      <div style="width: @reviewLayer2%;"> </div>
+    </dd>
+  </dl>
+  <dl>
+    <dt>差评<span>(@reviewLayer3%)</span></dt>
+    <dd class="d1">
+      <div style="width: @reviewLayer3%;"> </div>
+    </dd>
+  </dl>
+</div>
+
+<div class="btns">
+  <div>您可对已购商品进行评价</div>
+  <a href="@Url.Action("orderlist", "ucenter")" class="btn-comment" target="_blank">发表评论</a>
+  <div></div>
+</div>
+<div class="clear"></div>
+</div>
+
+<h2 class="infoRT infoBT2">
+<ul>
+<li class="hot" onclick="changeReviewType(this,0)">全部评价</li>
+<li onclick="changeReviewType(this,1)">好评</li>
+<li onclick="changeReviewType(this,2)">中评</li>
+<li onclick="changeReviewType(this,3)">差评</li>
+<div class="clear"></div>
+</ul>
+</h2>
+<script type="text/javascript">
+    function changeReviewType(obj, reviewType) {
+        var liList = obj.parentNode.getElementsByTagName("li");
+        for (var i = 0; i < liList.length; i++) {
+            liList[i].className = "";
+        }
+        obj.className = "hot";
+        getProductReviewList(@Model.Pid,reviewType,1);
+    }
+</script>
+
+<div id="productReviewList">
+@*商品评价列表*@
+</div>
+</div>
+ </div>
+<div class="clear"></div>
+<script type="text/javascript">
+    function selectProductInfo(id, obj) {
+        var liList = obj.parentNode.getElementsByTagName("li");
+        for (var i = 0; i < liList.length; i++) {
+            liList[i].className = "";
+        }
+        obj.className = "hot";
+        document.getElementById("productInfo1").style.display = "none";
+        document.getElementById("productInfo2").style.display = "none";
+        document.getElementById("productInfo3").style.display = "none";
+        document.getElementById("productInfo" + id).style.display = "block";
+    }
+</script>
+</div>
+
+    <script type="text/javascript">
+        $(function(){
+            getProductReviewList(@Model.Pid, 0, 1);
+            getProductConsultList(@Model.Pid, 0, "", 1);
+        })
+    </script>
+
+@Html.Partial("_footer")
+</body>
+</html>
+

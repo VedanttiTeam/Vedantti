@@ -1,0 +1,95 @@
+﻿@model BrnShop.Web.Models.SubscribeModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>订阅-@{@WorkContext.ShopConfig.SiteTitle}</title>
+    @Html.Raw(WorkContext.ShopConfig.SEOKeyword)
+    @Html.Raw(WorkContext.ShopConfig.SEODescription)
+    <link href="@{@WorkContext.CSSCDN}/themes/default/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="@{@WorkContext.CSSCDN}/themes/default/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="@{@WorkContext.CSSCDN}/themes/default/css/dr.css" rel="stylesheet" type="text/css" />
+    <script src="@{@WorkContext.ScriptCDN}/scripts/jquery.js" type="text/javascript"></script>
+    <script src="@{@WorkContext.ScriptCDN}/scripts/common.js" type="text/javascript"></script>
+    <style type="text/css">
+        .sub {
+            width: 600px;
+            margin: 20px auto;
+            color:#000;
+        }
+        .sub-title{
+            
+        }
+        .sub-main {
+            margin: 20px 0px;
+        }
+        .sub-email .email{
+            width:280px;
+            height:38px;
+            padding-left:10px;
+            box-sizing:border-box;
+            vertical-align:middle;
+        }
+        .sub-email .btn-cta{
+            box-sizing:border-box;
+            width:80px;
+            background-color:#000;
+            border:none;
+            color:#fff;
+            font-family:NewsGothicBT,Arial,sans-serif;
+            font-weight:400;
+            font-size:12px;
+            height:38px;
+            line-height:38px;
+            letter-spacing:1px;
+            text-transform:uppercase;
+            vertical-align:middle;
+        }
+        .error{
+            color:#b40026;
+            font-family:NewsGothicBT,Arial,sans-serif;
+            font-weight:400;font-size:13px!important;
+            letter-spacing:.03em;
+            line-height:150%;
+            margin-top:10px!important;
+            display:none;
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+    @Html.Partial("_header")
+    <div class="sub" id="newsletterform">
+        <div class="sub-title">
+            <h1>新闻通讯</h1>
+        </div>
+        <br/>
+        <div class="sub-main">
+            <p>
+                订阅新闻通讯，新闻通讯每周发送，为您提供最新产品讯息，促销活动，潮流趋势等资讯。
+            </p>
+            <div class="sub-email">
+                <input name="email" class="text email" id="email" type="email" placeholder="您的电邮地址" pattern="@Html.Raw("[a-zA-Z0-9!#$%&amp;'*+/=?_`{|}~-]+(?:\\.[a-zA-Z0-9!#$%&amp;'*+/=?_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?")" value="@Model.Email" autocomplete="off" />
+                <button class="btn-cta" onclick="addSubscribeEmail($('#email').val());">订阅</button>
+                <p class="error" style="display:block;">
+                    <strong>请输入合法的电邮地址</strong>
+                </p>
+                <div class="visible" id="data-protection-info">
+                    <span>
+                        您的个人信息不会泄露给任何第三方更多详情，请查看
+                        <a href="#">隐私政策</a>.
+                        <br /><br />
+                        点击此处
+                        <a href="javascript:delSubscribeEmail($('#email').val());void(0);">退订</a>.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("_footer")
+</body>
+</html>

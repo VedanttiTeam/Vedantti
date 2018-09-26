@@ -1,0 +1,140 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>MAP-@{@WorkContext.ShopConfig.SiteTitle}</title>
+    @Html.Raw(WorkContext.ShopConfig.SEOKeyword)
+    @Html.Raw(WorkContext.ShopConfig.SEODescription)
+    <link href="@{@WorkContext.CSSCDN}/themes/default/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="@{@WorkContext.CSSCDN}/themes/default/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="@{@WorkContext.CSSCDN}/themes/default/css/dr.css" rel="stylesheet" type="text/css" />
+    <link href="@{@WorkContext.CSSCDN}/themes/default/css/help.css" rel="stylesheet" type="text/css" />
+    <link href="@{@WorkContext.CSSCDN}/themes/default/css/news.css" rel="stylesheet" type="text/css" />
+    <script src="@{@WorkContext.ScriptCDN}/scripts/jquery.js" type="text/javascript"></script>
+    <script src="@{@WorkContext.ScriptCDN}/scripts/common.js" type="text/javascript"></script>
+</head>
+<body>
+    @Html.Partial("_header")
+    <!--这里开始复制-->
+    <style>
+        .store-banner {
+            text-align: center;
+            background: url(../../images/find-store-banner.jpg) no-repeat center;
+            background-size: cover;
+            width: 100%;
+        }
+
+            .store-banner h1 {
+                padding: 10% 0;
+                text-align: center;
+                color: #fff;
+                text-transform: uppercase;
+                font-family: 'BrandonText-Regular';
+                margin: 0;
+            }
+
+        .drfans_ImgWord p {
+            font-size: 12px;
+            color: #aaa;
+            padding: 0 52px;
+            height: 43px;
+            line-height: 23px;
+            overflow: hidden;
+            text-align: left;
+        }
+    </style>
+    <!--头部-->
+    <div class="store-banner">
+        <h1>Find a Boutique</h1>
+    </div>
+    <!--头部 end-->
+    <!--产品-->
+    <div class="container" style="margin-left:auto; margin-right:auto; background-color:#ededed;">
+        <ul class="drfans_list" style="padding-left:45px;">
+            <li class="active">
+                <div class="drfans_listTop drSetPic">
+                    <img src="../../images/n_1809041447556851986.jpg" style="width: 100%; height: 100%;">
+                </div>
+                <div class="drfans_ImgWord">
+                    <h3>Louis Martin Jewelers</h3>
+                    <div class="nov_line"></div>
+                    <p>
+                        地址：30 Rockefeller Plaza
+                        54 West 50th Street
+                        New York,  NY10112
+                    </p>
+                    <p>电话：+212 245 5566</p>
+                </div>
+            </li>
+            <li class="active">
+                <div class="drfans_listTop drSetPic">
+                    <img src="../../images/n_1809041447556851986.jpg" style="width: 100%; height: 100%;">
+                </div>
+                <div class="drfans_ImgWord">
+                    <h3>Bianca Jewelers</h3>
+                    <div class="nov_line"></div>
+                    <p>
+                        地址：30 Rockefeller Plaza
+                        54 West 50th Street
+                        New York,  NY10112
+                    </p>
+                    <p>电话：+212 245 5566</p>
+                </div>
+            </li>
+            <li class="active">
+                <div class="drfans_listTop drSetPic">
+                    <img src="../../images/n_1809041447556851986.jpg" style="width: 100%; height: 100%;">
+                </div>
+                <div class="drfans_ImgWord">
+                    <h3>Louis Martin Jewelers</h3>
+                    <div class="nov_line"></div>
+                    <p>
+                        地址：30 Rockefeller Plaza
+                        54 West 50th Street
+                        New York,  NY10112
+                    </p>
+                    <p>电话：+212 245 5566</p>
+                </div>
+            </li>
+            <li class="active">
+
+                <div class="drfans_listTop drSetPic">
+                    <img src="../../images/n_1809041447556851986.jpg" style="width: 100%; height: 100%;">
+                </div>
+                <div class="drfans_ImgWord">
+                    <h3>Louis Martin Jewelers</h3>
+                    <div class="nov_line"></div>
+                    <p>
+                        地址：30 Rockefeller Plaza
+                        54 West 50th Street
+                        New York,  NY10112
+                    </p>
+                    <p>电话：+212 245 5566</p>
+                </div>
+            </li>
+            <li class="active">
+
+                <div class="drfans_listTop drSetPic">
+                    <img src="../../images/n_1809041447556851986.jpg" style="width: 100%; height: 100%;">
+                </div>
+                <div class="drfans_ImgWord">
+                    <h3>Louis Martin Jewelers</h3>
+                    <div class="nov_line"></div>
+                    <p>
+                        地址：30 Rockefeller Plaza
+                        54 West 50th Street
+                        New York,  NY10112
+                    </p>
+                    <p>电话：+212 245 5566</p>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+    <!--这里复制结束-->
+    @Html.Partial("_footer")
+</body>
+</html>

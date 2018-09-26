@@ -1,0 +1,142 @@
+body {
+    font: 12px/22px 'Microsoft Yahei',Verdana,Arial,sans-serif,"Times New Roman";
+    text-align: center;
+    word-wrap: break-word;
+	background-color:#ededed;
+}
+
+.ftoubu{width:100%;
+height:100px;
+margin-left:auto;
+margin-right:auto;
+text-align:center;
+border-bottom:1px solid #fff;
+line-height:100px;
+background-color:#ededed;
+font-size:16px;}
+
+
+.container {
+    position: relative;
+    padding-top: 34px;
+    padding-bottom: 60px;
+    border-top: 0px solid #fff;
+	width:100%;}
+
+.drfans_list {
+    overflow: hidden;
+    padding-left: 130px;
+    padding-bottom: 52px;
+    border-bottom: 0px solid #fff;
+    margin-left: -17px;
+	width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.drfans_list li {
+    position: relative;
+    background: #fff;
+    float: left;
+    width: 355px;
+    height: 403px;
+    margin-bottom: 32px;
+    margin-left: 17px;
+}
+
+.drfans_list .hreflink {
+    position: absolute;
+    opacity: .01;
+    filter: alpha(opacity=0.01);
+    background: #fff;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.drfans_listTop {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.drfans_listTop img {
+    position: absolute;
+}
+
+.drfans_ImgWord {
+    position: relative;
+    text-align: center;
+    padding: 26px 0 15px;
+}
+
+.drfans_ImgWord h3 {
+    font-size: 14px;
+    color: #000;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0 24px;
+    margin-bottom: 6px;
+}
+
+.nov_line {
+    width: 20px;
+    height: 1px;
+    border-bottom: 1px solid #ababab;
+    margin: 13px auto 6px;
+}
+
+.drfans_ImgWord p {
+    font-size: 12px;
+    color: #aaa;
+    padding: 0 52px;
+    height: 52px;
+    line-height: 18px;
+    overflow: hidden;
+    text-align: left;
+}
+
+
+ul{
+    list-style: none;
+}
+.nav>li{
+    float: left;
+}
+ul a{
+    display: block;
+    text-decoration: none;
+    width: 119px;
+    height: 100px;
+    text-align: center;
+    line-height: 122px;
+    color: white;
+	font-size:16px;
+    background-color: #51636d;
+}
+.nav>li:first-child a{
+    border-radius: 0px 0 0 0px;
+}
+.nav>li:last-child a{
+    border-radius: 0 0px 0px 0;
+}
+.drop-down{
+    /*position: relative;*/
+}
+.drop-down-content{
+    padding: 0;
+    display: none;
+    position: absolute;
+}
+        
+
+.drop-down-content li:hover a{
+    background-color:#51636d;
+}
+.nav .drop-down:hover .drop-down-content{
+    display: block;
+}

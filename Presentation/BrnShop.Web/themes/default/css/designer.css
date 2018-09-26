@@ -1,0 +1,21 @@
+﻿.container {
+    width: 1400px;
+    text-align: left;
+    font-family: "Microsoft Yahei", Verdana, Arial, sans-serif, "Times New Roman",BrandonText-Regular;
+    line-height: 1.5;
+    color: #777777;
+    margin:auto;
+}
+
+.title {
+    font-size:36px;
+    color: #222222;
+    text-align: left;
+    margin-top:30px;
+}
+
+.subtitle {margin-top:20px;text-transform: uppercase;padding-bottom: 20px;font-weight: 400;font-size: 26px;color: #1d2127;}
+.content {
+    font-size:18px;
+    line-height: 42px;
+}

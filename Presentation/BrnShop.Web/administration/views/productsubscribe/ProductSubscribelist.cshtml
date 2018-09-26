@@ -1,0 +1,46 @@
+﻿@model BrnShop.Web.Admin.Models.ProductSubscribelistModel
+           
+@section header{
+<title>客户订阅</title>
+<link type="text/css" rel="stylesheet" href="/administration/css/site.css"/>
+<script type="text/javascript" src="/administration/scripts/jquery.js"></script>
+<script type="text/javascript" src="/administration/scripts/showlist.js"></script>
+}
+
+@section body{
+<h1 class="rightH1">
+客户订阅 &gt;&gt; 客户订阅列表
+@*<div class="right">
+<a href="@Url.Action("addproductconsulttype")" class="menuBT"><img src="/administration/images/add.jpg"/>添加</a>
+<div class="clear"></div>
+</div>
+<div class="clear"></div>*@
+</h1>
+<div class="table_top"></div>
+<div class="dataList">
+	<table width="100%">
+		<thead>
+			<tr>
+				<th align="left">客户邮箱</th>
+				<th width="100" align="center">IP</th>
+				<th width="120" align="center" >创建日期</th>
+				<th width="100" align="center">管理操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (ProductSubscribeListInfo info in Model.ProductSubscribeList)
+			{
+				<tr>
+					<td>@info.FvchrEmail</td>
+					<td align="center">@info.FvchrIP</td>
+					<td align="center">@info.FdmCreateDate</td>
+					<td align="center">
+						@Html.ActionLink("[删除]", "DeleteProductSubscribeById", new { SubscribeId = info.FID }, new { @class = "deleteOperate" })
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
+<div class="table_bottom"></div>
+}

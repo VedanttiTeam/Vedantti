@@ -1,0 +1,76 @@
+﻿body {
+    line-height: 1.5;
+    font-family: "Microsoft Yahei", Verdana, Arial, sans-serif, "Times New Roman",BrandonText-Regular;
+}
+
+h2 {
+    font-weight:700;
+    margin:20px auto;
+}
+
+.vc_container {
+    background-image: url(http://vedantti.com/wp-content/uploads/2017/09/craftmanship-banner.jpg?id=222);
+    height: 500px;
+}
+
+    .vc_container p {
+        font-size: 36px;
+        color: #fff;
+        position: relative;
+        top: 198px;
+        left: 42%;
+    }
+
+.vc_row {
+    width: 1026px;
+    height: 213px;
+    margin: auto;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.vc_row p{
+    font-size:18px;
+}
+
+.craft_video01_thumb {
+    text-align: center;
+}
+
+.wpb_row {
+    margin-top: 47px;
+}
+
+.vc_row-fluid {
+    width: 1300px;
+    height: 460px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.vc_row-fluidleft {
+    float: left;
+    width: 50%;
+}
+
+.vc_row-fluidright {
+    float: left;
+    width: 50%;
+}
+
+.vc_row-fluidleftone {
+    width: 620px;
+    height: 383px;
+    background-color: #0099FF;
+}
+
+.vc_row-fluidrightone {
+    width: 620px;
+    height: 383px;
+    background-color: #0099FF;
+    margin-left: 30px;
+}
+
+.wpb_rowone {
+    margin-top: 75px;
+}

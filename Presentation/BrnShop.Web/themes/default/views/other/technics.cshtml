@@ -1,0 +1,58 @@
+@{
+    Layout = null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>制作工艺-@{@WorkContext.ShopConfig.SiteTitle}</title>
+    @Html.Raw(WorkContext.ShopConfig.SEOKeyword)
+    @Html.Raw(WorkContext.ShopConfig.SEODescription)
+    <link href="@{@WorkContext.CSSCDN}/themes/default/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="@{@WorkContext.CSSCDN}/themes/default/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="@{@WorkContext.CSSCDN}/themes/default/css/dr.css" rel="stylesheet" type="text/css" />
+    <link href="@{@WorkContext.CSSCDN}/themes/default/css/technics.css" rel="stylesheet" type="text/css" />
+    <script src="@{@WorkContext.ScriptCDN}/scripts/jquery.js" type="text/javascript"></script>
+    <script src="@{@WorkContext.ScriptCDN}/scripts/common.js" type="text/javascript"></script>
+    
+</head>
+<body>
+    @Html.Partial("_header")
+    <div class="vc_container">
+        <p>制作工艺</p>
+    </div>
+    <div class="vc_row">
+        <p>
+            每一个精心制作的珠宝都要经过严谨的程序，才会被雕琢而出。无数时间去反复设计图案和形状，巧妙地融合在一起，呈现完美的成品。
+            在设计出完整的首饰后，便要用心塑造各个部分，准备好下一步，铸造。一旦铸造完成，精巧的镶嵌钻石一律由专业珠宝商仔细筛选。最后，您独特的VEDANTTI珠宝将受到最好的照顾！当然，我们所有的珠宝都是“为你的微笑精心打造！”
+        </p>
+    </div>
+    <div class="wpb_row">
+        <h2 style="color: #222222;text-align: center" class="vc_custom_heading Video-title">素描和造型</h2>
+        <div class="craft_video01_thumb">
+            <embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=z0727wsokil&auto=0" allowFullScreen="true" quality="high" width="1300" height="600" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" />
+        </div>
+    </div>
+    <div class="vc_row-fluid">
+        <div class="vc_row-fluidleft">
+            <h2 style="color: #222222;text-align: center" class="vc_custom_heading Video-title">铸造</h2>
+            <div class="vc_row-fluidleftone">
+                <embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=i0727d4s653&auto=0" allowFullScreen="true" quality="high" width="620" height="383" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" />
+            </div>
+        </div>
+        <div class="vc_row-fluidright">
+            <h2 style="color: #222222;text-align: center" class="vc_custom_heading Video-title">钻石镶嵌</h2>
+            <div class="vc_row-fluidrightone">
+                <embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=f0727b2tw2l&auto=0" allowFullScreen="true" quality="high" width="620" height="383" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" />
+            </div>
+        </div>
+    </div>
+    <div class="wpb_rowone">
+        <h2 style="color: #222222;text-align: center" class="vc_custom_heading Video-title">抛光和雕刻</h2>
+        <div class="craft_video01_thumb">
+            <embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=d072755iczf&auto=0" allowFullScreen="true" quality="high" width="1300" height="600" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" />
+        </div>
+    </div>
+    @Html.Partial("_footer")
+</body>
+</html>
