@@ -188,13 +188,13 @@
                         ￥@info.ShopPrice
                     </div>
                     <p class="dring_thing-word">
-                       @{
-                           string vName = info.Name;
-                           int vI = vName.LastIndexOf(" ");
-                           if (vI > 0)
-                           {
-                               vName = vName.Substring(0, vI - 1);
-                           }
+                        @{
+                            string vName = info.Name;
+                            int vIdx = vName.LastIndexOf(" ");
+                            if (vIdx > 0)
+                            {
+                                vName = vName.Substring(0, vIdx);
+                            }
                             @vName;
                         }
                     </p>
