@@ -206,7 +206,11 @@ namespace BrnShop.Web.Admin.Controllers
                 CreateOrderAction(oid, orderActionType, actionDes.Length == 0 ? "您的订单已经发货,发货方式为:" + orderInfo.ShipFriendName + "，单号为：" + shipSN : actionDes);
                 //邮件通知
                 if (!string.IsNullOrWhiteSpace(orderInfo.Email))
-                    Emails.SendOrderFinishedEmail(orderInfo.Email, orderInfo.OSN);
+                {
+                    List<OrderProductInfo> vList = AdminOrders.GetOrderProductList(oid);
+                    string vUIDStr = string.Join(",", vList.ConvertAll(AItem => AItem.Gid));
+                    Emails.SendOrderFinishedEmail(orderInfo.Email, orderInfo.OSN, vUIDStr, shipSN+"("+ orderInfo.ShipFriendName+")");
+                }
             }
             else if (orderActionType == OrderActionType.Lock)//锁定订单
             {

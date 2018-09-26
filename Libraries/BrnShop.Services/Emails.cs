@@ -179,7 +179,7 @@ namespace BrnShop.Services
         {
             string subject = string.Format("{0}订单支付成功通知", _shopconfiginfo.ShopName);
             string body = string.Format("<p>尊敬的客户，你好！<br/><br/>&emsp;&emsp;您通过{0}完成了一笔金额为{1}的支付，订单号：{2}。<br/><br/>{3}</p>", payName, payAmt, osn, _shopconfiginfo.SiteUrl);
-            return SendEmail(to, subject, body);                
+            return SendEmail(to, subject, body);
         }
 
         /// <summary>
@@ -201,10 +201,10 @@ namespace BrnShop.Services
         /// <param name="to"></param>
         /// <param name="osn">订单编号</param>
         /// <returns></returns>
-        public static bool SendOrderFinishedEmail(string to, string osn)
+        public static bool SendOrderFinishedEmail(string to, string osn, string uidStr, string shipSN)
         {
             string subject = string.Format("{0}卖家发货通知", _shopconfiginfo.ShopName);
-            string body = string.Format("<p>尊敬的客户，你好！<br/><br/>&emsp;&emsp;您的订单：{0}，卖家已发货。<br/><br/>{1}</p>", osn, _shopconfiginfo.SiteUrl);
+            string body = string.Format("<p>尊敬的客户，你好！<br/><br/>&emsp;&emsp;您的订单：{0}，卖家已发货。<br/><br/>&emsp;&emsp;快递单号：{1}<br/><br/>&emsp;&emsp;UID：{2}<br/><br/>{3}</p>", osn, shipSN, uidStr, _shopconfiginfo.SiteUrl);
             return SendEmail(to, subject, body);
         }
     }

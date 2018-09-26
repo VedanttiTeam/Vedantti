@@ -193,7 +193,7 @@ namespace BrnShop.Services
             orderInfo.Consignee = fullShipAddressInfo.Consignee;
             orderInfo.Mobile = fullShipAddressInfo.Mobile;
             orderInfo.Phone = fullShipAddressInfo.Phone;
-            orderInfo.Email = fullShipAddressInfo.Email;
+            orderInfo.Email = string.IsNullOrWhiteSpace(fullShipAddressInfo.Email)? partUserInfo.Email: fullShipAddressInfo.Email;
             orderInfo.ZipCode = fullShipAddressInfo.ZipCode;
             orderInfo.Address = fullShipAddressInfo.Address;
             orderInfo.BestTime = bestTime;

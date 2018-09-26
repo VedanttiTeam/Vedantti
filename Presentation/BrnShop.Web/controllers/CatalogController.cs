@@ -204,7 +204,7 @@ namespace BrnShop.Web.Controllers
 
 
             //分页对象
-            PageModel pageModel = new PageModel(20, page, Products.GetCategoryProductCount(cateId, brandId, filterPrice, catePriceRangeList, attrValueIdList, onlyStock));
+            PageModel pageModel = new PageModel(15, page, Products.GetCategoryProductCount(cateId, brandId, filterPrice, catePriceRangeList, attrValueIdList, onlyStock));
             //视图对象
             CategoryModel model = new CategoryModel()
             {
@@ -321,7 +321,7 @@ namespace BrnShop.Web.Controllers
             }
 
             //分页对象
-            PageModel pageModel = new PageModel(20, page, Products.GetBrandProductCount(brandId, cateId, onlyStock));
+            PageModel pageModel = new PageModel(15, page, Products.GetBrandProductCount(brandId, cateId, onlyStock));
             //视图对象
             BrandModel model = new BrandModel()
             {
@@ -401,7 +401,7 @@ namespace BrnShop.Web.Controllers
             //商品列表
             List<PartProductInfo> productList = null;
             //搜索
-            Searches.SearchProducts(20, page, word, cateId, brandId, filterPrice, attrValueIdList, onlyStock, sortColumn, sortDirection, ref categoryInfo, ref catePriceRangeList, ref cateAAndVList, ref categoryList, ref brandInfo, ref brandList, ref totalCount, ref productList);
+            Searches.SearchProducts(15, page, word, cateId, brandId, filterPrice, attrValueIdList, onlyStock, sortColumn, sortDirection, ref categoryInfo, ref catePriceRangeList, ref cateAAndVList, ref categoryList, ref brandInfo, ref brandList, ref totalCount, ref productList);
 
             if (productList == null)
                 return PromptView(WorkContext.UrlReferrer, "您搜索的商品不存在");
@@ -434,7 +434,7 @@ namespace BrnShop.Web.Controllers
             List<PartProductInfo> userBrowseHistory = BrowseHistories.GetUserBrowseHistory(WorkContext.Uid, 0);
 
             //分页对象
-            PageModel pageModel = new PageModel(20, page, totalCount);
+            PageModel pageModel = new PageModel(15, page, totalCount);
             //视图对象
             SearchModel model = new SearchModel()
             {
