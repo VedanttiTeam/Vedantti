@@ -213,46 +213,45 @@
                     }
                     <div class="clear"></div>
                 </div>
-
             </div>
-
-            <div>
-                <ul class="dring_thing">
-                    @foreach (PartProductInfo info in Model.ProductList)
-                    {
-                        <li>
-                            <a href="@Url.Action("product", new RouteValueDictionary { { "pid", info.Pid } })" target="_blank"><img src="@{@WorkContext.ImageCDN}/upload/product/show/thumb320_320/@info.ShowImg" width="320" height="320" alt="" /></a>
-                            <div class="dring_thing-cort">
-                                <div class="dring_thing-price">
-                                    ￥@info.ShopPrice
-                                </div>
-                                <p class="dring_thing-word">
-                                    @{ 
-                                        string vName = info.Name;
-                                        int vIdx = vName.LastIndexOf(" ");
-                                        if (vIdx > 0)
-                                        {
-                                            vName = vName.Substring(0, vIdx);
+                <div>
+                    <ul class="dring_thing">
+                        @foreach (PartProductInfo info in Model.ProductList)
+                        {
+                            <li>
+                                <a href="@Url.Action("product", new RouteValueDictionary { { "pid", info.Pid } })" target="_blank"><img src="@{@WorkContext.ImageCDN}/upload/product/show/thumb320_320/@info.ShowImg" width="320" height="320" alt="" /></a>
+                                <div class="dring_thing-cort">
+                                    <div class="dring_thing-price">
+                                        ￥@info.ShopPrice
+                                    </div>
+                                    <p class="dring_thing-word">
+                                        @{
+                                            string vName = info.Name;
+                                            int vIdx = vName.LastIndexOf(" ");
+                                            if (vIdx > 0)
+                                            {
+                                                vName = vName.Substring(0, vIdx);
+                                            }
+                                            @vName;
                                         }
-                                        @vName;
-                                    }
-                                </p>
-                                <div class="dring_thing-button">
-                                    <span onclick="addToFavorite(@info.Pid)">收藏</span>
-                                    @if (info.Number > 0)
-                                    {
-                                        <a href="javascript:buyProduct(@info.Pid, 1);void(0);"><i>立即购买</i></a>
-                                    }
-                                    else
-                                    {
-                                        <a href="javascript:void(0);"><i>暂无库存</i></a>
-                                    }
+                                    </p>
+                                    <div class="dring_thing-button">
+                                        <span onclick="addToFavorite(@info.Pid)">收藏</span>
+                                        @if (info.Number > 0)
+                                        {
+                                            <a href="javascript:buyProduct(@info.Pid, 1);void(0);"><i>立即购买</i></a>
+                                        }
+                                        else
+                                        {
+                                            <a href="javascript:void(0);"><i>暂无库存</i></a>
+                                        }
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                    }
-                </ul>
-            </div>
+                            </li>
+                        }
+                    </ul>
+                    @Html.WebPager(Model.PageModel)
+                </div>
         </div>
         <div class="clear"></div>
     </div>

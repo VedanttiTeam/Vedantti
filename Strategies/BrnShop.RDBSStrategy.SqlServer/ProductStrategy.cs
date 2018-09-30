@@ -1415,13 +1415,15 @@ namespace BrnShop.RDBSStrategy.SqlServer
         public int GetCategoryProductCount(int cateId, int brandId, int filterPrice, string[] catePriceRangeList, List<int> attrValueIdList, int onlyStock)
         {
             StringBuilder commandText = new StringBuilder();
-
-            commandText.AppendFormat("SELECT COUNT([p].[pid]) FROM [{0}products] AS [p]", RDBSHelper.RDBSTablePre);
+            commandText.AppendFormat("SELECT COUNT([p].[pid]) FROM [{0}products] AS [p]", RDBSHelper.RDBSTablePre);           
 
             if (onlyStock == 1)
                 commandText.AppendFormat(" LEFT JOIN [{0}productstocks] AS [ps] ON [p].[pid]=[ps].[pid]", RDBSHelper.RDBSTablePre);
 
-            commandText.AppendFormat(" WHERE [p].[cateid]={0}", cateId);
+            commandText.Append(" where [p].[state]=0 and([p].[skugid] = 0 or [p].[ishot] = 1)");
+
+            if (cateId > 0)
+                commandText.AppendFormat(" and [p].[cateid]={0}", cateId);
 
             if (brandId > 0)
                 commandText.AppendFormat(" AND [p].[brandid]={0}", brandId);
@@ -1435,7 +1437,7 @@ namespace BrnShop.RDBSStrategy.SqlServer
                     commandText.AppendFormat(" AND [p].[shopprice]>='{0}' AND [p].[shopprice]<'{1}'", priceRange[0], priceRange[1]);
             }
 
-            commandText.Append(" AND [p].[state]=0");
+            
 
             if (attrValueIdList.Count > 0)
             {

@@ -84,7 +84,7 @@ namespace BrnShop.Web.Framework
             if (_showfirst)
             {
                 if (_pagemodel.IsFirstPage)
-                    html.Append("<a href=\"javascript:void(0)\">首页</a> ");
+                    html.Append("<a href=\"javascript:void(0)\" class=\"disabled\">首页</a> ");
                 else
                     html.AppendFormat("<a href=\"{0}\"> 首页</a> ", CreateUrl(1));
             }
@@ -94,7 +94,7 @@ namespace BrnShop.Web.Framework
                 if (_pagemodel.HasPrePage)
                     html.AppendFormat("<a href=\"{0}\">上一页</a> ", CreateUrl(_pagemodel.PrePageNumber));
                 else
-                    html.Append("<a href=\"javascript:void(0)\">上一页</a> ");
+                    html.Append("<a href=\"javascript:void(0)\" class=\"disabled\">上一页</a> ");
             }
 
             if (_showitems)
@@ -115,13 +115,13 @@ namespace BrnShop.Web.Framework
                 if (_pagemodel.HasNextPage)
                     html.AppendFormat("<a href=\"{0}\">下一页</a> ", CreateUrl(_pagemodel.NextPageNumber));
                 else
-                    html.Append("<a href=\"javascript:void(0)\">下一页</a> ");
+                    html.Append("<a href=\"javascript:void(0)\" class=\"disabled\">下一页</a> ");
             }
 
             if (_showlast)
             {
                 if (_pagemodel.IsLastPage)
-                    html.Append("<a href=\"javascript:void(0)\">末页</a>");
+                    html.Append("<a href=\"javascript:void(0)\" class=\"disabled\">末页</a>");
                 else
                     html.AppendFormat("<a href=\"{0}\">末页</a>", CreateUrl(_pagemodel.TotalPages));
             }
@@ -138,7 +138,10 @@ namespace BrnShop.Web.Framework
         private string CreateUrl(int pageNumber)
         {
             _routevalues[_pageparamname] = pageNumber;
-            return UrlHelper.GenerateUrl(_routename, null, null, _routevalues, RouteTable.Routes, _viewcontext.RequestContext, true);
+            string vUrl = UrlHelper.GenerateUrl(_routename, null, null, _routevalues, RouteTable.Routes, _viewcontext.RequestContext, true);
+            if (!string.IsNullOrWhiteSpace(_pagemodel.Anchor))
+                vUrl += "#" + _pagemodel.Anchor;
+            return vUrl;
         }
     }
 }

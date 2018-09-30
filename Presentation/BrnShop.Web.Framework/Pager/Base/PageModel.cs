@@ -1,23 +1,24 @@
-using System;
+ï»¿using System;
 
 namespace BrnShop.Web.Framework
 {
     /// <summary>
-    /// ·ÖÒ³Ä£ĞÍ
+    /// åˆ†é¡µæ¨¡å‹
     /// </summary>
     public class PageModel
     {
-        private int _pageindex;//µ±Ç°Ò³Ë÷Òı
-        private int _pagenumber;//µ±Ç°Ò³Êı
-        private int _prepagenumber;//ÉÏÒ»Ò³Êı
-        private int _nextpagenumber;//ÏÂÒ»Ò³Êı
-        private int _pagesize;//Ã¿Ò³Êı
-        private int _totalcount;//×ÜÏîÊı
-        private int _totalpages;//×ÜÒ³Êı
-        private bool _hasprepage;//ÊÇ·ñÓĞÉÏÒ»Ò³
-        private bool _hasnextpage;//ÊÇ·ñÓĞÏÂÒ»Ò³
-        private bool _isfirstpage;//ÊÇ·ñÊÇµÚÒ»Ò³
-        private bool _islastpage;//ÊÇ·ñÊÇ×îºóÒ»Ò³
+        private int _pageindex;//å½“å‰é¡µç´¢å¼•
+        private int _pagenumber;//å½“å‰é¡µæ•°
+        private int _prepagenumber;//ä¸Šä¸€é¡µæ•°
+        private int _nextpagenumber;//ä¸‹ä¸€é¡µæ•°
+        private int _pagesize;//æ¯é¡µæ•°
+        private int _totalcount;//æ€»é¡¹æ•°
+        private int _totalpages;//æ€»é¡µæ•°
+        private bool _hasprepage;//æ˜¯å¦æœ‰ä¸Šä¸€é¡µ
+        private bool _hasnextpage;//æ˜¯å¦æœ‰ä¸‹ä¸€é¡µ
+        private bool _isfirstpage;//æ˜¯å¦æ˜¯ç¬¬ä¸€é¡µ
+        private bool _islastpage;//æ˜¯å¦æ˜¯æœ€åä¸€é¡µ
+        private string _anchor;//é”šç‚¹
 
         public PageModel(int pageSize, int pageNumber, int totalCount)
         {
@@ -53,7 +54,7 @@ namespace BrnShop.Web.Framework
         }
 
         /// <summary>
-        /// µ±Ç°Ò³Ë÷Òı
+        /// å½“å‰é¡µç´¢å¼•
         /// </summary>
         public int PageIndex
         {
@@ -61,7 +62,7 @@ namespace BrnShop.Web.Framework
             set { _pageindex = value; }
         }
         /// <summary>
-        /// µ±Ç°Ò³Êı
+        /// å½“å‰é¡µæ•°
         /// </summary>
         public int PageNumber
         {
@@ -69,7 +70,7 @@ namespace BrnShop.Web.Framework
             set { _pagenumber = value; }
         }
         /// <summary>
-        /// ÉÏÒ»Ò³Êı
+        /// ä¸Šä¸€é¡µæ•°
         /// </summary>
         public int PrePageNumber
         {
@@ -77,7 +78,7 @@ namespace BrnShop.Web.Framework
             set { _prepagenumber = value; }
         }
         /// <summary>
-        /// ÏÂÒ»Ò³Êı
+        /// ä¸‹ä¸€é¡µæ•°
         /// </summary>
         public int NextPageNumber
         {
@@ -85,7 +86,7 @@ namespace BrnShop.Web.Framework
             set { _nextpagenumber = value; }
         }
         /// <summary>
-        /// Ã¿Ò³Êı
+        /// æ¯é¡µæ•°
         /// </summary>
         public int PageSize
         {
@@ -93,7 +94,7 @@ namespace BrnShop.Web.Framework
             set { _pagesize = value; }
         }
         /// <summary>
-        /// ×ÜÏîÊı
+        /// æ€»é¡¹æ•°
         /// </summary>
         public int TotalCount
         {
@@ -101,7 +102,7 @@ namespace BrnShop.Web.Framework
             set { _totalcount = value; }
         }
         /// <summary>
-        /// ×ÜÒ³Êı
+        /// æ€»é¡µæ•°
         /// </summary>
         public int TotalPages
         {
@@ -109,7 +110,7 @@ namespace BrnShop.Web.Framework
             set { _totalpages = value; }
         }
         /// <summary>
-        /// ÊÇ·ñÓĞÉÏÒ»Ò³
+        /// æ˜¯å¦æœ‰ä¸Šä¸€é¡µ
         /// </summary>
         public bool HasPrePage
         {
@@ -117,7 +118,7 @@ namespace BrnShop.Web.Framework
             set { _hasprepage = value; }
         }
         /// <summary>
-        /// ÊÇ·ñÓĞÏÂÒ»Ò³
+        /// æ˜¯å¦æœ‰ä¸‹ä¸€é¡µ
         /// </summary>
         public bool HasNextPage
         {
@@ -125,7 +126,7 @@ namespace BrnShop.Web.Framework
             set { _hasnextpage = value; }
         }
         /// <summary>
-        /// ÊÇ·ñÊÇµÚÒ»Ò³
+        /// æ˜¯å¦æ˜¯ç¬¬ä¸€é¡µ
         /// </summary>
         public bool IsFirstPage
         {
@@ -133,12 +134,21 @@ namespace BrnShop.Web.Framework
             set { _isfirstpage = value; }
         }
         /// <summary>
-        /// ÊÇ·ñÊÇ×îºóÒ»Ò³
+        /// æ˜¯å¦æ˜¯æœ€åä¸€é¡µ
         /// </summary>
         public bool IsLastPage
         {
             get { return _islastpage; }
             set { _islastpage = value; }
+        }
+
+        /// <summary>
+        /// é”šç‚¹
+        /// </summary>
+        public string Anchor
+        {
+            get { return _anchor; }
+            set { _anchor = value; }
         }
     }
 }

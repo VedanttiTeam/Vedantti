@@ -138,13 +138,13 @@ namespace BrnShop.Services
         /// <summary>
         /// 后台获得指定品牌商品的数量
         /// </summary>
-        /// <param name="brandId">品牌id</param>
         /// <param name="cateId">分类id</param>
+        /// <param name="brandId">品牌id</param>
         /// <param name="onlyStock">是否只显示有货</param>
         /// <returns></returns>
-        public static int GetBrandProductCount(int brandId, int cateId = 0, int onlyStock = 0)
+        public static int GetBrandProductCount(int cateId, int brandId, int filterPrice, string[] catePriceRangeList, List<int> attrValueIdList, int onlyStock = 0)
         {
-            return BrnShop.Data.Products.GetBrandProductCount(brandId, cateId, onlyStock);
+            return BrnShop.Data.Products.GetCategoryProductCount(cateId, brandId, filterPrice, catePriceRangeList, attrValueIdList, onlyStock);
         }
 
         /// <summary>

@@ -44,7 +44,7 @@ namespace BrnShop.Web.Controllers
             int page = WebHelper.GetQueryInt("page");
 
             string condition = News.GetNewsListCondition(newsTypeId, newsTitle);
-            PageModel pageModel = new PageModel(10, page, News.GetNewsCount(condition));
+            PageModel pageModel = new PageModel(15, page, News.GetNewsCount(condition));
             NewsListModel model = new NewsListModel()
             {
                 PageModel = pageModel,

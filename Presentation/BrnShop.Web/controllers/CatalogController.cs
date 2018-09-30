@@ -321,7 +321,7 @@ namespace BrnShop.Web.Controllers
             }
 
             //分页对象
-            PageModel pageModel = new PageModel(15, page, Products.GetBrandProductCount(brandId, cateId, onlyStock));
+            PageModel pageModel = new PageModel(15, page, Products.GetBrandProductCount(cateId, brandId, filterPrice, catePriceRangeList, attrValueIdList, onlyStock)) { Anchor="Cdt" };
             //视图对象
             BrandModel model = new BrandModel()
             {
