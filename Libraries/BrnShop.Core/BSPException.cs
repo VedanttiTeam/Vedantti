@@ -16,5 +16,6 @@ namespace BrnShop.Core
         public BSPException(string message, Exception inner) : base(message, inner) { }
 
         protected BSPException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+
     }
 }
