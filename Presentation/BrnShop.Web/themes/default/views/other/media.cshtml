@@ -1,0 +1,239 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>品牌故事-@{@WorkContext.ShopConfig.SiteTitle}</title>
+    @Html.Raw(WorkContext.ShopConfig.SEOKeyword)
+    @Html.Raw(WorkContext.ShopConfig.SEODescription)
+    <link href="@{@WorkContext.CSSCDN}/themes/default/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="@{@WorkContext.CSSCDN}/themes/default/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="@{@WorkContext.CSSCDN}/themes/default/css/dr.css" rel="stylesheet" type="text/css" />
+    <link href="@{@WorkContext.CSSCDN}/themes/default/css/story.css" rel="stylesheet" type="text/css" />
+    <script src="@{@WorkContext.ScriptCDN}/scripts/jquery.js" type="text/javascript"></script>
+    <script src="@{@WorkContext.ScriptCDN}/scripts/common.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="@{@WorkContext.CSSCDN}/themes/default/css/photoswipe.css" />
+    <link rel="stylesheet" href="@{@WorkContext.CSSCDN}/themes/default/css/default-skin/default-skin.css" />
+    <script src="@{@WorkContext.ScriptCDN}/scripts/photoswipe.min.js"></script>
+    <script src="@{@WorkContext.ScriptCDN}/scripts/photoswipe-ui-default.min.js"></script>
+    <style>
+        .pnav {
+            margin-top: 30px;
+            text-align: center;
+            line-height: 24px;
+            font-size: 16px;
+        }
+
+            .pnav a {
+                padding: 4px;
+            }
+
+                .pnav a.cur {
+                    background: #007bc4;
+                    color: #fff;
+                }
+
+        .demo {
+            width: 80%;
+            margin: 10px auto;
+        }
+
+        /*必要样式*/
+        #photos {
+            width: 150px;
+            border: 1px solid #d3d3d3;
+            margin: 20px auto;
+            text-align: center;
+            padding: 4px;
+            cursor: pointer;
+            position: relative;
+        }
+
+            #photos p {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                padding: 4px;
+                background: #000;
+                color: #fff;
+            }
+
+        .my-gallery {
+            width: 100%;
+            float: left;
+        }
+
+            .my-gallery img {
+                width: 100%;
+                height: auto;
+            }
+
+            .my-gallery figure {
+                display: block;
+                float: left;
+                margin: 0 5px 5px 0;
+                width: 150px;
+            }
+
+            .my-gallery figcaption {
+                display: none;
+            }
+            .tuji {
+                float: left;
+                margin-right: 15px;
+                margin-left: 15px;
+            }
+        .container {
+            width:1100px;
+            margin-top: 50px;
+            min-height:512px;
+        
+        }
+        .vc_custom_heading {
+            text-align: center;
+            letter-spacing: 0px !important;
+            font-size: 28px;
+            margin-bottom: 16px;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+    @Html.Partial("_header")
+    <div class="container">
+    
+    
+            <h2 class="vc_custom_heading">Media</h2>
+
+            <div id="photos1" class="tuji">
+                <img src="https://vedantti.com/wp-content/uploads/2018/08/cover2-212x300.jpg" alt="Image description" />
+            </div>
+            <div id="photos2" class="tuji">
+                <img src="https://vedantti.com/wp-content/uploads/2018/06/Cover-234x300.png" alt="Image description" />
+            </div>
+            <div id="photos3" class="tuji">
+                <img src="https://vedantti.com/wp-content/uploads/2018/06/Screenshot_4-219x300.png" alt="Image description" />
+            </div>
+
+
+            <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+                <div class="pswp__bg"></div>
+                <div class="pswp__scroll-wrap">
+                    <div class="pswp__container">
+                        <div class="pswp__item"></div>
+                        <div class="pswp__item"></div>
+                        <div class="pswp__item"></div>
+                    </div>
+                    <div class="pswp__ui pswp__ui--hidden">
+                        <div class="pswp__top-bar">
+                            <div class="pswp__counter"></div>
+                            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                            <button class="pswp__button pswp__button--share" title="Share"></button>
+                            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                            <div class="pswp__preloader">
+                                <div class="pswp__preloader__icn">
+                                    <div class="pswp__preloader__cut">
+                                        <div class="pswp__preloader__donut"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                            <div class="pswp__share-tooltip"></div>
+                        </div>
+                        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+                        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                        <div class="pswp__caption">
+                            <div class="pswp__caption__center"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+    <script type="text/javascript">
+    var openPhotoSwipe = function(aitems) {
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+
+
+
+    var options = {
+        history: false,
+        focus: false,
+
+        showAnimationDuration: 0,
+        hideAnimationDuration: 0
+
+    };
+
+    var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, aitems, options);
+    gallery.init();
+};
+
+     var items1 = [
+         {
+             src: 'https://vedantti.com/wp-content/uploads/2018/08/cover2.jpg',
+             w: 850,
+             h: 1142
+         },
+         {
+             src: 'https://vedantti.com/wp-content/uploads/2018/08/cover3.jpg',
+             w: 850,
+             h: 1142
+         }
+     ];
+
+     var items2 = [
+         {
+             src: 'https://vedantti.com/wp-content/uploads/2018/06/Cover.png',
+             w: 850,
+             h: 1142
+         },
+         {
+             src: 'https://vedantti.com/wp-content/uploads/2018/06/page16-17.png',
+             w: 1300,
+             h: 900
+         },
+         {
+             src: 'https://vedantti.com/wp-content/uploads/2018/06/circle-port.jpg',
+             w: 1300,
+             h: 900
+         }
+     ];
+     var items3 = [
+         {
+             src: 'https://vedantti.com/wp-content/uploads/2018/06/Screenshot_4.png',
+             w: 850,
+             h: 1142
+         },
+         {
+             src: 'https://vedantti.com/wp-content/uploads/2018/06/Screenshot_5.png',
+             w: 850,
+             h: 1142
+         }
+     ];
+
+        $(document).ready(function(){
+	        $("#photos1").click(function(){
+		        openPhotoSwipe(items1);
+	        })
+	        $("#photos2").click(function(){
+		        openPhotoSwipe(items2);
+	        })
+	        $("#photos3").click(function(){
+		        openPhotoSwipe(items3);
+	        })
+        })
+    </script>
+    </div>
+    <div style="clear:both;"></div>
+    @Html.Partial("_footer")
+</body>
+</html>
+
+

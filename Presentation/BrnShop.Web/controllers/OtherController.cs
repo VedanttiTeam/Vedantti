@@ -39,6 +39,15 @@ namespace BrnShop.Web.Controllers
         }
 
         /// <summary>
+        /// 杂志
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult media()
+        {
+            return View();
+        }
+
+        /// <summary>
         /// 订阅
         /// </summary>
         public ActionResult Subscribe()

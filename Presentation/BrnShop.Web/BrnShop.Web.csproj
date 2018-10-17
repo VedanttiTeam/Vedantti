@@ -241,11 +241,16 @@
     <Content Include="scripts\jquery.js" />
     <Content Include="scripts\jquery.soChange.js" />
     <Content Include="scripts\order.js" />
+    <Content Include="scripts\photoswipe-ui-default.min.js" />
+    <Content Include="scripts\photoswipe.min.js" />
     <Content Include="scripts\product.js" />
     <Content Include="scripts\region.js" />
     <Content Include="scripts\ucenter.order.js" />
     <Content Include="scripts\ucenter.safe.js" />
     <Content Include="scripts\ucenter.user.js" />
+    <Content Include="themes\default\css\default-skin\default-skin.css" />
+    <Content Include="themes\default\css\default-skin\default-skin.png" />
+    <Content Include="themes\default\css\default-skin\preloader.gif" />
     <Content Include="themes\default\css\designer.css" />
     <Content Include="themes\default\css\dr.css" />
     <Content Include="themes\default\css\account.css" />
@@ -256,6 +261,7 @@
     <Content Include="themes\default\css\home.css" />
     <Content Include="themes\default\css\list.css" />
     <Content Include="themes\default\css\news.css" />
+    <Content Include="themes\default\css\photoswipe.css" />
     <Content Include="themes\default\css\story.css" />
     <Content Include="themes\default\css\technics.css" />
     <Content Include="themes\default\css\ucenter.css" />
@@ -347,6 +353,8 @@
     <Content Include="themes\default\views\account\registersuccess.cshtml" />
     <Content Include="themes\default\views\account\regactivate.cshtml" />
     <Content Include="themes\default\views\other\map.cshtml" />
+    <Content Include="themes\default\views\other\media.cshtml" />
+    <Content Include="themes\default\css\default-skin\default-skin.svg" />
     <None Include="themes\default\views\other\story.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
