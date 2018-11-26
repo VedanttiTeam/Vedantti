@@ -5,14 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>印度风首饰VEDANTTI</title>    
+    <title>Vedantti珠宝首饰-来自美国纽约的珠宝品牌</title>
     @Html.Raw(WorkContext.ShopConfig.SEOKeyword)
     @Html.Raw(WorkContext.ShopConfig.SEODescription)
     <link href="@{@WorkContext.CSSCDN}/themes/default/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="@{@WorkContext.CSSCDN}/themes/default/css/base.css" rel="stylesheet" type="text/css" />
     <link href="@{@WorkContext.CSSCDN}/themes/default/css/dr.css" rel="stylesheet" type="text/css" />
     <link href="@{@WorkContext.CSSCDN}/themes/default/css/home.css" rel="stylesheet" type="text/css" />
-    <link href="@{@WorkContext.CSSCDN}/components/jsmodern/jsmodern.min.css" rel="stylesheet" type="text/css" />    
+    <link href="@{@WorkContext.CSSCDN}/themes/default/css1/main.css" rel="stylesheet" type="text/css" />
+    <link href="@{@WorkContext.CSSCDN}/components/jsmodern/jsmodern.min.css" rel="stylesheet" type="text/css" />
     <script src="@{@WorkContext.ScriptCDN}/scripts/jquery.js" type="text/javascript"></script>
     <script src="@{@WorkContext.ScriptCDN}/scripts/common.js" type="text/javascript"></script>
     <script src="@{@WorkContext.ScriptCDN}/components/jsmodern/jsmodern.min.js" type="text/javascript"></script>
@@ -25,6 +26,11 @@
             jsModern.video("#video");
             jsModern.video("#video1");
         });
+
+        $(document).ready(function(){
+            $(".trent-slider div").
+        })
+
     </script>
 </head>
 <body>
@@ -34,39 +40,74 @@
         $("#categorysCon").removeClass("hide");
     </script>
 
-    <div id="xilie0" class="box">
-        <div class="indexPic left">
+
+    <div class="container" style="height:500px;    background: #000; width: 1400px; margin-left: auto; margin-right: auto;">
+        <div class="trent-slider">
             @{
                 List<AdvertInfo> bannerList = Adverts.GetAdvertList(45);
-            }
-            <ul>
-                @foreach (AdvertInfo info in bannerList)
+            }<AdvertInfo>
+                <!--@foreach (AdvertInfo info in bannerList)
                 {
-                <li><a href="@info.Url"><img src="@{@WorkContext.ImageCDN}/upload/adv/@info.Image" style="width:1400px;height:500px;" /></a></li>
-                }
-            </ul>
-            <div class="indexPicBT">
-                @for (int i = 1; i <= bannerList.Count; i++)
-                {
-                <a href="#">@i</a>
-                }
-                <div class="clear"></div>
-            </div>
-            @if (bannerList.Count > 1)
-            {
-            <script type="text/javascript">
-                $("#xilie0 .indexPic li").soChange({
-                    thumbObj:"#xilie0 .indexPicBT a",
-		                thumbNowClass:"hot",
-		                changeTime:4200,
-		                autoChange:true,
-		                slideTime:300
-	                })
-            </script>
-            }
+                    //这里帮我写下if代码,info的index为0【即第一个】时,使用current-t-slide
+                    if(1==1){
+                    <div class="t-slide current-t-slide">
+                        <img src="@{@WorkContext.ImageCDN}/upload/adv/@info.Image" alt="" />
+                    </div>
+                    }else{
+                    <div class="t-slide current-t-slide">
+                        <img src="@{@WorkContext.ImageCDN}/upload/adv/@info.Image" alt="" />
+                    </div>
+                    }
+
+                }-->
+
+                 <a href="/blist/28.html">
+                     <div class="t-slide current-t-slide">
+                         <img src="/upload/adv/ad_1807141734275082159.jpg" alt="" />
+                     </div>
+                 </a>
+                <div class="t-slide">
+                    <img src="/upload/adv/ad_1807141734150118519.jpg" alt="" />
+                </div>
+                <div class="t-slide">
+                    <img src="/upload/adv/ad_1807141734002941957.jpg" alt="" />
+                </div>
+                <div class="t-slide">
+                    <img src="/upload/adv/ad_1807141733380396819.jpg" alt="" />
+                </div>
+
+
+
+                <div class="t-slider-controls">
+                    <div class="arrow right-arrow">
+                        <div class="arrow-container">
+                            <div class="arrow-icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                    <div class="arrow left-arrow">
+                        <div class="arrow-container">
+                            <div class="arrow-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                    <!--<div class="t-load-bar">
+                        <div class="inner-load-bar"></div>
+                    </div>-->
+                    <div class="t-dots-container">
+                        <div class="t-slide-dots-wrap">
+                            <div class="t-slide-dots">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </AdvertInfo>
         </div>
-        <div class="clear"></div>
     </div>
+
+    <script src="{dede:global.cfg_templets_skin/}/js/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
+    <script src="@{@WorkContext.ScriptCDN}/scripts/main.js"></script>
+    <!--结束-->
     <!--mobius-->
     <div class="mobius">
         <div class="mobius-right">
@@ -74,8 +115,10 @@
                 <div class="mobius3">
                     <p class="mtitile">MOBIUS</p>
                     <div class="mobiusa">
-                        <p class="miaoshu1">VEDANTTI从自然本身和其他自然元素中获得灵感</p>
-                        <p class="miaoshu2">VEDANTTI从自然本身和其他自然元素中获得灵感 </p>
+                        <p class="miaoshu1">
+                            VEDANTTI的每一颗钻石都是独一无二的
+                        </p>
+                        <p class="miaoshu2">与心灵深处缔结,见证永恒爱情</p>
                     </div>
                     <a href="/blist/28.html"><p class="discover">DISCOVER</p></a>
                 </div>
@@ -86,7 +129,7 @@
         </div>
         <div class="mobius-left">
             <div id="video1" style="width:700px;height:396px;">
-                <video src="@{@WorkContext.ImageCDN}/themes/default/video/video.mp4"></video>
+                <video src="@{@WorkContext.ImageCDN}/themes/default/video/Mobius.mp4"></video>
             </div>
         </div>
 
@@ -96,7 +139,7 @@
     <div class="circle">
         <div class="circle-right">
             <div id="video" style="width:700px;height:396px;">
-                <video src="@{@WorkContext.ImageCDN}/themes/default/video/video.mp4"></video>
+                <video src="@{@WorkContext.ImageCDN}/themes/default/video/Circle.mp4"></video>
             </div>
         </div>
         <div class="circle-left">
@@ -107,8 +150,8 @@
                 <div class="circle3">
                     <p class="mtitile">THE CIRCLE</p>
                     <div class="circlea">
-                        <p class="miaoshu1">VEDANTTI从自然本身和其他自然元素中获得灵感</p>
-                        <p class="miaoshu2">VEDANTTI从自然本身和其他自然元素中获得灵感 </p>
+                        <p class="miaoshu1">将莫比丝无止境的爱与祝愿渗透在每一个设计理念</p>
+                        <p class="miaoshu2">独立女性宣言，演绎自信风采</p>
                     </div>
                     <a href="/blist/29.html"><p class="discover">DISCOVER</p></a>
                 </div>
@@ -122,10 +165,10 @@
 
         <div class="shejishi1">
             <div class="mobius3">
-                <p class="mtitile" style="font-size:14px; color:#000000;">和其他自然元素中获得灵感</p>
+                <p class="mtitile" style="color:#000000;">VEDANTTI</p>
                 <div class="mobiusa" style="color:#000000;">
-                    <p class="miaoshu1">VEDANTTI从自然本身和其他自然元素中获得灵感</p>
-                    <p class="miaoshu2">VEDANTTI从自然本身和其他自然元素中获得灵感 </p>
+                    <p class="miaoshu1">她是一个充满活力的年轻女孩，爱笑并热情洋溢</p>
+                    <p class="miaoshu2">她精心创作每一款产品创，是为了女性能更自信地微笑 </p>
                 </div>
                 <a href="/other/designer"><p class="discover" style="margin-top:15%;">DISCOVER</p></a>
             </div>
@@ -135,63 +178,66 @@
     <!--chanpin-->
     <div class="chanpin">
         <div class="chanpin1" style="text-align:center">
-            <p class="tchanpin">热销产品</p>
-            <span class="mchanpin">jkf发的将反馈的空间发卡</span>
+            <p class="tchanpin">推荐产品</p>
+            <span class="mchanpin">VEDANTTI高级珠宝缔造者</span>
         </div>
         <div class="chanpin2" style="text-align:center">
             @{
                 List<AdvertInfo> productList = Adverts.GetAdvertList(48);
                 foreach (AdvertInfo info in productList)
                 {
-                    <div class="chanpina">
-                        <div class="chanpina1">
-                            <img src="@WorkContext.ImageCDN/upload/adv/@info.Image" />
-                            <p>@info.Title</p>
+                    <AdvertInfo>
+                        <div class="chanpina">
+                            <div class="chanpina1">
+                                <img src="@WorkContext.ImageCDN/upload/adv/@info.Image" />
+                                <p>@info.Title</p>
+                            </div>
+                            <div class="chanpina2">
+                                <p class="jiage">@info.ExtField1</p>
+                                <a href="@info.Url"><p class="discover">DETAILS</p></a>
+                            </div>
                         </div>
-                        <div class="chanpina2">
-                            <p class="jiage">@info.ExtField1</p>
-                            <a href="@info.Url"><p class="discover">DETAILS</p></a>
-                        </div>
-                    </div>
                 }
             }
-        </div>
+        </AdvertInfo>
     </div>
-    <!--chanpin end-->
-    <!--gongyi-->
-    <div id="xilie4" style="background:url(@{@WorkContext.ImageCDN}/themes/default/images/33.jpg); width:1400px; height:400px; margin:auto; margin-top:30px;">
-        <div class="xilie4right" style="height:270px; width:380px; background-color:#ffffff; float:right; margin-right:125px; margin-top:66px; text-align:center">
-            <h2 class="txt-title" style="color: #000000; font-size: 23px;line-height: normal; margin-top:50px;">创作工艺</h2>
-            <div class="txt-desc" style="color: #000000;font-size: 15px;line-height: 20px; width:290px; height:40px;margin-top: 12px;margin-left: 46px; text-align:left;">宝石鉴定师、珠宝大师、宝石镶嵌师和抛光大师发挥所长，缔造每件非凡臻品。</div>
-            <hr style="border-top: 1px solid #7F7E7E;width: 80px;margin: 20px auto;margin-top: 20px;margin-right: auto;margin-bottom: 20px;margin-left: auto;" />
-            <p style="font-size:18px"> &gt;&nbsp;<a href="/other/technics" style="color:#000000">观看影片探索作品的创作过程</a></p>
-        </div>
+</div>
+<!--chanpin end-->
+<!--gongyi-->
+<div id="xilie4" style="background:url(@{@WorkContext.ImageCDN}/themes/default/images/33.jpg); width:1400px; height:400px; margin:auto; margin-top:30px;">
+    <div class="xilie4right" style="height:270px; width:380px; background-color:#ffffff; float:right; margin-right:125px; margin-top:66px; text-align:center">
+        <h2 class="txt-title" style="color: #000000; font-size: 23px;line-height: normal; margin-top:50px;">创作工艺</h2>
+        <div class="txt-desc" style="color: #000000;font-size: 15px;line-height: 20px; width:290px; height:40px;margin-top: 12px;margin-left: 46px; text-align:left;">宝石鉴定师、珠宝大师、宝石镶嵌师和抛光大师发挥所长，缔造每件非凡臻品。</div>
+        <hr style="border-top: 1px solid #7F7E7E;width: 80px;margin: 20px auto;margin-top: 20px;margin-right: auto;margin-bottom: 20px;margin-left: auto;" />
+        <p style="font-size:18px"> &gt;&nbsp;<a href="/other/technics" style="color:#000000">观看影片探索作品的创作过程</a></p>
     </div>
-    <!--gongyi end-->
-    <div id="xilie5" style="width:1400px; height:200px; margin:auto;margin-top:30px;">
-        <div style="width:1360px; height:156px; position:relative;left:60px; top:20px;">
-            <div style="width:50%; height:156px; float:left;">
-                <h3>加入我们</h3>
-                <ul style="float:none; margin-top:30px;">
-                    <li style="float:left; padding-right:13%;"><a href="https://weibo.com/vedantti" target="_blank"><span><img src="@{@WorkContext.ImageCDN}/themes/default/images/weibo.jpg" /></span></a></li>
-                    <li style="float:left; padding-right:13%;"><a href="https://tvs.youku.com/vedantti" target="_blank"><span><img src="@{@WorkContext.ImageCDN}/themes/default/images/youku.jpg" /></span></a></li>
-                    <li style="float:left"><a href="#" target="_blank"><span><img src="@{@WorkContext.ImageCDN}/themes/default/images/weixin.jpg" /></span></a></li>
-                </ul>
-            </div>
-            <div style="width:50%; height:156px; float:right;">
-                <div>
-                    <h3>订阅新闻通讯</h3>
-                    <div class="subscibe">
-                        <form method="post" action="other/subscribe" novalidate="novalidate" data-form-submit="ajax">
-                            <input id="subemail" type="email" autocomplete="off" class="text" pattern="@Html.Raw("[a-zA-Z0-9!#$%&amp;'*+/=?_`{|}~-]+(?:\\.[a-zA-Z0-9!#$%&amp;'*+/=?_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?")" title="订阅新闻通讯，获取最新产品及时尚资讯. 电邮地址" aria-label="订阅新闻通讯，获取最新产品及时尚资讯. 电邮地址" placeholder="电邮地址" />
-                            <input class="btn-cta" type="submit" value="订阅" />
-                        </form>
-                    </div>
+</div>
+<!--gongyi end-->
+<div id="xilie5" style="width:1400px; height:200px; margin:auto;margin-top:30px;">
+    <div style="width:1360px; height:156px; position:relative;left:60px; top:20px;">
+        <div style="width:50%; height:156px; float:left;">
+            <h3>加入我们</h3>
+            <ul style="float:none; margin-top:30px;">
+                <li style="float:left; padding-right:13%;"><a href="https://weibo.com/u/6604854967?refer_flag=1001030102_&is_hot=1" target="_blank"><span><img style="width:38px;" src="@{@WorkContext.ImageCDN}/themes/default/images/sina.png" /></span></a></li>
+                <li style="float:left; padding-right:13%;"><a href="https://www.facebook.com/vedantti" target="_blank"><span><img src="@{@WorkContext.ImageCDN}/themes/default/images/facebook.png" style="width:38px;" /></span></a></li>
+                <li style="float:left;padding-right:13%;"><a href="https://www.instagram.com/vedantti/" target="_blank"><span><img style="width:38px;" src="@{@WorkContext.ImageCDN}/themes/default/images/ins.png" /></span></a></li>
+                <li style="float:left;padding-right:13%;"><a href="https://www.twitter.com/vedanttijewelry" target="_blank"><span><img style="width:38px;" src="@{@WorkContext.ImageCDN}/themes/default/images/tw.png" /></span></a></li>
+            </ul>
+        </div>
+        <div style="width:50%; height:156px; float:right;">
+            <div>
+                <h3>订阅新闻通讯</h3>
+                <div class="subscibe">
+                    <form method="post" action="other/subscribe" novalidate="novalidate" data-form-submit="ajax">
+                        <input id="subemail" type="email" autocomplete="off" class="text" pattern="@Html.Raw(" [a-zA-Z0-9!#$%&amp;'*+=[a-zA-Z0-9!#$%&amp;'*+/" title="订阅新闻通讯，获取最新产品及时尚资讯. 电邮地址" aria-label="订阅新闻通讯，获取最新产品及时尚资讯. 电邮地址" placeholder="电邮地址" />
+                        <input class="btn-cta" type="submit" value="订阅" />
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    @Html.Partial("_footer")
+</div>
+@Html.Partial("_footer")
 </body>
 </html>
 
