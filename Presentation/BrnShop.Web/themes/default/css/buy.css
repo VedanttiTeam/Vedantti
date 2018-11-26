@@ -1,4 +1,4 @@
-#buyTop{ padding:25px 0 0 0; position:relative;}
+﻿#buyTop{ padding:25px 0 0 0; position:relative;}
 .buyStep{ position:absolute; right:0;top:40px;}
 .buyStep li{ position:relative; border-top:5px solid #cccccc; width:160px; text-align:center; height:40px; line-height:40px; float:left;}
 .buyStep li s{ width:20px; height:20px; background:#CCC; position:absolute; top:-13px; left:50%; margin-left:-10px; font-weight:bold; color:#FFF; line-height:20px;}
@@ -17,6 +17,15 @@
 .promotionT{ width:160px; text-align:center;}
 .numberT{ width:126px; text-align:center;}
 .actionT{ width:100px; text-align:center;}
+.noteT {
+    width: 200px;
+    text-align: center;
+}
+
+    .actionT {
+        width: 100px;
+        text-align: center;
+    }
 .buyItme{ z-index:1; position:relative;}
 .buyItme h2{ padding:15px 0 5px 0; margin-left:20px; font-size:12px; font-weight:normal;}
 .buyItme h2 input{ vertical-align:-2px; margin-right:5px;}
@@ -31,7 +40,18 @@
 .productC a,.actionC a{ color:#005ea7;}
 .productC a:hover,.actionC a:hover{ text-decoration:underline;}
 .productC2{ padding-top:5px;}
+.noteC {
+    width: 200px;
+    padding-top: 20px;
+    text-align: center;
+}
 
+    .noteC input {
+        width: 198px;
+        height: 18px;
+        padding: 2px;
+        border-color: #ccc;
+    }
 .buyItme_header{height: 34px; line-height:34px;border: 1px solid #ccc;border-bottom:0;padding-left: 8px;background-color: #dbeefd; font-weight:bold;}
 .buyItme_header .more{ float:right; margin-right:10px; padding-right:10px; font-weight:normal; color:#005EA7;}
 .buyItme_header .more:hover{ text-decoration:underline;}

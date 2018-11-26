@@ -160,6 +160,7 @@ else
     <li class="priceT">价格</li>
     <li class="promotionT">优惠</li>
     <li class="numberT">数量</li>
+    <li class="noteT">备注</li>
 </ul>
 </div>
     @foreach (CartProductInfo cartProductInfo in Model.CartInfo.CartProductList)
@@ -203,6 +204,7 @@ else
                 <div class="nopriceC1"></div> 
             }
             <div class="cell numberC">@cartProductInfo.OrderProductInfo.RealCount</div>
+            <div class="cell noteC">@cartProductInfo.OrderProductInfo.Note</div>
             <div class="clear"></div>
             </div>
         }
@@ -240,6 +242,7 @@ else
             <div class="cell priceC">¥@cartSuitInfo.SuitPrice</div>
             <div class="nopriceC1"></div> 
             <div class="cell numberC">@cartSuitInfo.BuyCount</div>
+            <div class="cell noteC"></div>
             <div class="clear"></div>
             </div> 
         }
@@ -301,6 +304,7 @@ else
                     <div class="nopriceC1"></div> 
                 }
                 <div class="cell numberC">@cartProductInfo.OrderProductInfo.RealCount</div>
+                <div class="cell noteC"></div>
                 <div class="clear"></div>
                 </div> 
             }
@@ -359,6 +363,7 @@ else
                     <div class="nopriceC1"></div> 
                 }
                 <div class="cell numberC">@cartProductInfo.OrderProductInfo.RealCount</div>
+                <div class="cell noteC"></div>
                 <div class="clear"></div>
                 </div> 
             }

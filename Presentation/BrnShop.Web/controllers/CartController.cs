@@ -103,6 +103,7 @@ namespace BrnShop.Web.Controllers
         {
             int pid = WebHelper.GetQueryInt("pid");//商品id
             int buyCount = WebHelper.GetQueryInt("buyCount");//购买数量
+            string note = WebHelper.GetQueryString("note");//备注
             int scSubmitType = WorkContext.ShopConfig.SCSubmitType;//购物车的提交方式
 
             //当商城不允许游客使用购物车时
@@ -190,7 +191,7 @@ namespace BrnShop.Web.Controllers
 
             buyCount = orderProductInfo == null ? buyCount : orderProductInfo.BuyCount + buyCount;
             //将商品添加到购物车
-            Carts.AddProductToCart(ref orderProductList, buyCount, partProductInfo, WorkContext.Sid, WorkContext.Uid, DateTime.Now, WorkContext.IsMember);
+            Carts.AddProductToCart(ref orderProductList, buyCount, partProductInfo, WorkContext.Sid, WorkContext.Uid, DateTime.Now, WorkContext.IsMember, note);
             //将购物车中商品数量写入cookie
             Carts.SetCartProductCountCookie(Carts.SumOrderProductCount(orderProductList));
 
@@ -214,6 +215,7 @@ namespace BrnShop.Web.Controllers
         public ActionResult BuyProduct()
         {
             int pid = WebHelper.GetQueryInt("pid");//商品id
+            string note = WebHelper.GetQueryString("note");//备注
             int buyCount = WebHelper.GetQueryInt("buyCount");//购买数量
 
             //当商城不允许游客使用购物车时
@@ -245,11 +247,63 @@ namespace BrnShop.Web.Controllers
 
             buyCount = orderProductInfo == null ? buyCount : orderProductInfo.BuyCount + buyCount;
             //将商品添加到购物车
-            Carts.AddProductToCart(ref orderProductList, buyCount, partProductInfo, WorkContext.Sid, WorkContext.Uid, DateTime.Now, WorkContext.IsMember);
+            Carts.AddProductToCart(ref orderProductList, buyCount, partProductInfo, WorkContext.Sid, WorkContext.Uid, DateTime.Now, WorkContext.IsMember, note);
             //将购物车中商品数量写入cookie
             Carts.SetCartProductCountCookie(Carts.SumOrderProductCount(orderProductList));
 
             return AjaxResult("success", Url.Action("confirmorder", "order", new RouteValueDictionary { { "selectedCartItemKeyList", "0_" + pid } }));
+        }
+
+        /// <summary>
+        /// 修改购物车中商品的备注
+        /// </summary>
+        public ActionResult ChangeProductNote()
+        {
+            //当商城不允许游客使用购物车时
+            if (WorkContext.ShopConfig.IsGuestSC == 0 && WorkContext.Uid < 1)
+                return AjaxResult("nologin", "请先登录");
+
+            int pid = WebHelper.GetQueryInt("pid");//商品id
+            string note = WebHelper.GetQueryString("note");//商品备注
+            string selectedCartItemKeyList = WebHelper.GetQueryString("selectedCartItemKeyList");//选中的购物车项键列表
+
+            //购物车商品列表
+            List<OrderProductInfo> orderProductList = Carts.GetCartProductList(WorkContext.Uid, WorkContext.Sid);
+            //对应商品
+            OrderProductInfo orderProductInfo = Carts.GetCommonOrderProductByPid(pid, orderProductList);
+            if (orderProductInfo != null)//当商品已经存在
+            {
+                orderProductInfo.Note = note;
+                Carts.AddExistProductToCart(ref orderProductList, orderProductInfo.BuyCount, orderProductInfo, DateTime.Now);
+            }
+
+            //商品数量
+            int pCount = Carts.SumOrderProductCount(orderProductList);
+            //购物车信息
+            CartInfo cartInfo = Carts.TidyOrderProductList(StringHelper.SplitString(selectedCartItemKeyList), orderProductList);
+
+            //商品总数量
+            int totalCount = Carts.SumOrderProductCount(cartInfo.SelectedOrderProductList);
+            //商品合计
+            decimal productAmount = Carts.SumOrderProductAmount(cartInfo.SelectedOrderProductList);
+            //满减折扣
+            int fullCut = Carts.SumFullCut(cartInfo);
+            //订单合计
+            decimal orderAmount = productAmount - fullCut;
+
+            CartModel model = new CartModel
+            {
+                TotalCount = totalCount,
+                ProductAmount = productAmount,
+                FullCut = fullCut,
+                OrderAmount = orderAmount,
+                CartInfo = cartInfo
+            };
+
+            //将购物车中商品数量写入cookie
+            Carts.SetCartProductCountCookie(pCount);
+
+            return View("ajaxindex", model);
         }
 
         /// <summary>

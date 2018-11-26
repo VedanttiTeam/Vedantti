@@ -1328,7 +1328,9 @@ namespace BrnShop.Services
         /// <param name="sid">用户sessionId</param>
         /// <param name="uid">用户id</param>
         /// <param name="buyTime">购买时间</param>
-        public static void AddNewProductToCart(ref List<OrderProductInfo> orderProductList, int buyCount, PartProductInfo partProductInfo, string sid, int uid, DateTime buyTime,bool isMember=false)
+        /// <param name="isMember">是否会员</param>
+        /// <param name="note">备注</param>
+        public static void AddNewProductToCart(ref List<OrderProductInfo> orderProductList, int buyCount, PartProductInfo partProductInfo, string sid, int uid, DateTime buyTime, bool isMember = false, string note = null)
         {
             //需要添加的商品列表
             List<OrderProductInfo> addOrderProductList = new List<OrderProductInfo>();
@@ -1340,7 +1342,7 @@ namespace BrnShop.Services
             if (isMember)
                 mainOrderProductInfo.DiscountPrice = mainOrderProductInfo.MarketPrice;
 
-            InitOrderProduct(mainOrderProductInfo, buyCount, sid, uid, buyTime);
+            InitOrderProduct(mainOrderProductInfo, buyCount, sid, uid, buyTime, note);
 
             //获得买送促销活动
             BuySendPromotionInfo buySendPromotionInfo = Promotions.GetBuySendPromotion(buyCount, partProductInfo.Pid, buyTime);
@@ -1402,22 +1404,24 @@ namespace BrnShop.Services
         /// <param name="sid">用户sessionId</param>
         /// <param name="uid">用户id</param>
         /// <param name="buyTime">购买时间</param>
-        public static void AddProductToCart(ref List<OrderProductInfo> orderProductList, int buyCount, PartProductInfo partProductInfo, string sid, int uid, DateTime buyTime, bool isMember = false)
+        /// <param name="isMember">是否会员</param>
+        /// <param name="note">备注</param>
+        public static void AddProductToCart(ref List<OrderProductInfo> orderProductList, int buyCount, PartProductInfo partProductInfo, string sid, int uid, DateTime buyTime, bool isMember = false, string note = null)
         {
-            AddNewProductToCart(ref orderProductList, 1, partProductInfo, sid, uid, buyTime, isMember);//要求每件商品一条记录,数量固定为1
+            AddNewProductToCart(ref orderProductList, 1, partProductInfo, sid, uid, buyTime, isMember, note);//要求每件商品一条记录,数量固定为1
             /*
-            if (orderProductList.Count == 0)
-            {
-                AddNewProductToCart(ref orderProductList, buyCount, partProductInfo, sid, uid, buyTime);
-            }
-            else
-            {
-                OrderProductInfo orderProductInfo = GetCommonOrderProductByPid(partProductInfo.Pid, orderProductList);
-                if (orderProductInfo == null)//此商品作为普通商品不存在于购物车中时
-                    AddNewProductToCart(ref orderProductList, buyCount, partProductInfo, sid, uid, buyTime);
-                else//此商品作为普通商品存在于购物车中时
-                    AddExistProductToCart(ref orderProductList, buyCount, orderProductInfo, buyTime);
-            }*/
+             if (orderProductList.Count == 0)
+             {
+                 AddNewProductToCart(ref orderProductList, buyCount, partProductInfo, sid, uid, buyTime);
+             }
+             else
+             {
+                 OrderProductInfo orderProductInfo = GetCommonOrderProductByPid(partProductInfo.Pid, orderProductList);
+                 if (orderProductInfo == null)//此商品作为普通商品不存在于购物车中时
+                     AddNewProductToCart(ref orderProductList, buyCount, partProductInfo, sid, uid, buyTime);
+                 else//此商品作为普通商品存在于购物车中时
+                     AddExistProductToCart(ref orderProductList, buyCount, orderProductInfo, buyTime);
+             }*/
         }
 
         /// <summary>
@@ -1656,7 +1660,7 @@ namespace BrnShop.Services
         /// <summary>
         /// 初始化订单商品
         /// </summary>
-        private static void InitOrderProduct(OrderProductInfo orderProductInfo, int buyCount, string sid, int uid, DateTime buyTime)
+        private static void InitOrderProduct(OrderProductInfo orderProductInfo, int buyCount, string sid, int uid, DateTime buyTime, string note = null)
         {
             if (uid > 0)
                 orderProductInfo.Sid = "";
@@ -1666,6 +1670,7 @@ namespace BrnShop.Services
             orderProductInfo.RealCount = buyCount;
             orderProductInfo.BuyCount = buyCount;
             orderProductInfo.AddTime = buyTime;
+            orderProductInfo.Note = note;
         }
     }
 }

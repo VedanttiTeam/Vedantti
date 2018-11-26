@@ -200,12 +200,13 @@
 </table>
 
 <table width="97%">
-  <tr><th colspan="7" align="left">订单商品</th></tr>
+  <tr><th colspan="8" align="left">订单商品</th></tr>
   <tr>
     <td align="center" width="60">商品图片</td>
     <td width="100">商品编号</td>
     <td>商品名称</td>
     <td width="128">UID</td>
+    <td width="128">备注</td>
     <td width="80">价格</td>
     <td width="50">数量</td>
     <td width="80">小计</td>
@@ -226,6 +227,7 @@
                 @info.Gid
             }
         </td>
+        <td>@info.Note</td>
         <td>@info.DiscountPrice</td>
         <td>@info.BuyCount</td>
         <td>@Html.Raw((info.DiscountPrice * info.BuyCount).ToString())</td>

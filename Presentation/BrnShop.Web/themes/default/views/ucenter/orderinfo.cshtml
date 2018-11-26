@@ -131,7 +131,7 @@
                                             <th>UID</th>
                                             <th>价格</th>
                                             <th>数量</th>
-                                            <th>合计</th>
+                                            <th>金额</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -142,7 +142,8 @@
                                                     <div class="proList">
                                                         <img src="@{@WorkContext.ImageCDN}/upload/product/show/thumb60_60/@info.ShowImg" width="50" height="50" />                                                        
                                                         <a href="@Url.Action("product", "catalog", new RouteValueDictionary { { "pid", info.Pid } })">@info.Name</a><br />
-                                                        <text>@info.PSN</text>
+                                                        <text>@info.PSN</text><br />
+                                                        <text>@info.Note</text>
                                                         <div class="clear"></div>
                                                     </div>
                                                 </td>

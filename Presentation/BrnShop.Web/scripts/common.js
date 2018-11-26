@@ -1,6 +1,7 @@
 ﻿var uid = -1; //用户id
 var isGuestSC = 0; //是否允许游客使用购物车(0代表不可以，1代表可以)
 var scSubmitType = 0; //购物车的提交方式(0代表跳转到提示页面，1代表跳转到列表页面，2代表ajax提交)
+var size = null;
 
 $.ajaxSetup({
     cache: false //关闭AJAX缓存
@@ -81,6 +82,14 @@ function addToFavorite(pid) {
     }
 }
 
+//选择尺寸
+function SelSize(obj) {
+    var vSelf = $(obj);
+    size = vSelf.text();
+    vSelf.siblings("a").removeClass("hot");
+    vSelf.addClass('hot');
+}
+
 //处理添加商品到收藏夹的反馈信息
 function addToFavoriteResponse(data) {
     var result = eval("(" + data + ")");
@@ -88,7 +97,7 @@ function addToFavoriteResponse(data) {
 }
 
 //添加商品到购物车
-function addProductToCart(pid, buyCount) {
+function addProductToCart(pid, buyCount, note) {
     if (pid < 1) {
         alert("请选择商品");
     }
@@ -99,10 +108,10 @@ function addProductToCart(pid, buyCount) {
         alert("请填写购买数量");
     }
     else if (scSubmitType != 2) {
-        window.location.href = "/cart/addproduct?pid=" + pid + "&buyCount=" + buyCount;
+        window.location.href = "/cart/addproduct?pid=" + pid + "&buyCount=" + buyCount + "&note=" + note;
     }
     else {
-        $.get("/cart/addproduct?pid=" + pid + "&buyCount=" + buyCount, addProductToCartResponse)
+        $.get("/cart/addproduct?pid=" + pid + "&buyCount=" + buyCount + "&note=" + note, addProductToCartResponse)
     }
 }
 
@@ -113,7 +122,7 @@ function addProductToCartResponse(data) {
 }
 
 //购买商品
-function buyProduct(pid, buyCount) {
+function buyProduct(pid, buyCount, note) {
     if (pid < 1) {
         alert("请选择商品");
     }
@@ -124,7 +133,7 @@ function buyProduct(pid, buyCount) {
         alert("请填写购买数量");
     }
     else {
-        $.get("/cart/buyproduct?pid=" + pid + "&buyCount=" + buyCount, buyProductResponse)
+        $.get("/cart/buyproduct?pid=" + pid + "&buyCount=" + buyCount + "&note=" + note, buyProductResponse)
     }
 }
 
@@ -342,6 +351,24 @@ function clearCart(pos) {
     })
 }
 
+//改变商品备注
+function changeProductNote(pid, note) {
+    var key = "0_" + pid;
+    $("#cartBody input[type=checkbox][value=" + key + "]").each(function () {
+        $(this).prop("checked", true);
+        return false;
+    });
+    $.get("/cart/changeproductnote?pid=" + pid + "&note=" + escape(note) + "&selectedCartItemKeyList=" + getSelectedCartItemKeyList(), function (data) {
+        try {
+            alert(eval("(" + data + ")").content);
+        }
+        catch (ex) {
+            $("#cartBody").html(data);
+            setSelectAllCartItemCheckbox();
+        }
+    })
+}
+
 //改变商品数量
 function changePruductCount(pid, buyCount) {
     if (!isInt(buyCount)) {
@@ -552,7 +579,7 @@ function addSubscribeEmail(email) {
         return;
     }
 
-    if(!isEmail(email)){
+    if (!isEmail(email)) {
         alert("您的电邮地址格式不正确");
         return;
     }

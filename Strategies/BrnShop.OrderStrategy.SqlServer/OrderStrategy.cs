@@ -113,7 +113,8 @@ namespace BrnShop.OrderStrategy.SqlServer
                                                 GenerateInParam("@extcode3", SqlDbType.Int, 4, orderProductInfo.ExtCode3),
                                                 GenerateInParam("@extcode4", SqlDbType.Int, 4, orderProductInfo.ExtCode4),
                                                 GenerateInParam("@extcode5", SqlDbType.Int, 4, orderProductInfo.ExtCode5),
-                                                GenerateInParam("@addtime", SqlDbType.DateTime, 8, orderProductInfo.AddTime)
+                                                GenerateInParam("@addtime", SqlDbType.DateTime, 8, orderProductInfo.AddTime),
+                                                GenerateInParam("@note", SqlDbType.NVarChar, 500, orderProductInfo.Note)
                                               };
                         RDBSHelper.ExecuteNonQuery(CommandType.StoredProcedure,
                                                    string.Format("{0}addorderproduct", RDBSHelper.RDBSTablePre),

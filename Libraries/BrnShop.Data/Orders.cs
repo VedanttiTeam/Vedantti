@@ -50,6 +50,7 @@ namespace BrnShop.Data
             orderProductInfo.ExtCode4 = TypeHelper.ObjectToInt(reader["extcode4"]);
             orderProductInfo.ExtCode5 = TypeHelper.ObjectToInt(reader["extcode5"]);
             orderProductInfo.AddTime = TypeHelper.ObjectToDateTime(reader["addtime"]);
+            orderProductInfo.Note = reader["note"].ToString();
             return orderProductInfo;
         }
 

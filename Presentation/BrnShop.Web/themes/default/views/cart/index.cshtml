@@ -63,6 +63,10 @@
 
          }
      }
+     function noteBlur(obj, itemId) {
+         var value = obj.value;
+         changeProductNote(itemId, value);
+     }
  </script>
 <h1 id="buyT">我的购物车</h1>
 <div id="cartBody">
@@ -75,6 +79,7 @@
             <li class="priceT">价格</li>
             <li class="promotionT">优惠</li>
             <li class="numberT">数量</li>
+            <li class="noteT">备注</li>
             <li class="actionT">操作</li>
         </ul>
     </div>
@@ -127,6 +132,7 @@
             </dd>
             <div class="clear"></div>
             </dl></div>
+            <div class="cell noteC"><input type="text" onblur="noteBlur(this,@cartProductInfo.OrderProductInfo.Pid)" value="@cartProductInfo.OrderProductInfo.Note"/></div>
             <div class="cell actionC"><a href="javascript:void(0)" onclick="if (confirm('您确定要把该商品移出购物车吗？')) delCartProduct(@cartProductInfo.OrderProductInfo.Pid,0)">删除</a></div>
             <div class="clear"></div>
         </div>
@@ -172,6 +178,7 @@
                 <div class="clear"></div>
                 </dl>
             </div>
+            <div class="cell noteT"></div>
             <div class="cell actionC"><a href="javascript:void(0)" onclick="if (confirm('您确定要把该套装移出购物车吗？')) delCartSuit(@cartSuitInfo.PmId,0)">删除</a></div>
             <div class="clear"></div>
         </div>
@@ -266,6 +273,7 @@
             </dd>
             <div class="clear"></div>
             </dl></div>
+            <div class="cell noteT"></div>
             <div class="cell actionC"><a href="javascript:void(0)" onclick="if (confirm('您确定要把该商品移出购物车吗？')) delCartProduct(@cartProductInfo.OrderProductInfo.Pid,0)">删除</a></div>
             <div class="clear"></div>
         </div>
@@ -331,6 +339,7 @@
             </dd>
             <div class="clear"></div>
             </dl></div>
+            <div class="cell noteT"></div>
             <div class="cell actionC"><a href="javascript:void(0)" onclick="if (confirm('您确定要把该商品移出购物车吗？')) delCartProduct(@cartProductInfo.OrderProductInfo.Pid,0)">删除</a></div>
             <div class="clear"></div>
         </div>

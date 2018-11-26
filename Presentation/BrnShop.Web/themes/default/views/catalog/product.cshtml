@@ -255,21 +255,30 @@
                             }
                         }
                     }
-                    @:</dd><div class="clear"></div></dl>
+                    @:</dd></dl><div class="clear"></div>
                     attrLayer++;
                 }
+            }
+            else if(Model.CategoryInfo.Name.Contains("戒指"))
+            {
+                <dl class="choose"><dt>手寸：</dt><dd>
+                    <a href="#" onclick="SelSize(this);return false;" class="itme">13寸</a>
+                    <a href="#" onclick="SelSize(this);return false;" class="itme hot">14寸</a>
+                    <a href="#" onclick="SelSize(this);return false;" class="itme">15寸</a>
+                </dd></dl><div class="clear"></div>
+                <script type="text/javascript">size = "14寸";</script>
             }
         </div>
         <!--其他参数选择end-->
         <!--加入购物车等-->
         <div class="ringbuy_Button">
-            <a href="javascript:addProductToCart(@Model.Pid, 1);void(0);" class="to_shopcart" data-info="0">
+            <a href="javascript:addProductToCart(@Model.Pid, 1,size);void(0);" class="to_shopcart" data-info="0">
                 <span>加入购物车</span>
             </a>
             
             @if (Model.ProductInfo.Number > 0)
             {
-                <a href="javascript:buyProduct(@Model.Pid, 1);void(0);" class="to_buyit" data-info="1">立即购买</a>
+                <a href="javascript:buyProduct(@Model.Pid, 1,size);void(0);" class="to_buyit" data-info="1">立即购买</a>
             }
             else
             {

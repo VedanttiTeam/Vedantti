@@ -88,7 +88,8 @@ namespace BrnShop.CartStrategy.SqlServer
                                         GenerateInParam("@extcode3", SqlDbType.Int, 4, orderProductInfo.ExtCode3),
                                         GenerateInParam("@extcode4", SqlDbType.Int, 4, orderProductInfo.ExtCode4),
                                         GenerateInParam("@extcode5", SqlDbType.Int, 4, orderProductInfo.ExtCode5),
-                                        GenerateInParam("@addtime", SqlDbType.DateTime, 8, orderProductInfo.AddTime)
+                                        GenerateInParam("@addtime", SqlDbType.DateTime, 8, orderProductInfo.AddTime),
+                                        GenerateInParam("@note", SqlDbType.NVarChar, 500, orderProductInfo.Note)
                                     };
                 RDBSHelper.ExecuteNonQuery(CommandType.StoredProcedure,
                                            string.Format("{0}addorderproduct", RDBSHelper.RDBSTablePre),
@@ -120,12 +121,16 @@ namespace BrnShop.CartStrategy.SqlServer
         /// <param name="orderProductList">订单商品列表</param>
         public void UpdateOrderProductCount(List<OrderProductInfo> orderProductList)
         {
-            StringBuilder sql = new StringBuilder();
+            StringBuilder sql = new StringBuilder(1000);
+            int vIdx = 0;
+            List<DbParameter> parms = new List<DbParameter>(orderProductList.Count);
             foreach (OrderProductInfo orderProductInfo in orderProductList)
             {
-                sql.AppendFormat("UPDATE [{0}orderproducts] SET [realcount]={1},[buycount]={2},[extcode2]={3} WHERE [recordid]={4};", RDBSHelper.RDBSTablePre, orderProductInfo.RealCount, orderProductInfo.BuyCount, orderProductInfo.ExtCode2, orderProductInfo.RecordId);
+                string vName = "@Note" + vIdx.ToString();
+                parms.Add(GenerateInParam(vName, SqlDbType.NVarChar, 500, orderProductInfo.Note));
+                sql.AppendFormat("UPDATE [{0}orderproducts] SET [realcount]={1},[buycount]={2},[extcode2]={3},[note]={4} WHERE [recordid]={5};", RDBSHelper.RDBSTablePre, orderProductInfo.RealCount, orderProductInfo.BuyCount, orderProductInfo.ExtCode2, vName, orderProductInfo.RecordId);
             }
-            RDBSHelper.ExecuteNonQuery(CommandType.Text, sql.ToString());
+            RDBSHelper.ExecuteNonQuery(CommandType.Text, sql.ToString(), parms.ToArray());
         }
 
         /// <summary>

@@ -36,6 +36,7 @@ namespace BrnShop.Core
         private int _extcode4 = 0;//普通商品时为满赠促销活动id
         private int _extcode5 = 0;//普通商品时为满减促销活动id
         private DateTime _addtime;//添加时间
+        private string _note;//备注
 
         /// <summary>
         /// 记录id
@@ -268,6 +269,15 @@ namespace BrnShop.Core
         {
             get { return _addtime; }
             set { _addtime = value; }
+        }
+
+        /// <summary>
+        /// 备注
+        /// </summary>
+        public string Note
+        {
+            get { return _note; }
+            set { _note = value; }
         }
     }
 }
