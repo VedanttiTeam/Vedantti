@@ -14,7 +14,20 @@
     <link href="@{@WorkContext.CSSCDN}/themes/default/css/technics.css" rel="stylesheet" type="text/css" />
     <script src="@{@WorkContext.ScriptCDN}/scripts/jquery.js" type="text/javascript"></script>
     <script src="@{@WorkContext.ScriptCDN}/scripts/common.js" type="text/javascript"></script>
-    
+
+    <link href="@{@WorkContext.CSSCDN}/components/jsmodern/jsmodern.min.css" rel="stylesheet" type="text/css" />
+    <script src="@{@WorkContext.ScriptCDN}/components/jsmodern/jsmodern.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        uid = @WorkContext.Uid;
+        isGuestSC = @WorkContext.ShopConfig.IsGuestSC;
+        scSubmitType = @WorkContext.ShopConfig.SCSubmitType;
+        $(function () {
+            jsModern.video("#video");
+            jsModern.video("#video1");
+			jsModern.video("#video2");
+			jsModern.video("#video3");
+        });
+    </script>
 </head>
 <body>
     @Html.Partial("_header")
@@ -30,27 +43,35 @@
     <div class="wpb_row">
         <h2 style="color: #222222;text-align: center" class="vc_custom_heading Video-title">素描和造型</h2>
         <div class="craft_video01_thumb">
-            <embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=z0727wsokil&auto=0" allowFullScreen="true" quality="high" width="1300" height="600" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" />
+            <div id="video" style="width:1300px;height:600px;margin-left:auto;margin-right:auto;">
+                <video src="@{@WorkContext.ImageCDN}/themes/default/video/gongyi.mp4"></video>
+            </div>
         </div>
     </div>
     <div class="vc_row-fluid">
         <div class="vc_row-fluidleft">
             <h2 style="color: #222222;text-align: center" class="vc_custom_heading Video-title">铸造</h2>
             <div class="vc_row-fluidleftone">
-                <embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=i0727d4s653&auto=0" allowFullScreen="true" quality="high" width="620" height="383" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" />
+                <div id="video1" style="width:620px;height:383px;">
+                    <video src="@{@WorkContext.ImageCDN}/themes/default/video/zhuzao.mp4"></video>
+                </div>
             </div>
         </div>
         <div class="vc_row-fluidright">
             <h2 style="color: #222222;text-align: center" class="vc_custom_heading Video-title">钻石镶嵌</h2>
             <div class="vc_row-fluidrightone">
-                <embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=f0727b2tw2l&auto=0" allowFullScreen="true" quality="high" width="620" height="383" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" />
+                <div id="video2" style="width:620px;height:383px;">
+                    <video src="@{@WorkContext.ImageCDN}/themes/default/video/xiangqian.mp4"></video>
+                </div>
             </div>
         </div>
     </div>
     <div class="wpb_rowone">
         <h2 style="color: #222222;text-align: center" class="vc_custom_heading Video-title">抛光和雕刻</h2>
         <div class="craft_video01_thumb">
-            <embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=d072755iczf&auto=0" allowFullScreen="true" quality="high" width="1300" height="600" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" />
+            <div id="video3" style="width:1300px;height:600px;margin-left:auto;margin-right:auto;">
+                <video src="@{@WorkContext.ImageCDN}/themes/default/video/paoguang.mp4"></video>
+            </div>
         </div>
     </div>
     @Html.Partial("_footer")

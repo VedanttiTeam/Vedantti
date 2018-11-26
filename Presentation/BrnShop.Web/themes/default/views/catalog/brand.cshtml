@@ -21,15 +21,15 @@
         isGuestSC = @WorkContext.ShopConfig.IsGuestSC;
         scSubmitType = @WorkContext.ShopConfig.SCSubmitType;
     </script>
-	<script src="@{@WorkContext.ScriptCDN}/components/jsmodern/jsmodern.min.js" type="text/javascript"></script>
-    <link href="@{@WorkContext.CSSCDN}/components/jsmodern/jsmodern.min.css" rel="stylesheet" type="text/css" />   
+    <script src="@{@WorkContext.ScriptCDN}/components/jsmodern/jsmodern.min.js" type="text/javascript"></script>
+    <link href="@{@WorkContext.CSSCDN}/components/jsmodern/jsmodern.min.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
         uid = @WorkContext.Uid;
         isGuestSC = @WorkContext.ShopConfig.IsGuestSC;
         scSubmitType = @WorkContext.ShopConfig.SCSubmitType;
         $(function () {
             jsModern.video("#video");
-            jsModern.video("#video1");            
+            jsModern.video("#video1");
         });
         function SelectCategoryChg(AObj){
             var vSel = $(AObj);
@@ -50,7 +50,7 @@
             <div class="drring_all-bread fl">
                 <a href="/">Vedantti</a>
                 <span>&gt;</span>
-                <a href="@Url.Action("brand", new RouteValueDictionary { { "brandId", Model.BrandId } })">@Model.BrandInfo.Name</a>
+                <a href="@Url.Action(" brand",=brand", new=new RouteValueDictionary=RouteValueDictionary {={ {={ ="brandId" ,=, Model.BrandId=Model.BrandId }=} })"=})">@Model.BrandInfo.Name</a>
                 <span>&gt;</span>
                 <span><a href="#">所有商品</a></span>
             </div>
@@ -64,16 +64,13 @@
     </div>
     @{
         int nid = Model.BrandId;
-        if (nid == 28 || nid == 29||nid==32)
+        if (nid == 28 || nid == 29 || nid == 32)
         {
             <div id="video1" class="w1000" style="height:600px; margin-left:auto;margin-right:auto;">
                 <video src="@{@WorkContext.ImageCDN}/themes/default/video/@{@Model.BrandInfo.Name}.mp4"></video>
-            </div>
-        }
+            </div>}
 
     }
-
-
     <!--搜索栏end-->
     <div class="dr_pink" style="width:100%;padding:10px 0px;" id="Cdt">
         <div class="box w1000">
@@ -106,34 +103,52 @@
                                     {
                                         vSelList.AddRange(Model.CategoryList.ConvertAll(AItem => new SelectListItem() { Text = AItem.Name, Value = AItem.CateId.ToString(), Selected = Model.CateId == AItem.CateId }));
                                     }
-                                    @Html.DropDownList("SelectCategory", vSelList, new { @class = "SelectCategory", @onchange = "SelectCategoryChg(this)" })
+                                    <SelectListItem>
+                                        <SelectListItem>
+                                            @Html.DropDownList("SelectCategory", vSelList, new { @class = "SelectCategory", @onchange = "SelectCategoryChg(this)" })
                                 }
                                 @*<ul>
-                                    <li>
-                                        <a href="@Url.Action("brand", new RouteValueDictionary { { "brandId", Model.BrandId }, { "cateId", 0 }, { "onlyStock", 0 }, { "sortColumn", 0 }, { "sortDirection", 0 }, { "page", 1 } })#Cdt" @if (Model.CateId == 0) { <text> class="hot" </text> }>不限</a>
-                                    </li>
-                                    @foreach (CategoryInfo info in Model.CategoryList)
-                                    {
                                         <li>
-                                            <a href="@Url.Action("brand", new RouteValueDictionary { { "brandId", Model.BrandId }, { "cateId", info.CateId }, { "onlyStock", 0 }, { "sortColumn", 0 }, { "sortDirection", 0 }, { "page", 1 } })#Cdt" @if (Model.CateId == info.CateId) { <text> class="hot" </text> }>@info.Name</a>
+                                            <a href="@Url.Action("brand", new RouteValueDictionary { { "brandId", Model.BrandId }, { "cateId", 0 }, { "onlyStock", 0 }, { "sortColumn", 0 }, { "sortDirection", 0 }, { "page", 1 } })#Cdt" @if (Model.CateId == 0) { <text> class="hot" </text> }>不限</a>
                                         </li>
-                                    }
-                                </ul>*@
+                                        @foreach (CategoryInfo info in Model.CategoryList)
+                                        {
+                                            <li>
+                                                <a href="@Url.Action("brand", new RouteValueDictionary { { "brandId", Model.BrandId }, { "cateId", info.CateId }, { "onlyStock", 0 }, { "sortColumn", 0 }, { "sortDirection", 0 }, { "page", 1 } })#Cdt" @if (Model.CateId == info.CateId) { <text> class="hot" </text> }>@info.Name</a>
+                                            </li>
+                                        }
+                                    </ul>*@<ul>
+                                    <li>
+                                        <a href="@Url.Action(" brand",=brand", new=new RouteValueDictionary=RouteValueDictionary {={ {={ ="brandId" ,=, Model.BrandId=Model.BrandId },=}, {={ ="cateId" ,=, 0=0 },=}, {={ ="onlyStock" ,=, 0=0 },=}, {={ ="sortColumn" ,=, 0=0 },=}, {={ ="sortDirection" ,=, 0=0 },=}, {={ ="page" ,=, 1=1 }=} })#Cdt"=})#Cdt" @if=@if (Model.CateId=(Model.CateId =0) {={ <text> class="hot" </text> }>不限</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action(" brand",=brand", new=new RouteValueDictionary=RouteValueDictionary {={ {={ ="brandId" ,=, Model.BrandId=Model.BrandId },=}, {={ ="cateId" ,=, info.CateId=info.CateId },=}, {={ ="onlyStock" ,=, 0=0 },=}, {={ ="sortColumn" ,=, 0=0 },=}, {={ ="sortDirection" ,=, 0=0 },=}, {={ ="page" ,=, 1=1 }=} })#Cdt"=})#Cdt" @if=@if (Model.CateId=(Model.CateId =info.CateId) {={ <text> class="hot" </text> }>@info.Name</a>
+                                    </li>
+                                </ul>
                                 <div class="clear"></div>
-                            </div>
-                        }
+                            </SelectListItem>
+                        </SelectListItem>
+                    </div>
+                                    }
                         @{
-                          int order = 1;
-                          string startStr;
-                          string endStr;
-                          string centerStr;
-                          foreach (KeyValuePair<AttributeInfo, List<AttributeValueInfo>> item in Model.AAndVList)
-                          {
-                              if (item.Value.Count > 0)
-                              {
-                                  startStr = order != 1 ? Model.FilterAttr.Substring(0, StringHelper.IndexOf(Model.FilterAttr, order - 1) + 1) : "";
-                                  endStr = order != Model.AAndVList.Count ? Model.FilterAttr.Substring(StringHelper.IndexOf(Model.FilterAttr, order)) : "";
-                                  centerStr = StringHelper.TrimEnd(StringHelper.TrimStart(Model.FilterAttr, startStr), endStr);
+                            int order = 1;
+                            string startStr;
+                            string endStr;
+                            string centerStr;
+                            foreach (KeyValuePair<AttributeInfo, List<AttributeValueInfo>> item in Model.AAndVList)
+                            {
+                                if (item.Value.Count > 0)
+                                {
+                                    startStr = order != 1 ? Model.FilterAttr.Substring(0, StringHelper.IndexOf(Model.FilterAttr, order - 1) + 1) : "";
+                                    endStr = order != Model.AAndVList.Count ? Model.FilterAttr.Substring(StringHelper.IndexOf(Model.FilterAttr, order)) : "";
+                                    centerStr = StringHelper.TrimEnd(StringHelper.TrimStart(Model.FilterAttr, startStr), endStr);
+                                    <AttributeInfo, List=List<AttributeValueInfo>> item in Model.AAndVList)
+                            {
+                                if (item.Value.Count > 0)
+                                {
+                                    startStr = order != 1 ? Model.FilterAttr.Substring(0, StringHelper.IndexOf(Model.FilterAttr, order - 1) + 1) : "";
+                                    endStr = order != Model.AAndVList.Count ? Model.FilterAttr.Substring(StringHelper.IndexOf(Model.FilterAttr, order)) : "";
+                                    centerStr = StringHelper.TrimEnd(StringHelper.TrimStart(Model.FilterAttr, startStr), endStr);
                           <div class="selectItme">
                               <h3>@item.Key.Name</h3>
                               <ul>
@@ -151,121 +166,122 @@
                                 order++;
                               }
                           }
-                    </div>
-                </div>
+                                </div>
+                            </div>
 
-                <div class="orderList">
-                    <dl>
-                        <dt>排序:</dt>
-                        <dd>
-                            <a href="@Url.Action("brand", new RouteValueDictionary { { "cateId", Model.CateId }, { "brandId", Model.BrandId }, { "onlyStock", 0 }, { "sortColumn", 0 }, { "sortDirection", Model.SortDirection == 0 ? 1 : 0 }, { "page", 1 } })#Cdt" class="@if (Model.SortColumn == 0)
-                                                                                                                                                                                                                                                       { <text>current</text>} @if (Model.SortDirection == 1 && Model.SortColumn == 0)
+                            <div class="orderList">
+                                <dl>
+                                    <dt>排序:</dt>
+                                    <dd>
+                                        <a href="@Url.Action(" brand",=brand", new=new RouteValueDictionary=RouteValueDictionary {={ {={ ="cateId" ,=, Model.CateId=Model.CateId },=}, {={ ="brandId" ,=, Model.BrandId=Model.BrandId },=}, {={ ="onlyStock" ,=, 0=0 },=}, {={ ="sortColumn" ,=, 0=0 },=}, {={ ="sortDirection" ,=, Model.SortDirection=Model.SortDirection =0 ?=? 1=1 = 0=0 },=}, {={ ="page" ,=, 1=1 }=} })#Cdt"=})#Cdt" class="@if (Model.SortColumn == 0)
+                                           {={ <text>current</text>} @if (Model.SortDirection == 1 && Model.SortColumn == 0)
                                                                                                                                                                                                                                                                                { <text>down</text>}
                                                                                                                                                                                                                                                                                else if (Model.SortDirection == 0 && Model.SortColumn == 0)
-                                                                                                                                                                                                                                                                               { <text>up</text>}">默认</a></dd>
-                        <dd>
-                            <a href="@Url.Action("brand", new RouteValueDictionary { { "cateId", Model.CateId }, { "brandId", Model.BrandId }, { "onlyStock", 0 }, { "sortColumn", 1 }, { "sortDirection", Model.SortDirection == 0 ? 1 : 0 }, { "page", 1 } })#Cdt" class="@if (Model.SortColumn == 1)
-                                                                                                                                                                                                                                                       { <text>current</text>} @if (Model.SortDirection == 1 && Model.SortColumn == 1)
+                                                                                                                                                                                                                                                                               { <text>up</text>}">默认</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="@Url.Action(" brand",=brand", new=new RouteValueDictionary=RouteValueDictionary {={ {={ ="cateId" ,=, Model.CateId=Model.CateId },=}, {={ ="brandId" ,=, Model.BrandId=Model.BrandId },=}, {={ ="onlyStock" ,=, 0=0 },=}, {={ ="sortColumn" ,=, 1=1 },=}, {={ ="sortDirection" ,=, Model.SortDirection=Model.SortDirection =0 ?=? 1=1 = 0=0 },=}, {={ ="page" ,=, 1=1 }=} })#Cdt"=})#Cdt" class="@if (Model.SortColumn == 1)
+                                           {={ <text>current</text>} @if (Model.SortDirection == 1 && Model.SortColumn == 1)
                                                                                                                                                                                                                                                                                { <text>down</text>}
                                                                                                                                                                                                                                                                                else if (Model.SortDirection == 0 && Model.SortColumn == 1)
                                                                                                                                                                                                                                                                                { <text>up</text>}">销量</a>
-                        </dd>
-                        <dd>
-                            <a href="@Url.Action("brand", new RouteValueDictionary { { "cateId", Model.CateId }, { "brandId", Model.BrandId }, { "onlyStock", 0 }, { "sortColumn", 2 }, { "sortDirection", Model.SortDirection == 0 ? 1 : 0 }, { "page", 1 } })#Cdt" class="@if (Model.SortColumn == 2)
-                                                                                                                                                                                                                                                       { <text>current</text>} @if (Model.SortDirection == 1 && Model.SortColumn == 2)
+                                    </dd>
+                                    <dd>
+                                        <a href="@Url.Action(" brand",=brand", new=new RouteValueDictionary=RouteValueDictionary {={ {={ ="cateId" ,=, Model.CateId=Model.CateId },=}, {={ ="brandId" ,=, Model.BrandId=Model.BrandId },=}, {={ ="onlyStock" ,=, 0=0 },=}, {={ ="sortColumn" ,=, 2=2 },=}, {={ ="sortDirection" ,=, Model.SortDirection=Model.SortDirection =0 ?=? 1=1 = 0=0 },=}, {={ ="page" ,=, 1=1 }=} })#Cdt"=})#Cdt" class="@if (Model.SortColumn == 2)
+                                           {={ <text>current</text>} @if (Model.SortDirection == 1 && Model.SortColumn == 2)
                                                                                                                                                                                                                                                                                { <text>up</text>}
                                                                                                                                                                                                                                                                                else if (Model.SortDirection == 0 && Model.SortColumn == 2)
                                                                                                                                                                                                                                                                                { <text>down</text>}">价格</a>
-                        </dd>
-                        <dd>
-                            <a href="@Url.Action("brand", new RouteValueDictionary { { "cateId", Model.CateId }, { "brandId", Model.BrandId }, { "onlyStock", 0 }, { "sortColumn", 3 }, { "sortDirection", Model.SortDirection == 0 ? 1 : 0 }, { "page", 1 } })#Cdt" class="@if (Model.SortColumn == 3)
-                                                                                                                                                                                                                                                       { <text>current</text>} @if (Model.SortDirection == 1 && Model.SortColumn == 3)
+                                    </dd>
+                                    <dd>
+                                        <a href="@Url.Action(" brand",=brand", new=new RouteValueDictionary=RouteValueDictionary {={ {={ ="cateId" ,=, Model.CateId=Model.CateId },=}, {={ ="brandId" ,=, Model.BrandId=Model.BrandId },=}, {={ ="onlyStock" ,=, 0=0 },=}, {={ ="sortColumn" ,=, 3=3 },=}, {={ ="sortDirection" ,=, Model.SortDirection=Model.SortDirection =0 ?=? 1=1 = 0=0 },=}, {={ ="page" ,=, 1=1 }=} })#Cdt"=})#Cdt" class="@if (Model.SortColumn == 3)
+                                           {={ <text>current</text>} @if (Model.SortDirection == 1 && Model.SortColumn == 3)
                                                                                                                                                                                                                                                                                { <text>up</text>}
                                                                                                                                                                                                                                                                                else if (Model.SortDirection == 0 && Model.SortColumn == 3)
                                                                                                                                                                                                                                                                                { <text>down</text>}">评价</a>
-                        </dd>
-                        <dd>
-                            <a href="@Url.Action("brand", new RouteValueDictionary { { "cateId", Model.CateId }, { "brandId", Model.BrandId }, { "onlyStock", 0 }, { "sortColumn", 5 }, { "sortDirection", Model.SortDirection == 0 ? 1 : 0 }, { "page", 1 } })#Cdt" class="@if (Model.SortColumn == 5)
-                                                                                                                                                                                                                                                        { <text>current</text>} @if (Model.SortDirection == 1 && Model.SortColumn == 5)
+                                    </dd>
+                                    <dd>
+                                        <a href="@Url.Action(" brand",=brand", new=new RouteValueDictionary=RouteValueDictionary {={ {={ ="cateId" ,=, Model.CateId=Model.CateId },=}, {={ ="brandId" ,=, Model.BrandId=Model.BrandId },=}, {={ ="onlyStock" ,=, 0=0 },=}, {={ ="sortColumn" ,=, 5=5 },=}, {={ ="sortDirection" ,=, Model.SortDirection=Model.SortDirection =0 ?=? 1=1 = 0=0 },=}, {={ ="page" ,=, 1=1 }=} })#Cdt"=})#Cdt" class="@if (Model.SortColumn == 5)
+                                           {={ <text>current</text>} @if (Model.SortDirection == 1 && Model.SortColumn == 5)
                                                                                                                                                                                                                                                                                 { <text>up</text>}
                                                                                                                                                                                                                                                                                 else if (Model.SortDirection == 0 && Model.SortColumn == 5)
                                                                                                                                                                                                                                                                                 { <text>down</text>}">人气</a>
-                        </dd>                        
-                    </dl>
-                    <div class="clear"></div>
+                                    </dd>
+                                </dl>
+                                <div class="clear"></div>
 
-                    <div class="orderPage">
-                        <span class="ProNB">共 @Model.PageModel.TotalCount 个商品</span>
-                        <span class="orderPageNB">
-                            <b>
-                                @if (Model.PageModel.TotalPages > 0)
-                                {@Model.PageModel.PageNumber}
-                                else
-                                {<text>0</text>}
-                        </b>/@Model.PageModel.TotalPages
-                    </span>
-                    @if (Model.PageModel.HasPrePage)
-                    {
-                        <a href="@Url.Action("brand", new RouteValueDictionary { { "cateId", Model.CateId }, { "brandId", Model.BrandId }, { "onlyStock", 0 }, { "sortColumn", Model.SortColumn }, { "sortDirection", Model.SortDirection }, { "page", Model.PageModel.PrePageNumber } })#Cdt">上一页</a>
-                    }
-                    else
-                    {
-                        <a href="javascript:;">上一页</a>
-                    }
-                    @if (Model.PageModel.HasNextPage)
-                    {
-                        <a href="@Url.Action("brand", new RouteValueDictionary { { "cateId", Model.CateId }, { "brandId", Model.BrandId }, { "onlyStock", 0 }, { "sortColumn", Model.SortColumn }, { "sortDirection", Model.SortDirection }, { "page", Model.PageModel.NextPageNumber } })#Cdt">下一页</a>
-                    }
-                    else
-                    {
-                        <a href="javascript:;">下一页</a>
-                    }
-                    <div class="clear"></div>
-                </div>
-            </div>
-                <div>
-                    <ul class="dring_thing">
-                        @foreach (PartProductInfo info in Model.ProductList)
-                        {
-                            <li>
-                                <a href="@Url.Action("product", new RouteValueDictionary { { "pid", info.Pid } })" target="_blank"><img src="@{@WorkContext.ImageCDN}/upload/product/show/thumb320_320/@info.ShowImg" width="320" height="320" alt="" /></a>
-                                <div class="dring_thing-cort">
-                                    <div class="dring_thing-price">
-                                        ￥@info.ShopPrice
-                                    </div>
-                                    <p class="dring_thing-word">
-                                        @{
-                                            string vName = info.Name;
-                                            int vIdx = vName.LastIndexOf(" ");
-                                            if (vIdx > 0)
-                                            {
-                                                vName = vName.Substring(0, vIdx);
-                                            }
-                                            @vName;
-                                        }
-                                    </p>
-                                    <div class="dring_thing-button">
-                                        <span onclick="addToFavorite(@info.Pid)">收藏</span>
-                                        @if (info.Number > 0)
-                                        {
-                                            <a href="javascript:buyProduct(@info.Pid, 1);void(0);"><i>立即购买</i></a>
-                                        }
-                                        else
-                                        {
-                                            <a href="javascript:void(0);"><i>暂无库存</i></a>
-                                        }
-                                    </div>
+                                <div class="orderPage">
+                                    <span class="ProNB">共 @Model.PageModel.TotalCount 个商品</span>
+                                    <span class="orderPageNB">
+                                        <b>
+                                            @if (Model.PageModel.TotalPages > 0)
+                                            {@Model.PageModel.PageNumber}
+                                            else
+                                            {<text>0</text>}
+                                        </b>/@Model.PageModel.TotalPages
+                                    </span>
+                                    @if (Model.PageModel.HasPrePage)
+                                    {
+                                        <a href="@Url.Action(" brand",=brand", new=new RouteValueDictionary=RouteValueDictionary {={ {={ ="cateId" ,=, Model.CateId=Model.CateId },=}, {={ ="brandId" ,=, Model.BrandId=Model.BrandId },=}, {={ ="onlyStock" ,=, 0=0 },=}, {={ ="sortColumn" ,=, Model.SortColumn=Model.SortColumn },=}, {={ ="sortDirection" ,=, Model.SortDirection=Model.SortDirection },=}, {={ ="page" ,=, Model.PageModel.PrePageNumber=Model.PageModel.PrePageNumber }=} })#Cdt"=})#Cdt">上一页</a>
+                                    }
+                                    else
+                                    {
+                                        <a href="javascript:;">上一页</a>
+                                    }
+                                    @if (Model.PageModel.HasNextPage)
+                                    {
+                                        <a href="@Url.Action(" brand",=brand", new=new RouteValueDictionary=RouteValueDictionary {={ {={ ="cateId" ,=, Model.CateId=Model.CateId },=}, {={ ="brandId" ,=, Model.BrandId=Model.BrandId },=}, {={ ="onlyStock" ,=, 0=0 },=}, {={ ="sortColumn" ,=, Model.SortColumn=Model.SortColumn },=}, {={ ="sortDirection" ,=, Model.SortDirection=Model.SortDirection },=}, {={ ="page" ,=, Model.PageModel.NextPageNumber=Model.PageModel.NextPageNumber }=} })#Cdt"=})#Cdt">下一页</a>
+                                    }
+                                    else
+                                    {
+                                        <a href="javascript:;">下一页</a>
+                                    }
+                                    <div class="clear"></div>
                                 </div>
-                            </li>
-                        }
-                    </ul>
-                    @Html.WebPager(Model.PageModel)
+                            </div>
+                            <div>
+                                <ul class="dring_thing">
+                                    @foreach (PartProductInfo info in Model.ProductList)
+                                    {
+                                        <li>
+                                            <a href="@Url.Action(" product",=product", new=new RouteValueDictionary=RouteValueDictionary {={ {={ ="pid" ,=, info.Pid=info.Pid }=} })"=})" target="_blank"><img src="@{@WorkContext.ImageCDN}/upload/product/show/thumb320_320/@info.ShowImg" width="320" height="320" alt="" /></a>
+                                            <div class="dring_thing-cort">
+                                                <div class="dring_thing-price">
+                                                    ￥@info.ShopPrice
+                                                </div>
+                                                <p class="dring_thing-word">
+                                                    @{
+                                                        string vName = info.Name;
+                                                        int vIdx = vName.LastIndexOf(" ");
+                                                        if (vIdx > 0)
+                                                        {
+                                                            vName = vName.Substring(0, vIdx);
+                                                        }
+                                                        @vName;
+                                                    }
+                                                </p>
+                                                <div class="dring_thing-button">
+                                                    <span onclick="addToFavorite(@info.Pid)">收藏</span>
+                                                    @if (info.Number > 0)
+                                                    {
+                                                        <a href="javascript:buyProduct(@info.Pid, 1);void(0);"><i>立即购买</i></a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a href="javascript:void(0);"><i>暂无库存</i></a>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </li>
+                                                        }
+                                </ul>
+                                @Html.WebPager(Model.PageModel)
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
                 </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-</div>
 
-@Html.Partial("_footer")
-</body>
-</html>
+                @Html.Partial("_footer")
+            </body>
+        </html>

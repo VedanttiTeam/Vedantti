@@ -18,6 +18,9 @@
     <script src="@{@WorkContext.ScriptCDN}/scripts/common.js" type="text/javascript"></script>
     <script src="@{@WorkContext.ScriptCDN}/components/jsmodern/jsmodern.min.js" type="text/javascript"></script>
     <script src="@{@WorkContext.ScriptCDN}/scripts/jquery.soChange.js" type="text/javascript"></script>
+
+    <link href="@{@WorkContext.CSSCDN}/themes/default/css/flexslider.css" rel="stylesheet" type="text/css" />
+    <script src="@{@WorkContext.ScriptCDN}/scripts/jquery.flexslider-min.js" type="text/javascript"></script>
     <script type="text/javascript">
         uid = @WorkContext.Uid;
         isGuestSC = @WorkContext.ShopConfig.IsGuestSC;
@@ -27,11 +30,16 @@
             jsModern.video("#video1");
         });
 
-        $(document).ready(function(){
-            $(".trent-slider div").
-        })
-
+		$(function() {
+			$(".flexslider").flexslider({
+				slideshowSpeed: 4000, //展示时间间隔ms
+				animationSpeed: 400, //滚动时间ms
+				touch: true, //是否支持触屏滑动
+				slideshow : false
+			});
+		});
     </script>
+
 </head>
 <body>
     @Html.Partial("_header")
@@ -42,65 +50,18 @@
 
 
     <div class="container" style="height:500px;    background: #000; width: 1400px; margin-left: auto; margin-right: auto;">
-        <div class="trent-slider">
-            @{
-                List<AdvertInfo> bannerList = Adverts.GetAdvertList(45);
-            }<AdvertInfo>
-                <!--@foreach (AdvertInfo info in bannerList)
-                {
-                    //这里帮我写下if代码,info的index为0【即第一个】时,使用current-t-slide
-                    if(1==1){
-                    <div class="t-slide current-t-slide">
-                        <img src="@{@WorkContext.ImageCDN}/upload/adv/@info.Image" alt="" />
-                    </div>
-                    }else{
-                    <div class="t-slide current-t-slide">
-                        <img src="@{@WorkContext.ImageCDN}/upload/adv/@info.Image" alt="" />
-                    </div>
-                    }
 
-                }-->
-
-                 <a href="/blist/28.html">
-                     <div class="t-slide current-t-slide">
-                         <img src="/upload/adv/ad_1807141734275082159.jpg" alt="" />
-                     </div>
-                 </a>
-                <div class="t-slide">
-                    <img src="/upload/adv/ad_1807141734150118519.jpg" alt="" />
-                </div>
-                <div class="t-slide">
-                    <img src="/upload/adv/ad_1807141734002941957.jpg" alt="" />
-                </div>
-                <div class="t-slide">
-                    <img src="/upload/adv/ad_1807141733380396819.jpg" alt="" />
-                </div>
-
-
-
-                <div class="t-slider-controls">
-                    <div class="arrow right-arrow">
-                        <div class="arrow-container">
-                            <div class="arrow-icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-                        </div>
-                    </div>
-                    <div class="arrow left-arrow">
-                        <div class="arrow-container">
-                            <div class="arrow-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
-                        </div>
-                    </div>
-                    <!--<div class="t-load-bar">
-                        <div class="inner-load-bar"></div>
-                    </div>-->
-                    <div class="t-dots-container">
-                        <div class="t-slide-dots-wrap">
-                            <div class="t-slide-dots">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </AdvertInfo>
+        <div class="flexslider">
+            <ul class="slides">
+                <li>
+                    <a href="/blist/28.html">
+                        <img src="/upload/adv/ad_1807141734275082159.jpg" />
+                    </a>
+                </li>
+                <li><img src="/upload/adv/ad_1807141734150118519.jpg" /></li>
+                <li><img src="/upload/adv/ad_1807141734002941957.jpg" /></li>
+                <li><img src="/upload/adv/ad_1807141733380396819.jpg" /></li>
+            </ul>
         </div>
     </div>
 
