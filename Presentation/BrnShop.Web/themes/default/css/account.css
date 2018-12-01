@@ -1,5 +1,5 @@
-body{ background:#f2f2f2; }
-#loginTop{ padding:20px 0; width:1000px;}
+﻿body{ background:#f2f2f2; }
+#loginTop{ padding:20px 0; width:900px;height:40px;}
 #loginTop h2{ float:left; height:42px; line-height:42px; padding-left:15px; margin-left:15px;font-size:24px; font-weight:normal; color:#333;}
 
 .login{ width:1000px; margin:20px auto; margin-bottom:50px;border:5px solid #e8e8e8; background:#FFF; height:355px; position:relative;}
