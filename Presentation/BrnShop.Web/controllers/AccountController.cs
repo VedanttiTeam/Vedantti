@@ -377,7 +377,7 @@ namespace BrnShop.Web.Controllers
                             else
                             {
                                 userInfo = new UserInfo();
-                                userInfo.UserName = string.Empty;
+                                userInfo.UserName = accountName;
                                 userInfo.Email = accountName;
                                 userInfo.Mobile = string.Empty;
                             }
@@ -399,7 +399,7 @@ namespace BrnShop.Web.Controllers
                     else
                     {
                         userInfo = new UserInfo();
-                        userInfo.UserName = string.Empty;
+                        userInfo.UserName = accountName;
                         userInfo.Email = string.Empty;
                         userInfo.Mobile = accountName;
                     }
