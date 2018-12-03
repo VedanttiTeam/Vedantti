@@ -490,7 +490,7 @@ namespace BrnShop.Web.Controllers
                 if (userInfo.Email.Length > 0)
                 {
                     string v = ShopUtils.AESEncrypt(string.Format("{0},{1},{2},{3}", userInfo.Uid, "regactivate", DateTime.Now, Randoms.CreateRandomValue(6)));
-                    string url = string.Format("http://{0}{1}", Request.Url.Authority, Url.Action("regactivate", new RouteValueDictionary { { "v", v } }));                        
+                    string url = string.Format("http://{0}{1}", Request.Url.Authority, Url.Action("regactivate", new RouteValueDictionary { { "v", v } }));
                     Emails.SendActivateEmail(userInfo.Email, url);//发送激活邮件
                 }
 
@@ -610,9 +610,9 @@ namespace BrnShop.Web.Controllers
             {
                 errorList.AppendFormat("{0}\"key\":\"{1}\",\"msg\":\"{2}\"{3},", "{", "accountName", "账户名必须大于3且不大于50个字符", "}");
             }
-            else if ((!SecureHelper.IsSafeSqlString(accountName)))
+            else if ((!SecureHelper.IsSafeSqlString(accountName, false)))
             {
-                errorList.AppendFormat("{0}\"key\":\"{1}\",\"msg\":\"{2}\"{3},", "{", "accountName", "账户名不存在", "}");
+                errorList.AppendFormat("{0}\"key\":\"{1}\",\"msg\":\"{2}\"{3},", "{", "accountName", "账户名不合法", "}");
             }
 
             //验证码验证
