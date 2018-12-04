@@ -1,51 +1,100 @@
 ﻿<div id="footer" class="bigBox">
-  <div class="box">
+    <div class="box">
 
-    @{
-        int flag = 1;
-        foreach (HelpInfo info in WorkContext.HelpList)
-        {
-            if (info.Pid != 0)
+        @{
+            int flag = 1;
+            foreach (HelpInfo info in WorkContext.HelpList)
             {
-                if (info.Url.Length == 0)
+                if (info.Pid != 0)
                 {
-            <a href="@Url.Action("question", "help", new RouteValueDictionary { { "id", info.Id } })">@info.Title</a>
+                    if (info.Url.Length == 0)
+                    {
+                        <a href="@Url.Action("question", "help", new RouteValueDictionary { { "id", info.Id } })">@info.Title</a>
+                    }
+                    else
+                    {
+                        <a href="@info.Url">@info.Title</a>
+                    }
                 }
                 else
                 {
-            <a href="@info.Url">@info.Title</a>
+                    if (flag != 1)
+                    {
+                        @:
+                    </div>
+            }
+                    @:<div class="footerBox">
+                        <h3>@info.Title</h3>
+            flag++;
                 }
             }
-            else
+            if (WorkContext.HelpList.Count > 0)
             {
-                if (flag != 1)
-                {
-                @:</div>
-            }
-            @:<div class="footerBox"><h3>@info.Title</h3>
-            flag++;
-            }
+                @:
+            </div>
+    }
         }
-        if (WorkContext.HelpList.Count > 0)
-        {
-        @:</div>
-    }
-    }
 
-  <div class="clear"></div>
-  </div>
-  <div class="bigBox footerB">
-    <div id="footerB">
-      <div class="links">
-        @foreach (FriendLinkInfo info in WorkContext.FriendLinkList)
-        {
-        <a href="@info.Url" target="@info.Target" title="@info.Title">@info.Name</a> @:|
-        }
-      </div>
-      <div>版权所有 @WorkContext.ShopCopyright</div>
-      <div><a href="http://www.miitbeian.gov.cn">粤ICP备18090360号</a></div>
+        <div class="clear"></div>
     </div>
-  </div>
-</div>
-@*@Html.Raw(WorkContext.ExecuteDetail)
-@Html.Raw(WorkContext.ShopConfig.Script)*@
+    <div class="bigBox footerB">
+        <div id="footerB">
+            <div class="links">
+                @foreach (FriendLinkInfo info in WorkContext.FriendLinkList)
+                {
+                    <a href="@info.Url" target="@info.Target" title="@info.Title">@info.Name</a> @:|
+        }
+            </div>
+            <div>版权所有 @WorkContext.ShopCopyright</div>
+            <div><a href="http://www.miitbeian.gov.cn">粤ICP备18090360号</a></div>
+        </div>
+    </div>
+    </div>
+    @*@Html.Raw(WorkContext.ExecuteDetail)
+        @Html.Raw(WorkContext.ShopConfig.Script)*@
+
+    <link href="@{@WorkContext.CSSCDN}/themes/default/css/slideleft.css" rel="stylesheet" type="text/css" />
+
+    <!--右侧悬浮菜单-->
+    <div class="slide">
+        <ul class="icon">
+            <li class="qq"></li>
+            <li class="tel"></li>
+        </ul>
+        <ul class="info">
+            <li id="shoMsg" class="qq">
+                <!--<p>在线沟通，请点我<a href="http://wpa.qq.com/msgrd?v=3&uin=123456789&site=qq&menu=yes" target="_blank">在线咨询</a></p>-->
+
+                <p>咨询热线：<br>4008760328<br />客服微信:</p>
+                <div class="img"><img src="@{@WorkContext.CSSCDN}/themes/default/images/qrq.jpg" /></div>
+            </li>
+        </ul>
+    </div>
+    <div id="btn" class="index_cy"></div>
+
+    <script type="text/javascript">
+$(function(){
+
+	$('.slide .icon li').not('.up,.down,.qq').mouseenter(function(){
+		$('.slide .info').addClass('hover');
+		$('.slide .info li').hide();
+		$('#shoMsg').show();//.slide .info li.qq
+	});
+	$('.slide').mouseleave(function(){
+		$('.slide .info').removeClass('hover');
+	});
+
+	$('#btn').click(function(){
+		$('.slide').toggle();
+		if($(this).hasClass('index_cy')){
+			$(this).removeClass('index_cy');
+			$(this).addClass('index_cy2');
+		}else{
+			$(this).removeClass('index_cy2');
+			$(this).addClass('index_cy');
+		}
+
+	});
+
+});
+</script>

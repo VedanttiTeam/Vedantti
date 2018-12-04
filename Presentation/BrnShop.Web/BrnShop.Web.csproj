@@ -277,6 +277,7 @@
     <Content Include="themes\default\css\list.css" />
     <Content Include="themes\default\css\news.css" />
     <Content Include="themes\default\css\photoswipe.css" />
+    <Content Include="themes\default\css\slideleft.css" />
     <Content Include="themes\default\css\story.css" />
     <Content Include="themes\default\css\technics.css" />
     <Content Include="themes\default\css\ucenter.css" />
