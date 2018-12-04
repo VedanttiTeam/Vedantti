@@ -244,6 +244,7 @@
     <Content Include="images\s7.jpg" />
     <Content Include="images\s8.jpg" />
     <Content Include="images\s9.jpg" />
+    <Content Include="images\thepower1.jpg" />
     <Content Include="robots.txt" />
     <Content Include="scripts\account.js" />
     <Content Include="scripts\common.js" />

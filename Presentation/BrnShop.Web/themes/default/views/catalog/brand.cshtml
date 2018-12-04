@@ -64,13 +64,18 @@
     </div>
     @{
         int nid = Model.BrandId;
-        if (nid == 28 || nid == 29 || nid == 32)
+        if (nid == 28 || nid == 29||nid==32)
         {
             <div id="video1" class="w1000" style="height:600px; margin-left:auto;margin-right:auto;">
                 <video src="@{@WorkContext.ImageCDN}/themes/default/video/@{@Model.BrandInfo.Name}.mp4"></video>
-            </div>}
+            </div>
+		}else
+		{
+            <div id="video1" class="w1000" style="height:570px; margin-left:auto;margin-right:auto;">
+                <img width="1100" src="../../images/thepower1.jpg" sizes="(max-width: 1000px) 100vw, 1000px" />
+            </div>
+		}
 
-    }
     <!--搜索栏end-->
     <div class="dr_pink" style="width:100%;padding:10px 0px;" id="Cdt">
         <div class="box w1000">
