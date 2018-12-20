@@ -167,9 +167,9 @@ namespace BrnShop.Services
             string subject = string.Format("{0}注册激活", _shopconfiginfo.ShopName);
             // return SendEmail(to, subject, string.Format("<p>感谢注册{0}({1})，请点击下面链接完成激活<br/>{2}</p>", _shopconfiginfo.ShopName, _shopconfiginfo.SiteUrl, url));
             
-            return SendEmail(to, subject,string.Format(@"<div style='text - align: center; white - space: normal; '>
+            return SendEmail(to, subject,string.Format(@"<div style='text-align:center; white-space:normal; '>
          <div style = 'background-color: rgb(204, 204, 204);'>
-              <p style = 'text-align: center;'>
+              <p style ='text-align: center;'>
                    <img src = 'http://www.vedantti.cn/themes/default/images/logo21.png' />
                   </p>      
               </div>
@@ -177,8 +177,8 @@ namespace BrnShop.Services
                   亲爱的会员您好：
     </p>
     <p>
-        <span style = 'white-space: normal;'>欢迎加入VEDANTTI，感谢您注册VEDANTTI会员，成为我们VEDANTTI的一员。
-请点击下方链接激活您的账户： </span>：
+        <span style = 'white-space: normal;'>欢迎加入VEDANTTI，感谢您注册VEDANTTI会员，成为我们VEDANTTI的一员。<br/>
+请点击下方链接激活您的账户： </span>
     </p>
     <p>
         {2}
@@ -190,7 +190,7 @@ namespace BrnShop.Services
           </div>
   
           <div style = 'text-align: center;'>
-               Thanks & amp; Regards
+               Thanks & Regards
               </div>
               <div style = 'text-align: center;'>
                    Vedantti Team
@@ -214,7 +214,7 @@ namespace BrnShop.Services
             string subject = string.Format("{0}订单支付成功通知", _shopconfiginfo.ShopName);
             //string body = string.Format("<p>尊敬的客户，你好！<br/><br/>&emsp;&emsp;您通过{0}完成了一笔金额为{1}的支付，订单号：{2}。<br/><br/>{3}</p>", payName, payAmt, osn, _shopconfiginfo.SiteUrl);
 
- string body = string.Format(@"<div style='text - align: center; white - space: normal; '>
+ string body = string.Format(@"<div style='text-align:center; white - space: normal; '>
          <div style = 'background-color: rgb(204, 204, 204);'>
               <p style = 'text-align: center;'>
                    <img src = 'http://www.vedantti.cn/themes/default/images/logo21.png' />
@@ -224,7 +224,7 @@ namespace BrnShop.Services
                   亲爱的客户您好：
     </p>
     <p>
-        <span style = 'white-space: normal;'> 您通过{0}完成了一笔金额为{1}的支付，订单号为：{2} </span>：
+        <span style = 'white-space: normal;'> 您通过{0}完成了一笔金额为{1}的支付<br/>订单号为：{2} </span>
     </p>
     <div style = 'padding-top: 10px; padding-bottom: 10px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); font-size: 14px; line-height: 25px;'>
  
@@ -233,7 +233,7 @@ namespace BrnShop.Services
           </div>
   
           <div style = 'text-align: center;'>
-               Thanks & amp; Regards
+               Thanks & Regards
               </div>
               <div style = 'text-align: center;'>
                    Vedantti Team
@@ -256,7 +256,7 @@ namespace BrnShop.Services
         {
             string subject = string.Format("{0}卖家确认定单通知", _shopconfiginfo.ShopName);
 
-  string body = string.Format(@"<div style='text - align: center; white - space: normal; '>
+  string body = string.Format(@"<div style='text-align: center; white - space: normal; '>
          <div style = 'background-color: rgb(204, 204, 204);'>
               <p style = 'text-align: center;'>
                    <img src = 'http://www.vedantti.cn/themes/default/images/logo21.png' />
@@ -266,7 +266,7 @@ namespace BrnShop.Services
                   亲爱的客户您好：
     </p>
     <p>
-        <span style = 'white-space: normal;'>您的订单：{0}，卖家已确认。 </span>：
+        <span style = 'white-space: normal;'>您的订单：{0}，卖家已确认。 </span>
     </p>
     <div style = 'padding-top: 10px; padding-bottom: 10px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); font-size: 14px; line-height: 25px;'>
  
@@ -275,7 +275,7 @@ namespace BrnShop.Services
           </div>
   
           <div style = 'text-align: center;'>
-               Thanks & amp; Regards
+               Thanks & Regards
               </div>
               <div style = 'text-align: center;'>
                    Vedantti Team
@@ -299,7 +299,7 @@ namespace BrnShop.Services
             string subject = string.Format("{0}卖家发货通知", _shopconfiginfo.ShopName);
            // string body = string.Format("<p>尊敬的客户，你好！<br/><br/>&emsp;&emsp;您的订单：{0}，卖家已发货。<br/><br/>&emsp;&emsp;快递单号：{1}<br/><br/>&emsp;&emsp;UID：{2}<br/><br/>{3}</p>", osn, shipSN, uidStr, _shopconfiginfo.SiteUrl);
 
-            string body = string.Format(@"<div style='text - align: center; white - space: normal; '>
+            string body = string.Format(@"<div style='text-align: center; white - space: normal; '>
          <div style = 'background-color: rgb(204, 204, 204);'>
               <p style = 'text-align: center;'>
                    <img src = 'http://www.vedantti.cn/themes/default/images/logo21.png' />
@@ -307,12 +307,12 @@ namespace BrnShop.Services
               </div>
               <p>
                   亲爱的客户您好：
+          </p>
+    <p>
+        <span style = 'white-space: normal;'>您的订单：{0}，卖家已发货。 </span>
     </p>
     <p>
-        <span style = 'white-space: normal;'>您的订单：{0}，卖家已发货。 </span>：
-    </p>
-    <p>
-        快递单号：{1}&emsp;&emsp;UID：{2}
+        快递单号：{1}&emsp;&emsp;<br/>UID：{2}
     </p>
     <div style = 'padding-top: 10px; padding-bottom: 10px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); font-size: 14px; line-height: 25px;'>
  
@@ -321,7 +321,7 @@ namespace BrnShop.Services
           </div>
   
           <div style = 'text-align: center;'>
-               Thanks & amp; Regards
+               Thanks & Regards
               </div>
               <div style = 'text-align: center;'>
                    Vedantti Team
