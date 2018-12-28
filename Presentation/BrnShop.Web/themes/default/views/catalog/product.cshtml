@@ -71,7 +71,7 @@
             @foreach (ProductImageInfo info in Model.ProductImageList)
             {
                 <li><a href="@{@WorkContext.ImageCDN}/upload/product/show/thumb800_800/@info.ShowImg" rev="@{@WorkContext.ImageCDN}/upload/product/show/thumb320_320/@info.ShowImg" rel="zoom-id:zoomer" title="" target="_blank"><img src="@{@WorkContext.ImageCDN}/upload/product/show/thumb60_60/@info.ShowImg" width="54" height="54" onmouseover="selectProductImg(this)"/></a></li>
-            }
+    }
             <div class="clear"></div>
             </ul>
         </div>
@@ -173,7 +173,7 @@
                 foreach (ExtProductAttributeInfo info in Model.ExtProductAttributeList)
                 {
                     if (info.IsFilter == 0)
-                    { 
+                    {
                         if (info.IsInput != 0)
                         {
                             <li><span>@info.AttrName:&nbsp;</span><span>@info.InputValue</span></li>
@@ -241,33 +241,33 @@
                         KeyValuePair<string, ExtProductSKUItemInfo> skuProduct = skuProductList.Find(x => x.Key == attrValueIdKey);
                         if (skuProduct.Value == null)
                         {
-                            <a href="javascript:;" class="itme">@if (attrValue.IsInput == 0){ @attrValue.AttrValue }else{ @attrValue.InputValue }</a>
+                            <a href="javascript:;" class="itme">@if (attrValue.IsInput == 0) { @attrValue.AttrValue } else { @attrValue.InputValue }</a>
                         }
                         else
                         {
                             if (info.AttrShowType == 0)
                             {
-                                <a href="@Url.Action("product", new RouteValueDictionary { { "pid", skuProduct.Value.Pid } })" class="itme @if (skuProduct.Value.Pid == Model.Pid){ <text>hot</text> }">@if (attrValue.IsInput == 0){ @attrValue.AttrValue }else{ @attrValue.InputValue }</a>
+                                <a href="@Url.Action("product", new RouteValueDictionary { { "pid", skuProduct.Value.Pid } })" class="itme @if (skuProduct.Value.Pid == Model.Pid) { <text>hot</text> }">@if (attrValue.IsInput == 0) { @attrValue.AttrValue } else { @attrValue.InputValue }</a>
                             }
                             else
                             {
-                                <a href="@Url.Action("product", new RouteValueDictionary { { "pid", skuProduct.Value.Pid } })" class="itme @if (skuProduct.Value.Pid == Model.Pid){ <text>hot</text> }"><img src="@{@WorkContext.ImageCDN}/upload/product/show/thumb60_60/@skuProduct.Value.ShowImg" width="25" height="25" /><i>@if (attrValue.IsInput == 0){ @attrValue.AttrValue }else{ @attrValue.InputValue }</i></a>
-                            }
-                        }
-                    }
+                                <a href="@Url.Action("product", new RouteValueDictionary { { "pid", skuProduct.Value.Pid } })" class="itme @if (skuProduct.Value.Pid == Model.Pid) { <text>hot</text> }"><img src="@{@WorkContext.ImageCDN}/upload/product/show/thumb60_60/@skuProduct.Value.ShowImg" width="25" height="25" /><i>@if (attrValue.IsInput == 0) { @attrValue.AttrValue } else { @attrValue.InputValue }</i></a>
+            }
+        }
+    }
                     @:</dd></dl><div class="clear"></div>
                     attrLayer++;
-                }
-            }
-            else if(Model.CategoryInfo.Name.Contains("戒指"))
-            {
+        }
+    }
+    else if (Model.CategoryInfo.Name.Contains("戒指"))
+    {
                 <dl class="choose"><dt>手寸：</dt><dd>
                     <a href="#" onclick="SelSize(this);return false;" class="itme">13寸</a>
                     <a href="#" onclick="SelSize(this);return false;" class="itme hot">14寸</a>
                     <a href="#" onclick="SelSize(this);return false;" class="itme">15寸</a>
                 </dd></dl><div class="clear"></div>
                 <script type="text/javascript">size = "14寸";</script>
-            }
+    }
         </div>
         <!--其他参数选择end-->
         <!--加入购物车等-->
@@ -291,8 +291,17 @@
 
         <p class="ringbuy_Delivery">
             配送说明：
+            @{ int bid = Model.BrandInfo.BrandId;
+                if (bid == 31 || bid == 32)
+                {
 
-            预计15个工作日送达（限大陆地区）,其它地区请咨询客服。
+                    <span> 预计30个工作日送达（限大陆地区）,其它地区请咨询客服。</span>
+                }
+                else
+                {
+                    <span> 预计15个工作日送达（限大陆地区）,其它地区请咨询客服。</span>
+                }
+            }
         </p>
         <!--预计送货时间end-->
         <!--服务承诺-->
