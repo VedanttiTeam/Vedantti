@@ -226,6 +226,16 @@ namespace BrnShop.Web.Controllers
             return View(model);
         }
 
+        public ActionResult vspirit()
+        {
+            return View();
+        }
+
+        public ActionResult vspirit_info()
+        {
+            return View();
+        }
+
         /// <summary>
         /// 品牌
         /// </summary>

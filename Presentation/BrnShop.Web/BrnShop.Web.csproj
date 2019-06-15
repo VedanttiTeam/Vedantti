@@ -245,6 +245,19 @@
     <Content Include="images\s8.jpg" />
     <Content Include="images\s9.jpg" />
     <Content Include="images\thepower1.jpg" />
+    <Content Include="images\v1.jpg" />
+    <Content Include="images\v10.jpg" />
+    <Content Include="images\v11.jpg" />
+    <Content Include="images\v12.jpg" />
+    <Content Include="images\v2.jpg" />
+    <Content Include="images\v3.jpg" />
+    <Content Include="images\v4.jpg" />
+    <Content Include="images\v5.jpg" />
+    <Content Include="images\v6.jpg" />
+    <Content Include="images\v7.jpg" />
+    <Content Include="images\v8.jpg" />
+    <Content Include="images\v9.jpg" />
+    <Content Include="images\vspinfo.jpg" />
     <Content Include="robots.txt" />
     <Content Include="scripts\account.js" />
     <Content Include="scripts\common.js" />
@@ -354,6 +367,7 @@
     <Content Include="themes\default\images\user-avatar.gif" />
     <Content Include="themes\default\images\userIMG-bg.png" />
     <Content Include="themes\default\images\userSJ.png" />
+    <Content Include="images\vspitbanner.jpg" />
     <Content Include="themes\default\images\weibo.jpg" />
     <Content Include="themes\default\images\weixin.jpg" />
     <Content Include="themes\default\images\Wx.png" />
@@ -372,6 +386,8 @@
     <Content Include="themes\default\views\other\map.cshtml" />
     <Content Include="themes\default\views\other\media.cshtml" />
     <Content Include="themes\default\css\default-skin\default-skin.svg" />
+    <Content Include="themes\default\views\catalog\vspirit_info.cshtml" />
+    <Content Include="themes\default\views\catalog\vspirit.cshtml" />
     <None Include="themes\default\views\other\story.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

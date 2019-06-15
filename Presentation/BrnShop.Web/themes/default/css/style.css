@@ -1,0 +1,2948 @@
+/* ************** ADD YOUR CUSTOM CSS HERE  ************** */
+
+
+.bypostauthor {}
+
+@font-face {
+    font-family: 'vanitas-black';
+    src: url('fonts/vanitas/vanitas-black.woff') format('woff'),
+        url('fonts/vanitas/vanitas-black.eot') format('embedded-opentype') url('fonts/vanitas/vanitas-black.ttf') format('truetype'),
+        url('fonts/vanitas/vanitas-black.svg#vanitas-black') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BrandonText-Regular';
+    src: url('fonts/brandontext/BrandonText-Regular.woff') format('woff'),
+        url('fonts/brandontext/BrandonText-Regular.eot') format('embedded-opentype'),
+        url('fonts/brandontext/BrandonText-Regular.ttf') format('truetype'),
+        url('fonts/brandontext/BrandonText-Regular.svg#BrandonText-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BrandonText-Medium';
+    src: url('fonts/brandontext/BrandonText-Medium.eot') format('embedded-opentype'),
+        url('fonts/brandontext/BrandonText-Medium.woff') format('woff'),
+        url('fonts/brandontext/BrandonText-Medium.ttf') format('truetype'),
+        url('fonts/brandontext/BrandonText-Medium.svg#BrandonText-Medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BrandonText-Light';
+    src: url('fonts/brandontext/BrandonText-Light.eot') format('embedded-opentype'),
+        url('fonts/brandontext/BrandonText-Light.woff') format('woff'),
+        url('fonts/brandontext/BrandonText-Light.ttf') format('truetype'),
+        url('fonts/brandontext/BrandonText-Light.svg#BrandonText-Light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'futura_lightregular';
+    src: url('fonts/futuralight/futura.woff2') format('woff2'),
+        url('fonts/futuralight/futura.woff') format('woff'),
+        url('fonts/futuralight/futura.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html {
+    font-size: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "BrandonText-Regular";
+}
+
+body {
+    font-family: 'futura_lightregular' !important;
+}
+
+a {
+    color: #222;
+}
+
+.full {
+    width: 100% !important;
+    float: left;
+    margin-right: 0 !important;
+}
+
+/* Menu Css */
+#header #main-menu li a {
+    color: #222;
+    font-family: BrandonText-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    padding: 0 40px 0 0;
+}
+
+.header-wrapper #header .header-main .container .no-padd {
+    padding: 0px;
+}
+
+.header-wrapper #header .searchform {
+    border: none;
+    background-color: transparent;
+    width: 200px;
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.header-wrapper #header .searchform input {
+    border: 0 none;
+    display: inline-block;
+    padding: 0;
+    width: 80%;
+    padding-left: 20px;
+    float: right;
+}
+
+#header #main-menu ul.sub-menu li a {
+    padding-left: 15px;
+}
+
+.searchform-popup .fa.fa-search {
+    padding: 0 12px;
+}
+
+#header #mini-cart {
+    position: relative;
+}
+
+#header .minicart-icon4::before {
+    font-size: 19px;
+    color: #333;
+}
+
+#header #mini-cart .cart-head4 .cart-items {
+    font-size: 12px;
+    color: #333;
+
+}
+
+#header .searchform-popup,
+#header .header-minicart,
+#header .wishlist {
+    display: inline-block;
+    padding-left: 20px;
+    margin-top: 0px;
+}
+
+.header-wrapper #header .header-main {
+    background: #fff none repeat scroll 0 0;
+    padding: 9px 0;
+}
+
+.searchform-popup img {
+    padding-top: 0px;
+}
+
+/*CUSTOM CSS*/
+
+.no-padd {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.header-container {
+    width: 95%;
+    margin: auto;
+}
+
+#header .logo {
+    margin: auto;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+#header.sticky-header .logo {
+    max-width: 150px;
+    padding-bottom: 0;
+    text-align: center;
+    margin: auto;
+}
+
+.fixed-header #header {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px !important;
+}
+
+#header {
+    padding: 15px;
+    border-top: 5px solid #ededed;
+    border-bottom: 1px solid #ddd;
+}
+
+.header_right {
+    text-align: right;
+}
+
+.fixed-header #header .searchform-popup .searchform img {
+    padding-left: 15px;
+}
+
+.header-wrapper {}
+
+.no-breadcrumbs .main-content,
+body.woocommerce .main-content {}
+
+#header.sticky-header .header-main.sticky {
+    padding: 15px;
+}
+
+.header-wrapper #header .header-main {
+    padding: 0;
+}
+
+#header .header_left {
+    margin-top: 25px;
+}
+
+#header .header_right {
+    margin-top: 20px;
+    text-align: right;
+}
+
+#header.sticky-header .header_left {
+    margin-top: 20px;
+}
+
+#header.sticky-header .header_right {
+    margin-top: 15px;
+}
+
+.home .slider-title {
+    font-family: 'vanitas-black' !important;
+    font-size: 60px !important;
+    line-height: 60px !important;
+}
+
+.home .slider-link {
+    text-transform: uppercase;
+    font-size: 14px !important;
+    letter-spacing: 1px !important;
+    font-family: 'BrandonText-Regular';
+    /*top: -20px;*/
+}
+
+.logo-a {
+    font-size: 29px;
+    font-family: 'BrandonText-Light';
+    text-transform: lowercase;
+}
+
+.Highlighter .logo-a {
+    font-size: 36px;
+    font-family: 'BrandonText-Regular';
+}
+
+.logo-a.logo-a-bold {
+    font-family: "BrandonText-Regular";
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.bottom-center-txt .card .card-img-overlay .card-title {
+    text-transform: none;
+}
+
+.bottom-center-txt .logo-a {
+    font-size: 29px;
+}
+
+span.veda-text {
+    text-transform: uppercase;
+}
+
+.logo-a.logo-a-p {
+    font-size: 30px;
+    text-transform: lowercase;
+}
+
+.sub-title {
+    font-weight: 400;
+    font-family: "BrandonText-Regular";
+}
+
+.card .card-img-overlay .card-title {
+    font-family: 'BrandonText-Regular';
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card p {
+    margin-bottom: 0;
+}
+
+.card .card-img-overlay .card-text {
+    font-family: 'BrandonText-Regular';
+    color: #222;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.veda-imgbox-2 .card .box-title {
+    position: absolute;
+    bottom: 100px;
+    text-align: center;
+    width: 90%;
+}
+
+.veda-imgbox-2 .card {
+    padding-bottom: 30px;
+    background: #c2f1f7;
+    border: none;
+}
+
+.veda-imgbox-2 .card .card-img-overlay .card-title {
+    font-size: 20px;
+}
+
+
+.veda-imgbox-3 .card .card-img-overlay .card-title {
+    font-family: 'BrandonText-Light';
+    color: #fff;
+    font-size: 36px;
+}
+
+.veda-imgbox-3 .card .card-img-overlay .card-text {
+    color: #fff;
+}
+
+.veda-imgbox-3 .card .card-img-overlay .box-title {
+    width: 50%;
+    padding-top: 10%;
+}
+
+.rose-banner {
+    right: 50px;
+    position: absolute;
+    width: 40%;
+    top: 40%;
+}
+
+.rose-banner span {
+    font-size: 30px;
+    color: #333;
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.veda-imgbox-4 .box-title {
+    width: 40%;
+    margin-top: 30px;
+    color: #222;
+}
+
+.veda-imgbox-5 .box-title {
+    margin-top: 30px;
+    color: #222;
+}
+
+.card .rose-banner .card-text {
+    text-transform: none;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.ring-banner {
+    right: 50px;
+    position: absolute;
+    width: 40%;
+    top: 40%;
+}
+
+.ring-banner .card-title {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.ring-banner h4 {
+    font-size: 24px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    color: #222;
+    text-align: center;
+    line-height: 32px;
+    font-family: 'BrandonText-Regular';
+}
+
+.stretch-banner {}
+
+.stretch-banner-padd {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.stretch-banner h2 {
+    font-family: 'BrandonText-Regular';
+    font-size: 36px;
+    margin-bottom: 20px;
+    padding: 0 25%;
+    text-transform: uppercase;
+
+}
+
+.stretch-banner h3 {
+    font-family: 'BrandonText-Regular';
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+.stretch-banner p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding: 0 25%;
+}
+
+.stretch-banner a {
+    color: #222;
+}
+
+.bottom-mosaic-section {}
+
+.Collection-top-banner {
+    min-height: 500px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    text-align: center;
+    padding-top: 10%;
+    text-transform: uppercase;
+    font-family: 'BrandonText-Light';
+    background-size: cover;
+}
+
+.Collection-grid-banner {
+    background-size: cover;
+    height: auto;
+    text-align: center;
+    /* padding: 30% 20%;*/
+    padding: 46.4% 20%;
+}
+
+.Collection_heading {
+    font-size: 36px;
+    font-family: 'BrandonText-Regular';
+    text-transform: uppercase;
+    line-height: 45px;
+    margin-bottom: 15px;
+}
+
+.Collection_link {
+    margin-top: 20px;
+}
+
+.Collection_link a {
+    color: #222;
+    text-transform: uppercase;
+}
+
+.upload-lookbook input[type="file"] {
+    display: block;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.upload-lookbook label {
+    font-weight: 600;
+}
+
+.upload-lookbook label span {
+    font-weight: 400;
+}
+
+.upload-lookbook input[type="submit"] {
+    padding: 15px 30px;
+    background: #fff;
+    border: 1px solid #222;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    color: #222;
+}
+
+.upload-lookbook input[type="submit"]:hover {
+    padding: 15px 30px;
+    background: #fff;
+    border: 1px solid #20c5da;
+    color: #20c5da;
+    transition: all 0.5s ease;
+}
+
+.products li.product .outer-wrapper {
+    border: 1px solid #ddd;
+}
+
+.products li:hover .on-hover-content {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 40%;
+    color: #222;
+}
+
+.Collection_title1 {
+    color: #fff;
+    font-size: 36px;
+}
+
+.Collection_title2 {
+    font-size: 46px;
+    color: #fff;
+}
+
+.products li:hover .on-hover-content a {
+    color: #222;
+}
+
+.product-featured {
+    float: left;
+    margin-bottom: 15px;
+    padding-left: 8px;
+    padding-right: 8px;
+    position: relative;
+    width: 39.9%;
+}
+
+.lht_view {
+    float: left;
+}
+
+.rht_view {
+    float: right;
+}
+
+ul.pcols-lg-5 li.product,
+ul.pcols-lg-5 li.product-category {
+    padding: 0 8px;
+    width: 33.33%;
+}
+
+ul.pcols-lg-5 li.product,
+ul.pcols-lg-5 li.product-category {
+    padding: 0 2px;
+    margin-bottom: 4px;
+}
+
+.products .on-hover-content {
+    display: none;
+}
+
+.products li:hover .on-hover-content {
+    display: block;
+}
+
+.rht_view {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+ul.products.grid {
+    padding: 20px;
+}
+
+.archive-products {}
+
+.product-slider .product-image img {
+    margin: auto;
+    width: 84.5%;
+}
+
+.owl-carousel .owl-dots .owl-dot.active span,
+.owl-carousel .owl-dots .owl-dot:hover span {
+    background-color: #222;
+}
+
+.video-script .wpb_content_element {
+    margin: 0;
+}
+
+#main-menu .mega-menu .narrow .popup ul.sub-menu {
+    background-color: #ffffff;
+    border-top-color: #222;
+}
+
+#header #main-menu li a {
+    padding: 10px 16px 10px 0;
+}
+
+.footer-right ul li {
+    display: inline-block;
+}
+
+.porto-carousel.owl-carousel {
+    border: 1px solid #ddd;
+}
+
+.porto-carousel.owl-carousel .product-image {
+    border: 0;
+}
+
+.porto-carousel.owl-carousel .owl-dots .owl-dot span {
+    margin: 5px 4px;
+}
+
+#mini-cart .cart-popup {
+    border-color: #333;
+}
+
+#mini-cart .cart-popup:before {
+    border-color: #333;
+}
+
+#mini-cart .cart-head {
+    margin-top: 8px;
+}
+
+.archive-products ul.products li .on-hover-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    width: 98%;
+    height: 0;
+    top: 1px;
+    margin: 0 auto;
+    transition: .5s ease;
+}
+
+.archive-products ul.products li:hover .on-hover-content {
+    height: 98%;
+}
+
+.archive-products ul.products li:hover .on-hover-content h3 {
+    white-space: nowrap;
+    color: #222;
+    font-size: 20px;
+    font-weight: 700;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.woocommerce-tabs table thead,
+.woocommerce-tabs table tfoot {
+    font-weight: bold;
+}
+
+.footer-right ul li {
+    ÿdisplay: inline-block;
+}
+
+.page-title {
+    padding-top: 8%;
+    padding-bottom: 8%;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'BrandonText-Regular';
+}
+
+.page-title.custom-title {
+    padding-top: 0;
+    padding-bottom: 25px;
+}
+
+.Highlighter {
+    border: 1px solid #333;
+    margin-top: 30px;
+    width: 80%;
+    margin: 60px auto 30px auto;
+    padding: 30px;
+}
+
+.story-content {
+    text-align: center;
+    padding: 0 15%;
+}
+
+.story-content h4 {
+    font-weight: bold;
+    font-size: 26px;
+    margin-bottom: 30px;
+    margin-top: 80px;
+}
+
+.story-content h3 {
+    color: #2b838e;
+    font-size: 22px;
+    font-style: italic;
+    margin-top: 40px;
+    line-height: 36px;
+}
+
+p.v-logo {
+    margin-bottom: 0;
+    margin-top: 30px;
+}
+
+.sub-title {
+    text-transform: capitalize;
+    padding-bottom: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.tagline-text {
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tagline-wrapper {}
+
+.tagline-wrapper p {
+    padding: 0 7%;
+}
+
+.philosophy-wrapper {}
+
+.philosophy-wrapper p {
+    padding: 0 7%;
+}
+
+.craft-content p {
+    font-size: 18px;
+    padding: 0 10%;
+}
+
+.story-content p {
+    font-size: 22px;
+    line-height: 36px;
+}
+
+.story-content .philo-content p {
+    text-align: left !important;
+}
+
+.philo-content {
+    font-size: 22px;
+    line-height: 36px;
+}
+
+.philo-img {
+    margin-bottom: 40px;
+}
+
+.designer-content {}
+
+.padd-25 {
+    padding: 0 25%;
+}
+
+.padd-15 {
+    padding: 0 15%;
+}
+
+.padd-10 {
+    padding: 0 10%;
+}
+.padd-30{
+    padding: 0 30%;
+}
+.padd-15 p{
+    text-align: justify !important;
+}
+.designer-content {
+    padding: 0 10%;
+}
+
+.about-vedantti {
+    margin-top: 3%;
+}
+
+.designer-content p {
+    font-size: 18px;
+    text-align: center;
+}
+
+.designer-content h4 {
+    font-weight: bold;
+    font-size: 26;
+    margin-bottom: 30px;
+}
+
+.home_video01_thumb,
+.home_video02_thumb {
+    cursor: pointer;
+}
+
+.craft_video01_thumb,
+.craft_video02_thumb,
+.craft_video03_thumb {
+    cursor: pointer;
+}
+
+.footsteps {
+    /*border:1px solid #222;*/
+    padding: 5% 0;
+}
+
+.footsteps h4 {
+    margin-bottom: 40px;
+    font-family: 'BrandonText-Regular';
+}
+
+.footsteps ul {
+    padding-left: 0;
+}
+
+.footsteps ul li {
+    list-style: none;
+    background: url("http://joomlastaging.com/vedantti/wp-content/uploads/2017/09/floral-icon.png") no-repeat left 7px;
+    font-size: 18px;
+    padding-left: 35px;
+    margin-bottom: 25px;
+    line-height: 30px;
+}
+
+.footsteps p {
+    font-size: 18px;
+}
+
+.Video-title {
+    font-size: 30px;
+    font-family: 'BrandonText-Regular';
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.productpage-description {
+    text-align: center;
+    font-size: 18px;
+}
+
+.home .product-link a {
+    color: #777777;
+    font-size: 13px;
+}
+
+#footer .footer-bottom {
+    color: #fff;
+    background-color: #313131;
+}
+
+.home .card {
+    border: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.innerpage-banner {
+    background-size: cover;
+}
+
+.subscription-content {
+    margin-top: 10%;
+    padding-bottom: 15%;
+}
+
+/*PRODUCT DETAIL PAGE STARTS*/
+.tab-content table {
+    margin-top: 20px;
+    border: 0;
+}
+
+.product-summary-wrap {
+    padding-top: 50px;
+}
+
+.resp-tabs-list li:hover,
+.resp-tabs-list li:focus,
+.resp-tabs-list li.resp-tab-active {
+    border-top-color: #ddd;
+}
+
+.resp-tabs-list li {
+    color: #222;
+}
+
+.product_title {
+    color: #222;
+    font-size: 2em;
+    font-weight: 400;
+    font-family: 'BrandonText-Regular';
+}
+
+.slider-title .line {
+    display: none !important;
+}
+
+h2.woocommerce-loop-product__title {
+    font-size: 1rem;
+    color: #222;
+    line-height: 1.4rem;
+}
+
+.owl-carousel.show-nav-title .owl-nav [class*="owl-"] {
+    color: #222;
+}
+
+.card-text a {
+    color: #222;
+}
+
+.veda-imgbox-3 .card-text a {
+    color: #fff;
+    display: block;
+    margin-top: 15px;
+}
+
+/*PRODUCT DETAIL PAGE ENDS*/
+
+
+/*Collection page css Starts*/
+.rht_view {
+    padding-left: 0;
+    margin-bottom: 4px;
+}
+
+.archive-products {
+    padding: 20px;
+}
+
+.lft_view {
+    padding-right: 0;
+    margin-bottom: 4px;
+}
+
+.archive-products .product-row li img {
+    width: 60%;
+    padding: 20% 0;
+}
+
+.archive-products .odd .lft_view {
+    padding-right: 0;
+    margin-bottom: 0;
+}
+
+.archive-products .odd .rht_view {
+    padding-left: 0;
+}
+
+.archive-products .even .rht_view {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.archive-products .even .lft_view {
+    padding-right: 0;
+}
+
+.archive-products .odd .rht-view {
+    padding-left: 0;
+    3
+}
+
+/*Collection page css Ends*/
+
+
+/*ACCOUNT PAGE CSS STARTS*/
+
+.woocommerce-account .woocommerce {
+    margin-top: 0px;
+}
+
+.tinv-wishlist.woocommerce {
+    text-align: center;
+    padding-top: 0;
+}
+
+#accountinfo {
+    padding: 15px;
+}
+
+.featured-box .box-content {
+    border-top-color: #222222;
+}
+
+.btn-primary,
+.button,
+input.submit,
+input[type="submit"].btn-primary,
+input[type="submit"].button,
+input[type="submit"].submit {
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #21bece;
+    border-color: #21bece;
+}
+
+.woocommerce .woocommerce-MyAccount-content a {
+    color: #21bece;
+}
+
+a.woocommerce-Button.button.btn-lg.m-b {
+    color: #fff;
+}
+
+.btn-primary:hover,
+.button:hover,
+input.submit:hover,
+input[type="submit"].btn-primary:hover,
+input[type="submit"].button:hover,
+input[type="submit"].submit:hover,
+.btn-primary:active,
+.button:active,
+input.submit:active,
+input[type="submit"].btn-primary:active,
+input[type="submit"].button:active,
+input[type="submit"].submit:active,
+.btn-primary:focus,
+.button:focus,
+input.submit:focus,
+input[type="submit"].btn-primary:focus,
+input[type="submit"].button:focus,
+input[type="submit"].submit:focus {
+    border-color: #21bece;
+    background-color: #3bd3e2;
+}
+
+.alert-success,
+.woocommerce-message {
+    background-color: #ecf8f9;
+    border-color: #dae9ea;
+}
+
+.featured-box .shop_table .product-remove .remove {
+    font-size: 30px;
+    font-weight: 800;
+    text-decoration: none;
+    color: #333;
+}
+
+.quantity .qty,
+.quantity .minus:hover,
+.quantity .plus:hover {
+    color: #222;
+}
+
+.featured-box .shop_table .coupon #coupon_code {
+    height: 38px;
+}
+
+/*ACCOUNT PAGE CSS ENDS*/
+
+/*SUBSCRIBTION STARTS*/
+.newsletter-subscribe {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 60px;
+    margin-top: 20px;
+}
+
+.newsletter-subscribe h3 {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-align: center;
+    font-family: 'BrandonText-Regular';
+    padding-bottom: 25px;
+}
+
+.newsletter-subscribe input[type="text"] {
+    height: 42px;
+    box-shadow: none;
+    border-radius: 0px;
+    width: 80%;
+}
+
+.newsletter-subscribe input[type="submit"],
+.wpcf7-form .form-group .wpcf7-submit {
+    padding: 15px 30px;
+    background: #fff;
+    border: 1px solid #222;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    color: #222;
+}
+
+.newsletter-subscribe input[type="submit"]:hover,
+.wpcf7-form .form-group .wpcf7-submit:hover {
+    padding: 15px 30px;
+    background: #fff;
+    border: 1px solid #20c5da;
+    color: #20c5da;
+    transition: all 0.5s ease;
+}
+
+
+/**/
+
+/*LOOKBOOK CSS STARTS*/
+.category-title.lookbook-head {
+    color: #222;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.category-title.lookbook-head h1 {
+    font-size: 32px;
+    letter-spacing: 1px;
+    line-height: 42px;
+}
+
+.category-title.lookbook-head h5 {
+    font-size: 22px;
+    line-height: 36px;
+    margin-top: 30px;
+}
+
+.upload-btn button {
+    padding: 15px 30px;
+    background: #fff;
+    border: 1px solid #222;
+    transition: all 0.5s ease;
+    text-transform: uppercase;
+}
+
+.upload-btn button:hover {
+    padding: 15px 30px;
+    background: #fff;
+    color: #20c5da;
+    border: 1px solid #20c5da;
+}
+
+#loadmore {
+    padding: 15px 30px;
+    background: #fff;
+    border: 1px solid #222;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+}
+
+#loadmore:hover {
+    padding: 15px 30px;
+    background: #fff;
+    border: 1px solid #20c5da;
+    color: #20c5da;
+    transition: all 0.5s ease;
+
+}
+
+.modal-dialog {
+    max-width: 500px;
+    margin: 10% auto;
+}
+
+.upload-btn .inputfile + label {
+    max-width: 80%;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.4rem 1rem;
+}
+
+.upload-btn small {
+    margin-top: 8px;
+    position: absolute;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.modal-content .modal-body input {
+    background: #fff;
+    box-shadow: none;
+    height: 42px;
+    width: 100%;
+}
+
+.modal-dialog {
+    margin-top: 10%;
+}
+
+#transferpopup .modal-dialog {
+    margin-top: 10%;
+}
+
+#transferpopup .modal-content .modal-body input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#orderpopup .modal-dialog {
+    margin-top: 10%;
+}
+
+#orderpopup .modal-content .modal-body input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#orderpopup .modal-content .modal-body input.error {
+    border: 1px solid #ff4a4a;
+}
+
+.form-control:focus {
+    color: #464a4c;
+    background-color: #fff;
+    border-color: #20c5da !important;
+    outline: 0;
+}
+
+.modal-footer button,
+#uploadImg #save-img {
+    padding: 8px 25px;
+    border: 1px solid #222;
+    background: #fff;
+    color: #222;
+    border-radius: 0px;
+}
+
+.modal-footer input[type="button"] {
+    padding: 8px 25px;
+    border: 1px solid #222;
+    background: #fff;
+}
+
+p#loadmoremsg h1 {
+    color: #20c5da;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+.modal-backdrop.fade {
+    opacity: 0.5 !important;
+}
+
+.lookbook-imgs {
+    margin-top: 60px;
+    display: inline-block;
+    width: 100%;
+}
+
+span#pro-name {
+    display: inline-block;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#imgContent a {
+    color: #20c5da;
+}
+
+#imgPopup .modal-body {
+    padding: 0;
+}
+
+#imgPopup .modal-header {
+    padding: 0;
+    border: 0;
+    min-height: 0;
+}
+
+#imgPopup .close {
+    position: absolute;
+    right: 10px;
+    z-index: 100;
+    top: 10px;
+    opacity: .5;
+}
+
+#imgPopup #prdName {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 5px;
+    left: 10px;
+    color: #fff;
+}
+
+#imgContainer img {}
+
+/*LOOKBOOK CSS ENDS*/
+
+/*ACOUNT PAGE CSS STARTS*/
+
+.woocommerce .featured-box h2,
+.woocommerce-page .featured-box h2,
+.woocommerce .featured-box h3,
+.woocommerce-page .featured-box h3,
+.woocommerce .featured-box h4,
+.woocommerce-page .featured-box h4 {
+    color: #222;
+}
+
+.woocommerce-LostPassword.lost_password a {
+    color: #21bece;
+}
+
+body.woocommerce-page .main-content .featured-box {
+    background: none;
+    box-shadow: none;
+}
+
+.featured-box {
+    border: -radius:0;
+}
+
+.featured-box .box-content {
+    border-radius: 0;
+    display: inline-block;
+    width: 100%;
+}
+
+.form-row input[type="email"],
+.form-row input[type="number"],
+.form-row input[type="password"],
+.form-row input[type="search"],
+.form-row input[type="tel"],
+.form-row input[type="text"],
+.form-row input[type="url"],
+.form-row input[type="color"],
+.form-row input[type="date"],
+.form-row input[type="datetime"],
+.form-row input[type="datetime-local"],
+.form-row input[type="month"],
+.form-row input[type="time"],
+.form-row input[type="week"],
+.form-row select,
+.form-row textarea {
+    background: #fff;
+    box-shadow: none;
+    height: 42px;
+    border: -radius:0;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+textarea,
+select {
+    border: 1px solid #ccc;
+    border-radius: 0;
+}
+
+form .form-group input[type="radio"],
+input[type="checkbox"] {
+    height: auto;
+}
+
+input.woocommerce-Button.button {
+    background: none;
+    border: 1px solid #222;
+    border-radius: 0 !important;
+    color: #222;
+    font-family: 'BrandonText-Regular';
+    text-shadow: none;
+    font-weight: 200;
+    transition: all 0.5s ease;
+}
+
+input.woocommerce-Button.button:hover {
+    background: #fff;
+    color: #20c5da;
+    border: 1px solid #20c5da;
+}
+
+.woocommerce .custom-form h2 {
+    margin-top: 0;
+}
+
+#customer_login .register h2 {
+    text-transform: uppercase;
+}
+
+.woocommerce-error li a {
+    color: #222;
+}
+
+#customer_login .featured-box {
+    min-height: 360px;
+}
+
+.featured-box .box-content {
+    border-bottom: none;
+    margin-bottom: 0px;
+}
+
+.featured-box .box-content p {
+    margin-bottom: 25px;
+    float: none;
+}
+
+.woocommerce .box-content .button {
+    background: none;
+    border: 1px solid #222;
+    border-radius: 0 !important;
+    color: #222;
+    font-family: 'BrandonText-Regular';
+    text-shadow: none;
+    font-weight: 200;
+    padding: 8px 15px;
+    transition: all 0.5s ease;
+    font-size: 18px;
+}
+
+.woocommerce .box-content .button:hover {
+    background: #fff;
+    color: #20c5da;
+    border: 1px solid #20c5da;
+}
+
+.box-content h2 {
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: capitalize;
+    letter-spacing: 0.2px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.woocommerce-account .woocommerce h3 {
+    font-size: 22px;
+    font-weight: 400;
+    text-transform: capitalize;
+    letter-spacing: 0.2px;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.woocommerce-account .woocommerce h3.account-title {
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    letter-spacing: 0px !important;
+}
+
+.box-content p {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+.woocommerce-account .woocommerce table thead {
+    font-family: 'BrandonText-Regular';
+    background: #f9f9f9;
+    font-weight: 400;
+}
+
+.woocommerce-account .woocommerce table tr td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.woocommerce-account .woocommerce table thead th {
+    text-align: center;
+}
+
+.woocommerce-account .woocommerce table {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 60px;
+}
+
+.modal-body .docs-buttons button {
+    background: #fff;
+    color: #222;
+    border: 1px solid #222;
+    text-shadow: none;
+    border-radius: 0;
+}
+
+.modal .modal-dialog {
+    max-width: 550px;
+}
+
+.woocommerce-account .woocommerce .modal-content .modal-header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#orderform .form-group input[type="submit"] {
+    float: right;
+}
+
+.box-content {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 30px;
+}
+
+label.form-label {
+    padding-right: 30px;
+    width: 50%;
+    float: left;
+}
+
+button#loadmore {
+    margin-top: 30px;
+}
+
+.no-padd {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/*input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+	    background-color: #d5f9fd !important;
+}*/
+
+/* Search page */
+.search-prodresults li {
+    border: 1px solid #ddd;
+    float: left;
+    list-style: outside none none;
+    margin: 5px 5px;
+    width: 48%;
+}
+
+.search-prodresults {
+    display: inline-block;
+    margin: 50px 0;
+}
+
+.search-prodresults h3 {
+    color: #222;
+    font-size: 18px;
+    padding-bottom: 20px;
+    padding-top: 40px;
+    text-align: left;
+}
+
+.search-prodresults h3 a {
+    color: #222;
+}
+
+.no-search-result h2 {
+    padding: 75px 0;
+    text-align: center;
+}
+
+.search-prodresults h2 {
+    padding: 15px 0;
+    text-align: center;
+}
+
+.search-terms {
+    color: #2b838e;
+}
+
+table.shop_table.order_details tr th.product-total {
+    text-align: right;
+}
+
+table.shop_table.order_details tr th.product-name {
+    text-align: left;
+}
+
+table.shop_table order_details td span.woocommerce-Price-amount.amount {
+    text-align: right;
+    float: right;
+}
+
+table.shop_table td.woocommerce-table__product-name.product-name a {
+    float: left;
+}
+
+table.woocommerce-table.woocommerce-table--customer-details.shop_table.customer_details td {
+    text-align: right;
+}
+
+.woocommerce-customer-details h3.woocommerce-column__title {
+    text-transform: uppercase;
+    font-size: 1.3em;
+}
+
+table.shop_table.order_details tfoot tr td {
+    text-align: right;
+}
+
+table.shop_table tr td.woocommerce-table__product-total.product-total span {
+    float: right;
+}
+
+/*ACOUNT PAGE CSS ENDS*/
+
+/*CSS 26-9-2017*/
+
+.upload-btn {
+    margin-bottom: 30px;
+}
+
+label.error {
+    margin-top: 0;
+}
+
+
+/*CSS 14-10-2017*/
+.form-row-wide {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.featured-box .box-content .accountinfo h4 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 25px;
+}
+
+.featured-box .box-content .accountinfo p {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.featured-box .box-content fieldset legend {
+    margin-top: 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.woocommerce-MyAccount-content .featured-box .box-content {
+    padding-bottom: 25px;
+}
+
+.tinv-wishlist .product-stock span {
+    color: #21bece;
+    vertical-align: middle;
+    line-height: 16px;
+}
+
+.tinv-wishlist .tinvwl-to-left .input-group .form-control + .input-group-btn {
+    display: inline-block;
+}
+
+.woocommerce-account .woocommerce table.tinvwl-table-manage-list thead th {
+    font-size: 14px;
+}
+
+.woocommerce-account .woocommerce table.tinvwl-table-manage-list tr td {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 14px;
+}
+
+.tinv-wishlist.woocommerce.tinv-wishlist-clear {
+    margin-top: 15px;
+    border: 1px solid #ddd;
+}
+
+.woocommerce .box-content .tinvwl-table-manage-list .button {
+    padding: 8px 15px;
+}
+
+.featured-box .box-content p.stock.in-stock {
+    margin-bottom: 0;
+}
+
+.tinv-wishlist table td a {
+    color: #21bece;
+}
+
+.tinv-wishlist.woocommerce.tinv-wishlist-clear table.tinvwl-table-manage-list .button {
+    background: none;
+    border: 1px solid #222;
+    border-radius: 0 !important;
+    color: #222;
+    font-family: 'BrandonText-Regular';
+    text-shadow: none;
+    font-weight: 200;
+    transition: all 0.5s ease;
+    padding: 8px 15px;
+    font-size: 14px;
+}
+
+.tinv-wishlist.woocommerce.tinv-wishlist-clear table.tinvwl-table-manage-list .button:hover {
+    background: #fff;
+    color: #20c5da;
+    border: 1px solid #20c5da;
+}
+
+.tinv-wishlist table.tinvwl-table-manage-list {
+    border-bottom: none;
+}
+
+.tinv-wishlist table.tinvwl-table-manage-list thead {
+    background: #f9f9f9;
+    font-weight: 400;
+}
+
+.tinv-wishlist.woocommerce.tinv-wishlist-clear .tinv-header {
+    display: none;
+}
+
+h3 span {
+    font-size: 34px;
+    font-weight: 200;
+    font-family: 'BrandonText-Light';
+}
+
+.woocommerce-message .wc-forward {
+    margin-right: 10px;
+    float: right;
+    border: none;
+    border-radius: 0;
+}
+
+.alert-success,
+.woocommerce-message {
+    color: #10a2b1;
+}
+
+.container.wishlist {
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+.container.wishlist h3 {
+    text-align: center;
+    font-family: "BrandonText-Regular";
+    font-size: 32px;
+}
+
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 42px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    padding-top: 6px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: 10px;
+    right: 10px;
+}
+
+.woocommerce-Address.address address table tr td {
+    text-align: left;
+}
+
+.woocommerce-Address.address header h3 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.woocommerce-Address.address header {
+    text-align: left;
+    margin-top: 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.woocommerce-Address.address header a {
+    color: #21bece;
+    position: absolute;
+    top: 4px;
+    right: 20px;
+}
+
+.form-row.field-title {
+    text-transform: uppercase;
+}
+
+.featured-box .box-content .woocommerce-Address.address {
+    float: left;
+}
+
+ul.woocommerce-error li {
+    padding: 15px;
+}
+
+/*Products page popup CSS*/
+
+.popup-content {
+    position: absolute;
+    top: 0px;
+    width: 200%;
+    background: #fff;
+    z-index: 1;
+    border: 1px solid #333;
+    transition: all ease 0.5s;
+    height: 100%;
+}
+
+.archive-products li.product:hover .popup-content {
+    display: block;
+    cursor: pointer;
+}
+
+.popup-content h3.dp_title a {
+    font-size: 18px;
+    color: #000;
+    margin-top: 20px;
+}
+
+.popup-content .product-btn {
+    background: none;
+    border: 1px solid #222;
+    border-radius: 0 !important;
+    color: #222;
+    font-family: 'BrandonText-Regular';
+    text-shadow: none;
+    font-weight: 200;
+    transition: all 0.5s ease;
+    text-decoration: none;
+}
+
+.popup-content .product-btn:hover {
+    background: #fff;
+    color: #20c5da;
+    border: 1px solid #20c5da;
+}
+
+.popup-content .tinv-wraper.woocommerc a:before {
+    background-position: 0 -12px !important;
+}
+
+.tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart.icon-black:before,
+a.wishlist_products_counter.top_wishlist-heart.top_wishlist-black:before {
+    background-position: 0 -12px !important;
+    display: none;
+}
+
+a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart {
+    padding-left: 5px;
+}
+
+a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart img {
+    padding-right: 10px;
+    width: 26px;
+    position: relative;
+    top: -2px;
+}
+
+.popup-content .tinv-wraper.woocommerce a {
+    float: left;
+}
+
+.popup-content .product-content {
+    margin-top: 20%;
+}
+
+.popup-content .product-content p {
+    font-size: 14px;
+}
+
+.woocommerce {
+    // padding-top: 30px;
+}
+
+.popup-content .cart-link {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.popup-content .product-content .cart-link a {
+    background: none;
+    border: 1px solid #222;
+    border-radius: 0 !important;
+    color: #222;
+    font-family: 'BrandonText-Regular';
+    text-shadow: none;
+    font-weight: 200;
+    transition: all 0.5s ease;
+    padding: 8px 15px;
+    text-decoration: none;
+}
+
+.popup-content .product-content .cart-link a:hover {
+    background: #fff;
+    color: #20c5da;
+    border: 1px solid #20c5da;
+    text-decoration: none;
+}
+
+/*Product detail page CSS*/
+#chartsidenav {
+    padding: 15px 35px;
+    text-align: center;
+    z-index: 9999;
+    padding-top: 30px;
+}
+
+#chartsidenav img {
+    width: 100%;
+}
+
+#chartsidenav p {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#chartsidenav .closebtn {
+    position: relative;
+    left: 0;
+    font-size: 14px;
+    text-align: left;
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #222;
+}
+
+.chart-overlay {
+    transition: all ease 0.5s;
+}
+
+.product-summary-wrap h1.product_title.entry-title {
+    font-size: 28px;
+}
+
+.product-summary-wrap .price {
+    color: #333;
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.product-summary-wrap .single_add_to_cart_button {
+    background: none;
+    border: 1px solid #222;
+    border-radius: 0 !important;
+    color: #222;
+    font-family: 'BrandonText-Regular';
+    text-shadow: none;
+    font-weight: 200;
+    transition: all 0.5s ease;
+    padding: 8px 15px;
+
+}
+
+.product-summary-wrap .single_add_to_cart_button:hover {
+    background: #fff;
+    color: #20c5da;
+    border: 1px solid #20c5da;
+    text-decoration: none;
+}
+
+.product-summary-wrap .tinv-wraper.tinv-wishlist {
+    display: inline;
+}
+
+.product-summary-wrap a.tinvwl_add_to_wishlist_button.no-txt {
+    border: 1px solid #222;
+    width: 38px !important;
+    height: 38px !important;
+}
+
+.product-summary-wrap .description {
+    margin-top: 30px;
+}
+
+.product-summary-wrap .description .description-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.product-summary-wrap .description p {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.product-summary-wrap .stock {
+    font-size: 1.1429em;
+    font-weight: 400;
+    color: #00b5cc;
+}
+
+.product-summary-wrap .size-chart {
+    font-size: 16px;
+    text-decoration: underline;
+    padding-left: 15px;
+    margin-bottom: 30px;
+}
+
+.product-summary-wrap .share-links {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.product-summary-wrap .share-links a {
+    color: #fff;
+}
+
+.share-content a {
+    font-size: 13px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+.product-summary-wrap .share-links a {
+    color: #333;
+    background: none;
+}
+
+.product-summary-wrap .cart a.tinvwl_add_to_wishlist_button {
+    display: none;
+}
+
+.summary.entry-summary {
+    padding-left: 5%;
+}
+
+.tinv-wraper.tinv-wishlist {
+    display: none;
+}
+
+.shipping_calculator .order-total .amount,
+.cart_totals .order-total .amount,
+.review-order.shop_table .order-total .amount {
+    color: #20c5da;
+}
+
+.shop_table td.product-name a {
+    color: #20c5da;
+}
+
+table.shop_table .cart-actions input[type="submit"].btn-default {
+    background: none;
+    border: 1px solid #222;
+    border-radius: 0 !important;
+    color: #222;
+    font-family: 'BrandonText-Regular';
+    text-shadow: none;
+    font-weight: 200;
+    transition: all 0.5s ease;
+    padding: 8px 15px;
+    text-decoration: none;
+}
+
+.shop_table .coupon input[type="submit"].btn-default {
+    background: none;
+    border: 1px solid #222;
+    border-radius: 0 !important;
+    color: #222;
+    font-family: 'BrandonText-Regular';
+    text-shadow: none;
+    font-weight: 200;
+    transition: all 0.5s ease;
+    padding: 8px 15px;
+}
+
+.Collection_heading,
+.Collection_content,
+.Collection_link {
+    display: none;
+}
+
+
+/*Checkout css*/
+
+.woocommerce-info {
+    margin-top: 20px;
+}
+
+.alert-info,
+.woocommerce-info {
+    background-color: #e8f3f5;
+    color: #31708f;
+}
+
+.woocommerce-info a.showcoupon {
+    color: #1bb4bd;
+}
+
+#checkoutlogin {
+    margin-top: 50px;
+}
+
+.checkout-details {
+    margin-top: 30px;
+}
+
+.checkout-details .item-header h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.checkout-details .item-header h2 span {
+    padding-right: 15px;
+}
+
+.shipping-detail {
+    padding: 0;
+    margin-top: 40px;
+}
+
+.form-row .required {
+    text-decoration: none;
+}
+
+.checkout.woocommerce-checkout .featured-box .box-content p {
+    margin-bottom: 25px;
+    float: left;
+}
+
+.shop_table td.product-name {
+    color: #20c5da;
+}
+
+.checkout.woocommerce-checkout p#order_comments_field {
+    width: 100%;
+}
+
+.checkout.woocommerce-checkout p#order_comments_field textarea {
+    min-height: 200px;
+}
+
+.payment_box.payment_method_cod {
+    display: inline-block;
+    width: 100%;
+}
+
+.checkout.woocommerce-checkout .payment_box.payment_method_cod p {
+    margin-bottom: 5px;
+}
+
+.checkout.woocommerce-checkout ul.payment_methods.methods {
+    float: left;
+    width: 85%;
+}
+
+.checkout.woocommerce-checkout .form-row.place-order {
+    float: right;
+    margin-top: 30px;
+}
+
+.checkout.woocommerce-checkout table th.product-total {
+    text-align: right;
+}
+
+.checkout.woocommerce-checkout table td.product-total {
+    text-align: right;
+}
+
+.checkout.woocommerce-checkout table tr.cart-subtotal td span.woocommerce-Price-amount.amount {
+    text-align: right;
+    float: right;
+}
+
+.checkout.woocommerce-checkout table tr.order-total td strong {
+    float: right;
+}
+
+.checkout-details .item-detail {
+    display: inline-block;
+    width: 100%;
+}
+
+.checkout-details .item-detail h3 {
+    font-size: 22px;
+}
+
+#checkoutlogin .featured-box .box-content {
+    min-height: 240px;
+}
+
+h1.woocommerce-notice.woocommerce-notice--success.woocommerce-thankyou-order-received {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+#account_username_field {
+    width: 48%;
+}
+
+#account_username_field {
+    width: 48%;
+}
+
+#billing_email_field {
+    margin-right: 0;
+    width: 50%;
+}
+
+#billing_last_name_field {
+    width: 50%;
+    margin-right: 0;
+}
+
+#account_password_field {
+    width: 50%;
+    margin-right: 0;
+}
+
+/*STORE CSS STARTS*/
+.store-page .store-header {
+    padding: 15px;
+    background: #222;
+    position: absolute;
+    width: 75%;
+    top: -30px;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.store-map {
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+.country-select select,
+.state-select select,
+.store-select select {
+    background: #222;
+    color: #fff;
+    border: none;
+    width: 100%;
+}
+
+.country-select {
+    border-right: 1px solid #888;
+}
+
+.state-select {
+    border-right: 1px solid #888;
+}
+
+.store-banner {
+    text-align: center;
+    background: url(images/find-store-banner.jpg) no-repeat center;
+    background-size: cover;
+    float: left;
+    width: 100%;
+}
+
+.store-banner h1 {
+    padding: 10% 0;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'BrandonText-Regular';
+    margin: 0;
+}
+
+.store-banner h1 span {
+    text-transform: lowercase;
+    font-size: 60px;
+    font-family: "BrandonText-Light";
+}
+
+.store_locator_plus.vedantti {
+    position: relative;
+    top: -12px;
+    margin-bottom: 40px;
+}
+
+div#mapresult-popup {
+    position: absolute;
+    top: 574px;
+    right: 0;
+}
+
+#mapresult-popup a {
+    background: #222;
+    color: #fff;
+    border-radius: 50%;
+    height: 25px;
+    font-weight: 400;
+    padding: 1px 6px;
+    position: absolute;
+    left: -10px;
+    top: -10px;
+}
+
+form#searchForm {
+    position: relative;
+    right: 4%;
+    border-radius: 0;
+    z-index: 9999;
+    background: #222;
+    display: inline;
+    top: -32px;
+}
+
+form#searchForm input#addressSubmit {
+    background: #222;
+    border-radius: 0;
+    border: none;
+    padding: 19.5px 20px;
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+}
+
+/*#map.slp_map{
+ filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+ */
+/*filter: gra; /* IE6-9 */
+/*-webkit-filter: grayscale(0); /* Chrome 19+ & Safari 6+ */
+/*	  -webkit-backface-visibility: hidden;  /* Fix for transition flickering */
+/*}*/
+.lookbook-imgs .img-div img.lanuch-image-popup {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Size chart */
+ul.size-list li {
+    color: #222;
+    list-style: none;
+    margin: 15px 10px;
+    text-align: center;
+    padding: 10px;
+    width: auto;
+    border: 1px solid #222;
+    border-radius: 5px;
+}
+
+/*VEDA text CSS*/
+
+span.veda-a {
+    text-transform: lowercase;
+    font-size: 23px;
+    font-family: "BrandonText-Light";
+}
+
+span.veda-text {
+    text-transform: uppercase;
+    font-family: "BrandonText-Light";
+    font-size: 16px;
+}
+
+.lookbook-head span.veda-text {
+    text-transform: uppercase;
+    font-family: 'BrandonText-Regular';
+    font-size: 22px;
+}
+
+.lookbook-head span.veda-a {
+    text-transform: lowercase;
+    font-size: 34px;
+    font-family: "BrandonText-Light";
+}
+
+.size-dropdown {
+    margin-bottom: 30px;
+}
+
+.size-dropdown label {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-left: 10px;
+}
+
+ul.size-list {
+    display: inline-block;
+    width: 100%;
+    padding-left: 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+ul.size-list li {
+    background: #222 none repeat scroll 0 0;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 13px;
+    width: 70px;
+    height: 70px;
+    float: left;
+    padding-top: 22px;
+}
+
+.product-tabs .tab-content {
+    border: 0;
+    box-shadow: none;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.product-tabs .nav-tabs {
+    border: 0;
+}
+
+.product-tabs .nav-tabs li a {
+    background: none;
+    border: 0;
+    color: #222;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.product-tabs .nav-tabs li.active a {
+    border-bottom: 1px solid #222;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    color: #000;
+}
+
+ul.woocommerce-info li {
+    list-style: none;
+}
+
+.share-content #share-icon {
+    float: left;
+    padding-left: 8px;
+    padding-right: 10px;
+}
+
+form#profileimg input[type="submit"] {
+    background: none;
+    border: 1px solid #222;
+    border-radius: 0 !important;
+    color: #222;
+    font-family: 'BrandonText-Regular';
+    text-shadow: none;
+    font-weight: 200;
+    padding: 6px 12px;
+    transition: all 0.5s ease;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+body input.button.btn-lg[type="submit"],
+div.upload-btn button,
+.woocommerce .box-content .button,
+.woocommerce-customer-logout div.woocommerce-message .button {
+    padding: 6px 12px;
+    font-size: 16px;
+}
+
+form#profileimg input[type="submit"]:hover {
+    background: #fff;
+    color: #20c5da;
+    border: 1px solid #20c5da;
+}
+
+.woocommerce .copy-billing form .button {
+    font-size: 14px;
+}
+
+.tinvwl-table-manage-list .quantity {
+    width: 2.5em;
+}
+
+.tinv-wishlist.woocommerce table .quantity .qty {
+    text-align: center;
+}
+
+.veda-subtitle {
+/*
+    font-family: "BrandonText-Regular";
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 26px;
+    color: #222222;
+    text-align: left;    
+    margin-bottom: 0;
+*/
+    font-family: "BrandonText-Regular";
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 26px;
+    color: #222222;
+    text-align: left;
+    margin-bottom: 0;
+    margin-top: -55px;
+    background: #fff;
+    display: table;
+    padding: 0 10px;
+}
+
+.veda-subtitle span.sub-a {
+    font-family: 'BrandonText-Light';
+    text-transform: lowercase;
+    font-size: 38px;
+    font-weight: 200;
+}
+
+.woocommerce-Message.woocommerce-Message--info a.woocommerce-Button.button {
+    color: #222;
+}
+
+
+.woocommerce-Message.woocommerce-Message--info a.woocommerce-Button.button:hover {
+    color: #21bece;
+}
+
+.products .popup-content .tinv-wraper.tinv-wishlist {
+    display: block;
+    position: relative;
+    top: -30px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.pagination-wrap .pagination > a,
+.pagination-wrap .page-links > a,
+.pagination-wrap .pagination > span,
+.pagination-wrap .page-links > span {
+    color: #333;
+}
+
+.pagination a:hover,
+.page-links a:hover,
+.pagination a:focus,
+.page-links a:focus,
+.pagination span.current,
+.page-links span.current {
+    background-color: #333;
+    border-color: #333;
+    color: #fff;
+    text-decoration: none;
+}
+
+.pagination-wrap .pagination,
+.pagination-wrap .page-links {
+    float: right;
+    padding-right: 55px;
+}
+
+span.veda-a {}
+
+#uploadImg input[type="radio"] {
+    width: auto;
+}
+
+.wpcf7-form .form-group span {
+    width: 100%;
+    float: left;
+}
+
+.wpcf7-form .form-group span input,
+.wpcf7-form .form-group textarea {
+    width: 100%;
+}
+
+.wpcf7-form .form-group textarea {
+    resize: none;
+}
+
+.wpcf7-form .form-group .wpcf7-not-valid {
+    border-color: #c10000;
+}
+
+.wpcf7-form .form-group span.ajax-loader {
+    background-repeat: no-repeat;
+    width: 16px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.wpcf7-form .form-group .wpcf7-submit {
+    float: left;
+}
+
+.summary .product-tabs .tab-pane .size-btn {
+    padding: 8px 15px;
+    background: #fff;
+    border: 1px solid #222;
+    text-transform: uppercase;
+    transition: all 0.5s cubic-bezier(0, .94, .8, .24);
+    color: #222;
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    transition: all 0.1s;
+    border-radius: 3px;
+    line-height: 1.42857;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.summary .product-tabs .tab-pane .size-btn:hover {
+    background: #fff;
+    border: 1px solid #20c5da;
+    color: #20c5da;
+    transition: all 0.5s ease;
+}
+
+.wpcf7-response-output.wpcf7-mail-sent-ok {
+    padding: 15px 20px;
+    background: #20c5da;
+    border: 1px solid #0da9bd;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    text-align: center;
+    color: #fff;
+}
+
+/* dec-01-2017 */
+.card-img-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1.25rem;
+}
+
+body {
+    line-height: 1.5;
+}
+
+#orderpopup button.close,
+#transferpopup button.close,
+button.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.contact-info p a {
+    font-weight: 600;
+}
+
+.contact-info p {
+    font-size: 18px;
+}
+
+.contact-info h5.vc_custom_heading {
+    background: url(images/inform.png) no-repeat;
+    padding-left: 28px;
+    line-height: normal;
+    background-position: left 5px;
+}
+
+#progressbox #statustxt {
+    left: auto;
+    right: 5%;
+    color: #21bece !important;
+    font-weight: bold;
+    font-size: 16px;
+    top: 0;
+    font-family: "BrandonText-Regular";
+}
+
+#progressbox #progressbar {
+    width: 65% !important;
+    background-color: #21bece;
+    border-radius: 30px;
+    padding: 12px;
+    border: solid 2px #fff;
+    box-shadow: 0px 0px 4px 2px rgba(198, 194, 194, 0.5);
+}
+
+div#progressbox {
+    border: none;
+    border-radius: 0;
+    width: 90%;
+}
+
+.upload-btn button {
+    background: none;
+    border: 1px solid #222;
+    border-radius: 0 !important;
+    color: #222;
+    font-family: 'BrandonText-Regular';
+    text-shadow: none;
+    font-weight: 200;
+    padding: 8px 15px;
+    transition: all 0.5s ease;
+    font-size: 18px;
+    margin-top: 20px;
+    text-transform: none;
+}
+
+.upload-btn button:hover {
+    background: #fff;
+    color: #20c5da;
+    padding: 8px 15px;
+    font-size: 18px;
+    border: 1px solid #20c5da;
+}
+
+#radius_in_submit input#addressSubmit,
+#radius_in_submit input#find-location-submit {
+    background: none;
+    border: 1px solid #fff;
+}
+
+
+.forcefullwidth_wrapper_tp_banner {
+    margin-top: 130px !important;
+}
+#header #main-menu li:nth-child(5) a {
+    padding-right: 0;
+}
+
+.mediapage-thumbs ul.nav-pills > li.active > a {
+    background-color: #313131;
+}
+
+.mediapage-thumbs ul.nav-pills > li.active > a:hover,
+ul.nav-pills > li.active > a:focus {
+    background-color: #313131;
+}
+
+.mediapage-thumbs .nav-pills > li > a {
+    border-radius: 0;
+}
+
+.mediapage-thumbs a:hover {
+    color: #313131;
+}
+
+.mediapage-thumbs .thumb-info .thumb-info-inner {
+    letter-spacing: 1px;
+}
+
+.mediapage-thumbs .thumb-info .thumb-info-action-icon-primary {
+    background-color: #313131;
+}
+
+.mediapage-thumbs .media:first-child {
+    margin-top: 15px;
+}
+
+
+#main-right-menu ul#menu-main_menu_right {
+    list-style: none;
+    display: inline-block;
+}
+
+div#main-right-menu {
+    display: inline-block;
+    /*    float: left;*/
+}
+
+#main-right-menu #menu-main_menu_right li {
+    margin-top: 10px;
+}
+
+#main-right-menu a {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 8px 8px 8px 0px;
+}
+
+#main-right-menu a:hover {
+    color: #222;
+}
+
+
+/* video-volume-sec */
+div#home_vid1 {
+    position: relative;
+}
+
+.video_volume {
+    position: absolute;
+    bottom: 5%;
+    right: 10px;
+}
+
+.video_volume span#unmute {
+    background: #00162a;
+    padding: 6px 10px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.hide_aud {
+    display: none;
+}
+
+.show_aud {
+    display: block;
+}
+
+video#homepage_video1 {
+    background-size: cover;
+    object-fit: cover;
+}
+
+.ipad_play {
+    display: none;
+}
+
+/*
+.circle-video .wpb_raw_code.wpb_content_element.wpb_raw_html{
+    margin-bottom: 0;
+}*/
+
+.page-4316 .col-new,
+.page-4314 .col-new {
+    width: 16.66% !important;
+    margin-bottom: 5px;
+}
+
+/*The Power*/
+.archive-products.page-4316 .product-row li img {
+    width: 53.1%;
+    padding: 20% 0;
+}
+
+/*Designer*/
+.footsteps h3{
+    margin-bottom: 15px;
+    margin-top: -50px;
+    background: #fff;
+    padding: 0 10px;
+    display: table;
+}
+.content-bdr{
+    border: 3px solid #efefef;
+    padding: 30px;
+}
+.post-154{
+    font-size: 18px;
+}
+
+/*Media Query*/
+@media(min-width:1280px) and (max-width:1450px) {
+    #header #main-menu li a {
+        font-size: 14px !important;
+        padding: 10px 10px 10px 0;
+    }
+}
+
+@media(min-width:1000px) and (max-width:1100px) {
+    .page-4314 .col-new,
+    .page-4316 .col-new {
+        width: 33.33% !important;
+    }
+    .popup-proddata {
+        width: 60% !important;
+    }
+}
+
+@media(min-width:960px) and (max-width:1280px) {
+    .fixed-header #header {
+        padding: 18px 15px !important;
+    }
+
+    #header #main-menu li a {
+        font-size: 10px !important;
+        padding: 10px 10px 10px 0;
+    }
+
+    #header.sticky-header .header-main.sticky {
+        padding: 0 5px;
+    }
+    .padd-15 {
+        padding: 0 8%;
+    }
+}
+
+@media(min-width:971px) and (max-width:1024px) {
+    .forcefullwidth_wrapper_tp_banner {
+        margin-top: 118px !important;
+    }
+    .popup-proddata {
+        width: 60% !important;
+    }
+    .padd-15 {
+        padding: 0 5%;
+    }
+}
+@media(min-width:768px) and (max-width:970px) {
+    .forcefullwidth_wrapper_tp_banner {
+        margin-top: 80px !important;
+    }
+    .page-4314 .col-new,
+    .page-4316 .col-new {
+        width: 33.33% !important;
+    }
+    .padd-15 {
+        padding: 0 10%;
+    }
+    .content-bdr{
+        margin: 30px 0 !important;
+    }
+}
+@media(min-width:320px) and (max-width:767px) {
+    .forcefullwidth_wrapper_tp_banner {
+        margin-top: 100px !important;
+    }
+
+    #slide-7-layer-2,
+    #slide-8-layer-2,
+    #slide-9-layer-2 {
+        display: none;
+    }
+    .page-4316 .col-new,
+    .page-4314 .col-new {
+        width: 50% !important;
+    }
+    .padd-15 {
+        padding: 5% 10%;
+    }
+    .content-bdr {
+        margin-bottom: 50px !important;
+    }
+    .footsteps.content-bdr {
+        margin-bottom: 0px !important;
+    }
+}
+@media(min-width:320px) and (max-width:767px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+
+    #slide-7-layer-2,
+    #slide-8-layer-2,
+    #slide-9-layer-2 {
+        display: block;
+    }
+}
+/*
+@media (max-width:783px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    
+}
+*/

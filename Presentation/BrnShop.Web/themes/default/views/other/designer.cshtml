@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>设计师-@{@WorkContext.ShopConfig.SiteTitle}</title>
+    <title>设计师-@{@WorkContext.ShopConfig.SiteTitle}<<<<</title>
     @Html.Raw(WorkContext.ShopConfig.SEOKeyword)
     @Html.Raw(WorkContext.ShopConfig.SEODescription)
     <link href="@{@WorkContext.CSSCDN}/themes/default/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -16,37 +16,114 @@
     <script src="@{@WorkContext.ScriptCDN}/scripts/common.js" type="text/javascript"></script>
     <link href="@{@WorkContext.CSSCDN}/components/jsmodern/jsmodern.min.css" rel="stylesheet" type="text/css" />
     <script src="@{@WorkContext.ScriptCDN}/components/jsmodern/jsmodern.min.js" type="text/javascript"></script>
+    <link href="@{@WorkContext.ScriptCDN}/scripts/js_composer.min.css" rel="stylesheet" />
+    <link href="http://www.leokidsport.com/Content/leo/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="@{@WorkContext.ScriptCDN}/themes/default/css/style.css" rel="stylesheet" />
+
     <script type="text/javascript">
         $(function () {
             jsModern.video("#video");
 
         });
     </script>
+    <style>
+        .toptu {
+            height: 440px;
+            background-image: url(../../../../images/find-store-banner.jpg);
+        }
+
+        .col-md-6 {
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+    </style>
 </head>
 <body>
     @Html.Partial("_header")
-    <div class="container" style="width:1100px;margin-top: 50px;">
-        <div style="height:640px;">
-            <div style="float:left;width:50%;">
-                <h1 class="title">设计师</h1>
-                <h2 class="subtitle">Vedantti</h2>
-                <p class="content" style="padding-right:20px;">VEDANTTI珠宝公司的设计师，她是一个充满活力的年轻女孩，爱笑并热情洋溢。她创作的初衷是为了女性的自信微笑而精心打造。她热爱大自然、设计珠宝和任何关于艺术的事物，她也因此从中获得灵感。VEDANTTI是一个极具天赋的设计师，她很努力，以确保设计不仅受到人们的喜爱，更能得到爱戴和珍视。设计珠宝的愿望扎根于血统，也因为她出生于珠宝世家。</p>
+
+    <div id="main" class="column1 boxed no-breadcrumbs">
+        <!-- main -->
+        <section>
+            <div class="toptu">
+                <div style="color: #fff;margin-left: auto;margin-right: auto;width: 155px;font-size: 28px;line-height: 17;">DESIGNER</div>
             </div>
-            <div style="float:left;width:50%;text-align:right;">
-                <img width="493" height="657" src="../../images/myvedantti1.jpg" sizes="(max-width: 600px) 100vw, 600px" />
+
+        </section>
+        <section>
+            <div class="">
+                <div class="row" style="margin-top: 25px;">
+                    <div class="col-md-6">
+
+                        <div class="wpb_wrapper" style="margin-top:10%;">
+                            <div class="ult-spacer spacer-5c74b55d8a121" data-id="5c74b55d8a121" data-height="110" data-height-mobile="0" data-height-tab="0" data-height-tab-portrait="0" data-height-mobile-landscape="0" style="clear:both;display:block;"></div>
+                            <div class="wpb_text_column wpb_content_element  vc_custom_1547094057980 padd-15">
+                                <div class="wpb_wrapper">
+                                    <div class="content-bdr">
+                                        <h2 class="veda-subtitle">设计<span class="sub-a"></span>师</h2>
+                                        <p style="text-align: left;font-size: 16px;line-height: 46px;padding-top: 23px;">VEDANTTI珠宝公司的设计师，她是一个充满活力的年轻女孩，爱笑并热情洋溢。她创作的初衷是为了女性的自信微笑而精心打造。她热爱大自然、设计珠宝和任何关于艺术的事物，她也因此从中获得灵感。VEDANTTI是一个极具天赋的设计师，她很努力，以确保设计不仅受到人们的喜爱，更能得到爱戴和珍视。设计珠宝的愿望扎根于血统，也因为她出生于珠宝世家。</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wpb_wrapper">
+                            <div class="wpb_single_image wpb_content_element vc_align_left  vc_custom_1547293296077">
+                                <div class="wpb_wrapper">
+
+                                    <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="1048" height="940" src="https://vedantti.com/wp-content/uploads/2017/09/d1.jpg" class="vc_single_image-img attachment-full" alt="" srcset="https://vedantti.com/wp-content/uploads/2017/09/d1.jpg 1048w, https://vedantti.com/wp-content/uploads/2017/09/d1-300x269.jpg 300w, https://vedantti.com/wp-content/uploads/2017/09/d1-768x689.jpg 768w, https://vedantti.com/wp-content/uploads/2017/09/d1-1024x918.jpg 1024w" sizes="(max-width: 1048px) 100vw, 1048px" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="wpb_wrapper">
+
+                            <div class="vc_single_image-wrapper   vc_box_border_grey"><img src="https://vedantti.com/wp-content/uploads/2017/09/d2.jpg" class="vc_single_image-img attachment-full" alt="" style="width: 100%;" /></div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wpb_wrapper" style="text-align:center;">
+
+                            <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="571" height="531" src="https://vedantti.com/wp-content/uploads/2017/09/Sketch.jpg" class="vc_single_image-img attachment-full" alt="" srcset="https://vedantti.com/wp-content/uploads/2017/09/Sketch.jpg 571w, https://vedantti.com/wp-content/uploads/2017/09/Sketch-300x279.jpg 300w" sizes="(max-width: 571px) 100vw, 571px" /></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="wpb_wrapper" style="margin-top:10%;">
+                            <div class="ult-spacer spacer-5c74b55d8a121" data-id="5c74b55d8a121" data-height="110" data-height-mobile="0" data-height-tab="0" data-height-tab-portrait="0" data-height-mobile-landscape="0" style="clear:both;display:block;"></div>
+                            <div class="wpb_text_column wpb_content_element  vc_custom_1547094057980 padd-15">
+                                <div class="wpb_wrapper">
+                                    <div class="content-bdr">
+                                        <h2 class="veda-subtitle">父亲的<span class="sub-a"></span>足迹</h2>
+                                        <p style="text-align: left;font-size: 16px;line-height: 46px;padding-top: 23px;">继她父亲之后，VEDANTTI也进入了珠宝的世界，然而，她却创造了一个全新和独特的天地。与钻石和珠宝的接近使她认识到，要创造出一件珠宝，需要付出极大的努力，才能让佩戴者充满喜悦和幸福的感觉。她内心的快乐和创造力总是由钻石和珠宝引起的。凭借在创造过程中所需的努力、关怀和付出的时间，她更坚定了要设计出让人幸福的珠宝的信念，而这些珠宝能够与我们内心最深处沟通。</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wpb_wrapper">
+
+                            <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="1048" height="940" src="https://vedantti.com/wp-content/uploads/2017/09/d3.jpg" class="vc_single_image-img attachment-full" alt="" srcset="https://vedantti.com/wp-content/uploads/2017/09/d3.jpg 1048w, https://vedantti.com/wp-content/uploads/2017/09/d3-300x269.jpg 300w, https://vedantti.com/wp-content/uploads/2017/09/d3-768x689.jpg 768w, https://vedantti.com/wp-content/uploads/2017/09/d3-1024x918.jpg 1024w" sizes="(max-width: 1048px) 100vw, 1048px" /></div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-        </div>
-        <br /><br />
-        <div id="video" style="width:700px;height:396px;">
-            <video src="@{@WorkContext.ImageCDN}/themes/default/video/designer.mp4"></video>
-        </div>
-        <br /><br />
-        <div>
-            <img width="1100" height="374" src="../../images/myvedantti2.jpg" sizes="(max-width: 1000px) 100vw, 1000px" />
-            <h4 class="subtitle">父亲的足迹</h4>
-            <p class="content">继她父亲之后，VEDANTTI也进入了珠宝的世界，然而，她却创造了一个全新和独特的天地。与钻石和珠宝的接近使她认识到，要创造出一件珠宝，需要付出极大的努力，才能让佩戴者充满喜悦和幸福的感觉。她内心的快乐和创造力总是由钻石和珠宝引起的。凭借在创造过程中所需的努力、关怀和付出的时间，她更坚定了要设计出让人幸福的珠宝的信念，而这些珠宝能够与我们内心最深处沟通。</p>
-        </div>
+        </section>
+
+
+
     </div>
+
     @Html.Partial("_footer")
 </body>
 </html></script>
